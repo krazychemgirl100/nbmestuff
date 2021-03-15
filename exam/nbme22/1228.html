@@ -1,0 +1,1378 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 22 Answers : Block 1 : #35 = A 35-year-old man is brought to the hospital after ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 22 Answers <a href="1229.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme22.html">nbme22</a>/Block 1/Question#35
+<br />
+
+
+A 35-year-old man is brought to the hospital ...<br />
+
+<a href="https://www.google.com/search?q=Alteration+of+the+thermostatic+set+point+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Alteration of the thermostatic set point</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="1228">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-1228"
+        action="https://nbmeanswers.com/exam/nbme22/1228/comment-submit#1228"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="682">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+16&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/682/upvote#682">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/682/downvote#682">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/keycompany">keycompany</a>(232),
+    <a href="#682"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-27T18:26:42Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-05-27T18:26:42Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Alteration of the thermostatic set point is a <strong>hypothalamic process</strong> mediated by <strong>prostaglandins</strong> and is <em>independent of the sympathetic nervous system</em>.        </p>
+<p><strong>B, C, D, and E</strong> all require sympathetic nerves to ellicit a response. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/pg32">pg32</a>&nbsp;
+    <span id="c2cbodylink">Can anyone explain the mechanism behind shivering and the sympathetic nervous system? </span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/3873#682" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-25T17:19:11Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-01-25T17:19:11Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/mdmikek89">mdmikek89</a>&nbsp;
+    <span id="c2cbodylink">Hypothalamus relays through the autonomic nervous system. You cut the relay, you can only change the thermostatic set point, but the body can't react.</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/4841#682" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-07T03:42:00Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-03-07T03:42:00Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="682">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-682" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/682#682" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="682" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  <div class="tangent">
+    
+    <p>Even brown fat needs SNS == release of NE == binds to beta 3 receptor on fat == uncoupling of ox phos!</p>
+    
+    <div class="monospace">
+    <a href="https://nbmeanswers.com/nbme22/1228/tangentvote/280/upvote#682" class="upvoteme" style="color:green;">+1</a>/<a href="https://nbmeanswers.com/nbme22/1228/tangentvote/280/downvote#682" class="downvoteme">-</a> <a href="https://nbmeanswers.com/author/apurva">apurva</a>(31), <span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-07T15:32:43Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-03-07T15:32:43Z</span></span>
+  </div class="monospace">
+  </div>
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3231">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+3&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3231/upvote#3231">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3231/downvote#3231">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/qfever">qfever</a>(17),
+    <a href="#3231"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-01-04T04:10:08Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-01-04T04:10:08Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Hypothalamus controlling temperature set point is briefly mentioned in Pathoma 2018 edition page 13, Chapter 2 III Cardinal signs of inflammation D. Fever</p>
+<p>Pyogenes -&gt; macrophage release IL-1 and TNF -&gt; increased cyclooxygenase activity in hypothalamus perivascular cells -&gt; increased hypothalamus PGE2 -&gt; raised temperature set point</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3231">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3231" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/3231#3231" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3231" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="918">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/918/upvote#918">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/918/downvote#918">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/gribear">gribear</a>(0),
+    <a href="#918"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-31T14:06:40Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-05-31T14:06:40Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Can someone explain why when you transect the spinal cord superior to the level of sympathetic outflow -- and you get a systemic infection -- the response is alteration of the thermostatic set point?</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/its_raining_jimbos">its_raining_jimbos</a>&nbsp;
+    <span id="c2cbodylink">So I chose that one because set point is controlled by the hypothalamus (PGE2 and IL-1 mediate fever in the hypothalamus) and the rest of the answer choices involved something below the level that has been transected. Not 100% sure if that’s accurate though.</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/263#918" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-31T14:07:36Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-05-31T14:07:36Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/noselex">noselex</a>&nbsp;
+    <span id="c2cbodylink">Agreed with @its_raining_jimbos -- Fever is mediated by altering set point in hypothalamus. All the other choices, as far as I can tell, involve sympathetic nerves and their effects at target organs.</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/264#918" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-31T14:09:59Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-05-31T14:09:59Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="918">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-918" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/918#918" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="918" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  <div class="tangent">
+    
+    <p>You might not be able to change the temperature because you have no sympathetic outflow, but the actual "resetting" of the thermostatic set point is mediated via the hypothalamus and prostaglandins </p>
+    
+    <div class="monospace">
+    <a href="https://nbmeanswers.com/nbme22/1228/tangentvote/227/upvote#918" class="upvoteme" style="color:green;">+1</a>/<a href="https://nbmeanswers.com/nbme22/1228/tangentvote/227/downvote#918" class="downvoteme">-</a> <a href="https://nbmeanswers.com/author/spow">spow</a>(21), <span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-02-12T01:31:13Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-02-12T01:31:13Z</span></span>
+  </div class="monospace">
+  </div>
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3713">
+    <div class="monospace"><span style="background-color:pink;">&nbsp;-1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3713/upvote#3713">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3713/downvote#3713">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/j000">j000</a>(2),
+    <a href="#3713"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-02-27T22:53:29Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-02-27T22:53:29Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>i got this question wrong, but i think what this question is really asking is what happens in a systemic infection: which is fever</p>
+<p>in systemic infection, the most obvious sign to look for is a fever, not necessarily shivering, sweating, heat production by brown fat, etc. </p>
+<p>and how does fever occur? like someone already mentioned: pyogenes --&gt; macrophages releasing IL1 and TNF which increases COX activity in hypothalamus perivascular cells, increase production of PGE2 in hypothalamus and reset the temperature set point. </p>
+<p>i think the whole phrase "complete transection of the spinal cord superior to the level of sympathetic..." is a distraction. it just tells you that development of a fever has nothing to do with it </p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/j000">j000</a>&nbsp;
+    <span id="c2cbodylink">development of a fever in systemic infection has nothing to do with sympathetic nervous flow, so even it's injured, fever would still occur. I think this question is just asking how does fever occur in inflammation/infection situation. </span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/4660#3713" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-02-27T22:55:51Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-02-27T22:55:51Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/b1ackcoffee">b1ackcoffee</a>&nbsp;
+    <span id="c2cbodylink">So, how do you explain the actual fever by just changing the thermostat?? Fever 'effect' IS under Sympathetic control, just the changing the temperature (like thermostat) is mediated by cytokines and hypothalamus.</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/4809#3713" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-04T07:31:55Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-03-04T07:31:55Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/j000">j000</a>&nbsp;
+    <span id="c2cbodylink">oh i see what you mean, well i didn't know that, so thanks for clarifying that. however, based on your explanation, it would still get us to the right answer which is "alteration of thermostatic set point", not the fever effect itself. </span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/4823#3713" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-05T18:12:34Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-03-05T18:12:34Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3713">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3713" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/3713#3713" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3713" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3804">
+    <div class="monospace"><span style="background-color:pink;">&nbsp;-1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3804/upvote#3804">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/3804/downvote#3804">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/mdmikek89">mdmikek89</a>(-6),
+    <a href="#3804"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-07T03:41:07Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-03-07T03:41:07Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Okay boys and girls this question is easier than you think.</p>
+<p>Hypothalamus relays via the sympathetic nervous system to control the body when a new set point as been reached in lets say...fever...cause by....infection.</p>
+<p>If the connection between the hypothalamus and spinal cord (mainly the sympathetic outflow) is cut, the thalamus cannot relay the body reaction of a fever, but the hypothalamus itself can still change the set point.</p>
+<p>Boom</p>
+<p>Within the brain, the autonomic nervous system is regulated by the hypothalamus. Autonomic functions include control of respiration, cardiac regulation (the cardiac control center), vasomotor activity (the vasomotor center), and certain reflex actions such as coughing, sneezing, swallowing and vomiting.</p>
+<p>B-E occur as a result of a change in set point. </p>
+<p>A happens to cause the B-E when a new set point is reached.</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3804">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3804" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/3804#3804" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3804" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1624">
+    <div class="monospace"><span style="background-color:pink;">&nbsp;-2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/1624/upvote#1624">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1228/vote/1624/downvote#1624">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/gh889">gh889</a>(72),
+    <a href="#1624"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-16T00:50:48Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-06-16T00:50:48Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>From ShoryukenHadooken on reddit: </p>
+<p>What the question is getting at is the sympathetic chain was spared. It was a terrible way of wording it.</p>
+<p>Your anterior hypothalamus is responsible for cooling features and is under parasympathetic control. A lesion would cause hyperthermia.</p>
+<p>Your posterior hypothalamus is responsible for heating when you're cold and to generate the Fever response and is under sympathetic control. A lesion would cause hypothermia.</p>
+<p>In this question it is simply asking a person gets sick, hypothalamus was spared, what happens.</p>
+<p>Answer: hypothalamus will still be able to elevate set body temperature to battle infection.</p>
+<p>Hint: IF they give a question similar to this but reworded to include a lesion of the sympathetic fibers or of the hypothalamus, you would in turn NOT be able to generate a fever response to infection. The hypothalamus would be entirely under parasympathetic control</p>
+<p>This adds more context to the fact the Q states that the sympathetics was spared</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/oslerweberrendu">oslerweberrendu</a>&nbsp;
+    <span id="c2cbodylink">So, this says sympathetic also spared and hypothalamus also spared. Then what was wrong with this clinical case??</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/3111#1624" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-11-06T13:51:02Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2019-11-06T13:51:02Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/adong">adong</a>&nbsp;
+    <span id="c2cbodylink">i think the sympathetic system is actually impaired b/c it's cut before it can "outflow"...at least it's the only way this makes sense</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/3515#1624" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-08T23:23:31Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-01-08T23:23:31Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/suckitnbme">suckitnbme</a>&nbsp;
+    <span id="c2cbodylink">I agree. I think the question stem is saying the sympathetics were lesioned. Not that they were spared.</span>
+    <a href="https://nbmeanswers.com/nbme22/1228/subcommentvote/3609#1624" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-11T20:49:56Z" data-format="from(moment('2020-05-08T18:31:19Z'),0)" data-refresh="0" style="display: none">2020-01-11T20:49:56Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1624">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1624" action="https://nbmeanswers.com/exam/nbme22/1228/subcomment-submit/1624#1624" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc29w.DFPrEu6LDNvS07V2lf_0jp4H3tg">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1624" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

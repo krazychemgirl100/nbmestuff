@@ -1,0 +1,1314 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 21 Answers : Block 3 : #24 = Diastolic blood pressures are obtained in two ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 21 Answers <a href="718.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme21.html">nbme21</a>/Block 3/Question#24
+<br />
+
+
+Diastolic blood pressures are obtained in two ...<br />
+
+<a href="https://www.google.com/search?q=Median+of+group+Y:+higher;+Mode+of+group+Y:+higher+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Median of group Y: higher; Mode of group Y: higher</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="717">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-717"
+        action="https://nbmeanswers.com/exam/nbme21/717/comment-submit#717"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1794">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+9&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/1794/upvote#1794">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/1794/downvote#1794">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/amarousis">amarousis</a>(19),
+    <a href="#1794"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-23T20:54:51Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-23T20:54:51Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>so for this one you have to look at the diastolic blood pressure and that's the values you're supposed to read. not the numbers in the columns. Like group X's mode is 70 because it has that value 32 times. group y's mode is 80 because it appears 20 times. for median, you would have to write the diastolic number 50-120 how ever many times it appears and then find the middle. tricky question.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sahusema">sahusema</a>&nbsp;
+    <span id="c2cbodylink">Wow. I hate this. I only looked at the number of participants and completely ignored the Diastolic BP readings</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/2068#1794" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-18T18:15:17Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-07-18T18:15:17Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    background-color:rgba(0,255,0,0.1);
+    
+    ">
+    <a href="https://nbmeanswers.com/author/ma_rad">ma_rad</a>&nbsp;
+    <span id="c2cbodylink">Everyone commented how to get the mode right. But there is an easier way to realize that the median in Y is higher without all the calculations. If you see, the last Diastolic BP in group X is 110 (as there are ZERO people with 120). While group Y has 8 people with 120 DBP. This automatically shifts the median to the higher side.
+I got this wrong though at first I didn't pay attention to the "0" number at group X for 120 DBP</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/3436#1794" style="background-color:floralwhite;color:red;font-size:;">+8</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-12-25T17:18:29Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-12-25T17:18:29Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/brasel">brasel</a>&nbsp;
+    <span id="c2cbodylink">I think there's another easy way to find the median without writing out every value. There are 100 total people in each group, so that means the median (if the DBPs are written in  ascending order, which they are) is the 50th person. 
+Group X: 8 + 12 + 30 = 50, so median is 70
+Group Y: 2 + 8 + 10 + 20 +10 = 50, so median is 90</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/5475#1794" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-04-19T18:11:32Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2020-04-19T18:11:32Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/mangotango">mangotango</a>&nbsp;
+    <span id="c2cbodylink">I did it the way @brasel explained. The way @ma_rad did it could give the incorrect answer in some cases (e.g. Group X had 0 ppl with 120 BP but a ton of ppl for 110 BP etc. + Group Y had 10 ppl with 120 BP but basically none with 110 BP etc.). In this question that way worked but it's not always guaranteed since median doesn't sway with outliers, but mean does. // FA 2019 pg. 261</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/5641#1794" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-04-29T17:00:09Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2020-04-29T17:00:09Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1794">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1794" action="https://nbmeanswers.com/exam/nbme21/717/subcomment-submit/1794#1794" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1794" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2094">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+4&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/2094/upvote#2094">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/2094/downvote#2094">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/yb_26">yb_26</a>(154),
+    <a href="#2094"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-04T18:43:35Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-07-04T18:43:35Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>[<a href="https://www.reddit.com/r/usmlestep1/comments/c96406/explanation_for_question_from_nbme21/" rel="nofollow">https://www.reddit.com/r/usmlestep1/comments/c96406/explanation_for_question_from_nbme21/</a>]</p>
+<p>sorry for the napkin, hope that will help someone</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/fadila">fadila</a>&nbsp;
+    <span id="c2cbodylink">median should be: 70 for group X ; 85 for group Y
+median here is the avarage of Diastolic BP measured betweeen the 50 &amp; 51 patients (since the number of patients in each group in even; Median= (n+1)/2 -&gt; (100+1)/2= 50.5)
+Group X = (70+70)/2 = 70
+Group Y = (80+90)/2 = 85</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/3104#2094" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-11-05T13:45:27Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-11-05T13:45:27Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2094">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2094" action="https://nbmeanswers.com/exam/nbme21/717/subcomment-submit/2094#2094" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2094" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3219">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/3219/upvote#3219">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/3219/downvote#3219">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/ma_rad">ma_rad</a>(10),
+    <a href="#3219"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-12-25T17:18:00Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-12-25T17:18:00Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Everyone commented how to get the mode right. But there is an easier way to realize that the median in Y is higher without all the calculations. If you see, the last Diastolic BP in group X is 110 (as there are ZERO people with 120). While group Y has 8 people with 120 DBP. This automatically shifts the median to the higher side.</p>
+<p>I got this wrong though at first I didn't pay attention to the "0" number at group X for 120 DBP</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3219">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3219" action="https://nbmeanswers.com/exam/nbme21/717/subcomment-submit/3219#3219" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3219" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2093">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/2093/upvote#2093">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/2093/downvote#2093">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/yb_26">yb_26</a>(154),
+    <a href="#2093"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-04T18:36:12Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-07-04T18:36:12Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>FullSizeRender-04-07-19-11-28.jpg</p>
+<p>sorry for the napkin, hope that will help someone</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/yb_26">yb_26</a>&nbsp;
+    <span id="c2cbodylink">tried to attach photo, sorry for that(</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1679#2093" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-04T18:37:29Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-07-04T18:37:29Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/yb_26">yb_26</a>&nbsp;
+    <span id="c2cbodylink">[<a href="https://www.reddit.com/r/usmlestep1/comments/c96406/explanation_for_question_from_nbme21/" rel="nofollow">https://www.reddit.com/r/usmlestep1/comments/c96406/explanation_for_question_from_nbme21/</a>]</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1682#2093" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-04T18:43:10Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-07-04T18:43:10Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2093">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2093" action="https://nbmeanswers.com/exam/nbme21/717/subcomment-submit/2093#2093" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2093" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="608">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/608/upvote#608">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme21/717/vote/608/downvote#608">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/hajj">hajj</a>(0),
+    <a href="#608"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-26T09:48:19Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-05-26T09:48:19Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>can anyone explain this? i know median for y is higher by calculation but x has two modes so how come y has higher mode?</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/lispectedwumbologist">lispectedwumbologist</a>&nbsp;
+    <span id="c2cbodylink">The mode in X is 32 and the mode in Y is 80 </span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/130#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-27T22:18:25Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-05-27T22:18:25Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/lispectedwumbologist">lispectedwumbologist</a>&nbsp;
+    <span id="c2cbodylink">The mode in X is 70 and the mode in Y is 80*</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/131#608" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-27T22:19:02Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-05-27T22:19:02Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hajj">hajj</a>&nbsp;
+    <span id="c2cbodylink">Thank you!</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/143#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-28T07:53:31Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-05-28T07:53:31Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">Just checking in so I could feel smart about getting this right despite bombing the rest of the test lmao</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/262#608" style="background-color:floralwhite;color:red;font-size:;">+4</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-31T14:03:31Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-05-31T14:03:31Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>&nbsp;
+    <span id="c2cbodylink">can someone please explain the median in this</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/807#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-10T02:39:38Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-10T02:39:38Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/nala_ula">nala_ula</a>&nbsp;
+    <span id="c2cbodylink">The median can be known by first assembling the numbers in order from least to greater.
+If it's an uneven number set, the number in the middle is the median (for example: 4, 10, 12, 20, 27 = median is 12 since this is the number in the middle); if the numbers are even then you have to take the two values in the middle, add them up and divide them by 2 [for example: 4, 10, 12, 12, 20, 27 = (12+12)/2 = 12]. 
+Page 261 on FA 2019 explains it as well. Not sure if I explained it well... good luck on the test, people! </span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1130#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-17T00:17:13Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-17T00:17:13Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/dubin%20johnson">dubin johnson</a>&nbsp;
+    <span id="c2cbodylink">Can someone please explain how the mode for Y than X. Not sure how we got the values above. Thanks!</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1255#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-20T21:08:51Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-20T21:08:51Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/dubin%20johnson">dubin johnson</a>&nbsp;
+    <span id="c2cbodylink">I mean how is the mode for Y greater than mode for x?</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1256#608" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-20T21:10:49Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-20T21:10:49Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sgarzon15">sgarzon15</a>&nbsp;
+    <span id="c2cbodylink">Mode is the one that repeats the most once you list them in order</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1261#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-21T01:51:44Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-21T01:51:44Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/usmile1">usmile1</a>&nbsp;
+    <span id="c2cbodylink">Median would be the BP value that the person in the 50th percentile of each group would have. 
+So for group X, to find the 50th percent value, I added 8 + 12 + 32 = 52, which is right above 50, so the median would be 70 mmHg for group X. 
+Doing the same thing for group Y, 2+8+10+20+ 18 = 58; the 50th percentile would fall in group that had a BP of 90 mmHg. which makes the median higher for group Y.
+hope that isn't wrong, and helps someone!</span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/1479#608" style="background-color:floralwhite;color:red;font-size:;">+4</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-26T23:19:12Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2019-06-26T23:19:12Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/poisonivy">poisonivy</a>&nbsp;
+    <span id="c2cbodylink">I did it the same way! not pretty sure if it is the right way to do it, but it gave me the right answer! </span>
+    <a href="https://nbmeanswers.com/nbme21/717/subcommentvote/3558#608" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-09T22:50:46Z" data-format="from(moment('2020-05-08T19:27:31Z'),0)" data-refresh="0" style="display: none">2020-01-09T22:50:46Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="608">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-608" action="https://nbmeanswers.com/exam/nbme21/717/subcomment-submit/608#608" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdEIw.kb808y-25CS4AyWXuqkDSm4rRgY">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="608" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

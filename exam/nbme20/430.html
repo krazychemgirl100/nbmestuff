@@ -1,0 +1,1725 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 20 Answers : Block 1 : #37 = A 1-month-old male newborn is brought to the ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 20 Answers <a href="431.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme20.html">nbme20</a>/Block 1/Question#37
+<br />
+
+
+A 1-month-old male newborn is brought to the ...<br />
+
+<a href="https://www.google.com/search?q=Na%3Csup%3E+%3C/sup%3E:+132;+K%3Csup%3E+%3C/sup%3E:+3.2;+Cl%3Csup%3E%E2%88%92%3C/sup%3E:+90;+HCO3%3Csup%3E%E2%88%92%3C/sup%3E:+37+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Na<sup>+</sup>: 132; K<sup>+</sup>: 3.2; Cl<sup>−</sup>: 90; HCO3<sup>−</sup>: 37</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="430">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-430"
+        action="https://nbmeanswers.com/exam/nbme20/430/comment-submit#430"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1804">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+7&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/1804/upvote#1804">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/1804/downvote#1804">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/apop">apop</a>(7),
+    <a href="#1804"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-24T14:42:50Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-24T14:42:50Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>These explanations arent great. It doesnt really have much to do with RAAS activation. It has almost everything to do with a phenomenon called the alkaline tide. In chronic vomitting, you would expect Cl- to be low and K= to be low (similar to lab results in someone with bullemia). To compensate for the low Cl-, the stomach has an antiporter which exchanges Cl- for HCO3-. Therefore, Cl- will be replenished in the stomach, while HCO3- will increase in the blood, causing an alkalosis. In alkalotic states, the H+/K+ antiporter will begin to activate, shifting K+ INTO cells (hypokalemia) and increasing pH. RAAS probably plays a role in making the hypokalemia worse but the alkaline tide is more important here. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/spaceboy98">spaceboy98</a>&nbsp;
+    <span id="c2cbodylink">Isnt alkaline tide related to an increase in pH after meals? Your logic is on point but I'm not sure whether we can apply that concept here. </span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/5571#1804" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-04-25T16:24:38Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2020-04-25T16:24:38Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1804">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1804" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/1804#1804" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1804" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="300">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+4&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/300/upvote#300">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/300/downvote#300">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/hayayah">hayayah</a>(928),
+    <a href="#300"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-14T18:40:39Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-05-14T18:40:39Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>With chronic vomiting, you lose electrolytes and a lot of acid. It triggers metabolic alkalosis which is why all the serum values are low (or on the lower end of the normal range) except for bicarbonate.  </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/ergogenic22">ergogenic22</a>&nbsp;
+    <span id="c2cbodylink">decreased K+ (from increased RAAS due to volume loss) and decreased Cl- (loss of HCl from the stomach), Alkalosis from loss of HCl and thus high bicarb.
+
+For this reason high to mid range K is wrong</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/466#300" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-03T03:38:32Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-03T03:38:32Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sbryant6">sbryant6</a>&nbsp;
+    <span id="c2cbodylink">Wouldn't increased RAAS lead to increased Na+? The answer shows decreased Na+.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/1328#300" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-23T07:24:12Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-23T07:24:12Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sbryant6">sbryant6</a>&nbsp;
+    <span id="c2cbodylink">Also, remember Bulimia Nervosa is associated with hypokalemia.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/1329#300" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-23T07:26:43Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-23T07:26:43Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sugaplum">sugaplum</a>&nbsp;
+    <span id="c2cbodylink">so the range they gave for K is 3-6? so 3.2 is WNL then? 
+or are we just operating on "it is on the lower end of normal in peds"</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/1373#300" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-24T18:21:35Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-24T18:21:35Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/dbg">dbg</a>&nbsp;
+    <span id="c2cbodylink">sodium levels in pyloric stenosis vary, nothing really classic, can be high as in this case simply due to hydration, can low in other cases if aldosterone managed to reverse that to the other extreme </span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/2121#300" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-20T01:37:28Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-07-20T01:37:28Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="300">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-300" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/300#300" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="300" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  <div class="tangent">
+    
+    <p>From amboss: The loss of gastric hydrochloric acid from emesis results in increased bicarbonate concentration in the blood and decreased chloride. Some potassium is also lost through vomiting. Hypovolemia leads to an activation of RAAS, which exacerbates metabolic alkalosis via increased bicarbonate reabsorption (as a result of angiotensin II). Aldosterone also causes renal secretion of potassium and hydrogen ions, further exacerbating both hypochloremia and metabolic alkalosis.</p>
+    
+    <div class="monospace">
+    <a href="https://nbmeanswers.com/nbme20/430/tangentvote/72/upvote#300" class="upvoteme" style="color:green;">+7</a>/<a href="https://nbmeanswers.com/nbme20/430/tangentvote/72/downvote#300" class="downvoteme">-</a> <a href="https://nbmeanswers.com/author/smpate">smpate</a>(14), <span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-12-11T22:53:55Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-12-11T22:53:55Z</span></span>
+  </div class="monospace">
+  </div>
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="525">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+3&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/525/upvote#525">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/525/downvote#525">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/masonkingcobra">masonkingcobra</a>(185),
+    <a href="#525"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-23T22:37:54Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-05-23T22:37:54Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>In metabolic alkalosis, potassium moves into the cells</p>
+<p>The loss in volume through emesis triggers RAAS resulting in increased Aldosterone release and further potassium excretion</p>
+<p><a href="http://www.labpedia.net/test/116" rel="nofollow">http://www.labpedia.net/test/116</a></p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="525">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-525" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/525#525" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="525" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1857">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/1857/upvote#1857">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/1857/downvote#1857">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/iamapotato">iamapotato</a>(2),
+    <a href="#1857"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-25T14:35:18Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-25T14:35:18Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>No one here bothered to actually discuss what's going on.
+This is a 1-month old newborn.</p>
+<p>He vomits after feedings, 5-day history.</p>
+<p>At 1 month old, with vomiting after feedings, it is most likely a case of PYLORIC STENOSIS due to hypertrophy of the pyloric sphincter (usually occurs 6 weeks later).</p>
+<p>Due to him vomiting stomach contents, he will LOSE Cl-, K+, and Na+.</p>
+<p>He will ALSO lose H+. This is why you go into the metabolic alkalosis with a resultant increase in the HCO3-.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/kamilia20">kamilia20</a>&nbsp;
+    <span id="c2cbodylink">sketchy:: vomiting causes loss of WATER greater than sodium→ increased serum sodium→ INCREASED serum osmolality, So NA will decrease too, but no that far</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/3655#1857" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-13T18:40:51Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2020-01-13T18:40:51Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1857">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1857" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/1857#1857" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1857" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="921">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/921/upvote#921">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/921/downvote#921">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/ark110">ark110</a>(1),
+    <a href="#921"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-31T14:12:34Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-05-31T14:12:34Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>But what is the difference between option A and option C (132; 4.9; 90; 35)</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sympathetikey">sympathetikey</a>&nbsp;
+    <span id="c2cbodylink">K+ shouldn&#39;t increase. It&#39;s moving into cells due to metabolic alkalosis.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/329#921" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-31T22:18:11Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-05-31T22:18:11Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/home_run_ball">home_run_ball</a>&nbsp;
+    <span id="c2cbodylink">In the parietal cell of the stomach
+
+Hydrogen ions are formed from the dissociation of carbonic acid. Water is a very minor source of hydrogen ions in comparison to carbonic acid. Carbonic acid is formed from carbon dioxide and water by carbonic anhydrase.
+The bicarbonate ion (HCO3−) is exchanged for a chloride ion (Cl−) on the basal side of the cell and the bicarbonate diffuses into the venous blood, leading to an alkaline tide phenomenon.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/356#921" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-01T02:41:10Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-01T02:41:10Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/ergogenic22">ergogenic22</a>&nbsp;
+    <span id="c2cbodylink">RAAS increases from volume loss, and thus more aldosterone leads to low K+</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/467#921" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-03T03:39:17Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-03T03:39:17Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sinforslide">sinforslide</a>&nbsp;
+    <span id="c2cbodylink">Three reasons for hypokalemia. 
+First, some K+ is lost in gastric fluids. 
+Second, H+ shifts out of cells and K+ shifts into cells in metabolic alkalosis.
+Third, ECF volume contraction has caused increased secretion of aldosterone.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/719#921" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-08T02:43:01Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-06-08T02:43:01Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="921">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-921" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/921#921" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="921" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3227">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/3227/upvote#3227">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/3227/downvote#3227">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/rainlad">rainlad</a>(14),
+    <a href="#3227"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-12-31T20:33:43Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-12-31T20:33:43Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Hypochloremic, hypokalemic metabolic alkalosis is the classic electrolyte and acid-base imbalance of pyloric stenosis.</p>
+<p>Persistent vomiting results in loss of HCl. The chloride loss results in a low blood chloride level which impairs the kidney's ability to excrete bicarbonate. This is the factor that prevents correction of the alkalosis leading to metabolic alkalosis.</p>
+<p>A secondary hyperaldosteronism develops due to the decreased blood volume. The high aldosterone levels causes the kidneys to retain Na+ (to correct the intravascular volume depletion), and excrete increased amounts of K+ into the urine (resulting in a low blood level of potassium).</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3227">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3227" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/3227#3227" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3227" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3660">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/3660/upvote#3660">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/3660/downvote#3660">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/lsantiag">lsantiag</a>(-1),
+    <a href="#3660"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-02-18T03:46:31Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2020-02-18T03:46:31Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>An infant with vomiting after feedings + eager to eat is most commonly Hypertrophic Pyloric Stenosis.</p>
+<p>Because there is vomiting, there is loss of HCl --&gt; loss of Cl-</p>
+<p>The loss of volume will increase RAAS --&gt; K+ excretion</p>
+<p>The loss of Cl- will cause the Cl-/HCO3- anti porter in the stomach to be active and thus lead to a state of metabolic alkalosis --&gt; increase HCO3-</p>
+<p>The volume depletion increase ADH secretion--&gt;dilution of plasma--&gt;low Na+</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3660">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3660" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/3660#3660" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3660" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2208">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/2208/upvote#2208">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/2208/downvote#2208">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/thefoggymist">thefoggymist</a>(1),
+    <a href="#2208"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-10T10:29:29Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-07-10T10:29:29Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>I don't get this. Shouldn't the kidneys start correcting the bicarb levels afer 5 days? The delayed phase of the correction since they take time... and in the question they're asking "now".
+We have metabolic alkalosis since HCL is lost, so the body will try to correct it first by hyperventilation and later by increased excretion of bicarb. Bicarb should be low... (unless I'm missing something due to being exhausted)</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/thefoggymist">thefoggymist</a>&nbsp;
+    <span id="c2cbodylink">Nevermind, I think I got it. Beta intercalated cells cannot function and excrete bicarb because we don't have chloride. Yea apparently I was exhausted.</span>
+    <a href="https://nbmeanswers.com/nbme20/430/subcommentvote/1812#2208" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-10T10:36:20Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-07-10T10:36:20Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2208">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2208" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/2208#2208" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2208" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2653">
+    <div class="monospace"><span style="background-color:pink;">&nbsp;-1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/2653/upvote#2653">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/430/vote/2653/downvote#2653">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/amirmullick3">amirmullick3</a>(48),
+    <a href="#2653"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-08-31T00:03:58Z" data-format="from(moment('2020-05-08T19:26:21Z'),0)" data-refresh="0" style="display: none">2019-08-31T00:03:58Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Very easy question. Nonbilious vomit. 1 month age. Most likely scenario is pyloric stenosis.</p>
+<p>The vomiting causes loss of HCl so we have the hypochloremia, and renal compensation for this H loss is
+by preserving protons at the expense of K so that gives hypokalemia. As the disease is named, the red
+arrow in the image of the stomach is smooth muscle hypertrophy of the pyloric muscularis mucosae, forming
+the olive-shaped mass felt on palpation. This is a metabolic alkalosis because without Cl-, the basolateral
+HCO3/Cl exchanger will not work, so you retain HCO3.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2653">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2653" action="https://nbmeanswers.com/exam/nbme20/430/subcomment-submit/2653#2653" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD3Q.dhvY_3TqG4o67hzDL22GRIg3kWU">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2653" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

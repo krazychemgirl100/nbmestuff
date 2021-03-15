@@ -1,0 +1,2799 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+
+
+</style>
+
+
+
+
+
+<title>NBME 22 Answers</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+
+<div class="container-exam">
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">NBME 22 Answers</span><br />
+
+
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1194.html" class="blue">Question#1</a><br />
+    
+    A 66-year-old man develops worsening shortness of breath and ...<br />
+    
+    <span style="background-color:yellow;">Dilution of serum sodium due to ADH (vasopressin) secretion</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1195.html" class="blue">Question#2</a><br />
+    
+    A 28-year-old man has recurrent pancreatitis associated with ...<br />
+    
+    <span style="background-color:yellow;">Decreasing VLDL</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1196.html" class="blue">Question#3</a><br />
+    
+    Parenterally administered cholera vaccines consisting of ...<br />
+    
+    <span style="background-color:yellow;">Inability of the vaccine to elicit secretory antibody at the epithelial surface</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1197.html" class="blue">Question#4</a><br />
+    
+    A 48-year-old man begins furosemide therapy for pedal edema ...<br />
+    
+    <span style="background-color:yellow;">Decreases the luminal permeability to Na+ in the collecting duct</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1198.html" class="blue">Question#5</a><br />
+    
+    A 10-month-old girl is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Naloxone</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1199.html" class="blue">Question#6</a><br />
+    
+    A 2-month-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Human papillomavirus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1200.html" class="blue">Question#7</a><br />
+    
+    Two patients, a 54-year-old man (Patient X) and a 76-year-old ...<br />
+    
+    <span style="background-color:yellow;">Loading dose</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1201.html" class="blue">Question#8</a><br />
+    
+    A 16-year-old girl has pain and tingling in her left hand ...<br />
+    
+    <span style="background-color:yellow;">Cervical rib</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1202.html" class="blue">Question#9</a><br />
+    
+    A 54-year-old man has an aneurysm in the distal portion of ...<br />
+    
+    <span style="background-color:yellow;">2.4</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1203.html" class="blue">Question#10</a><br />
+    
+    A 25-year-old woman is admitted to the hospital because of ...<br />
+    
+    <span style="background-color:yellow;">Streptococcus pneumoniae</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1204.html" class="blue">Question#11</a><br />
+    
+    A 6-month-old boy has recently been diagnosed with ...<br />
+    
+    <span style="background-color:yellow;">Sphingomyelin degradation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1205.html" class="blue">Question#12</a><br />
+    
+    During the first week of life, a male newborn has vomiting, ...<br />
+    
+    <span style="background-color:yellow;">21-Hydroxylase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1206.html" class="blue">Question#13</a><br />
+    
+    A 13-year-old girl is brought to the physician by her mother ...<br />
+    
+    <span style="background-color:yellow;">Ask the mother to leave the room before asking the patient any questions</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1207.html" class="blue">Question#14</a><br />
+    
+    A 57-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Trigeminal neuralgia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1208.html" class="blue">Question#15</a><br />
+    
+    A 35-year-old woman has weakness and fever. When she was 25 ...<br />
+    
+    <span style="background-color:yellow;">Acute myelocytic leukemia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1209.html" class="blue">Question#16</a><br />
+    
+    An Rh-negative woman, gravida 3, para 2, has had an ...<br />
+    
+    <span style="background-color:yellow;">O, Rh-negative</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1210.html" class="blue">Question#17</a><br />
+    
+    A 27-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Eversion</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1211.html" class="blue">Question#18</a><br />
+    
+    A 13-year-old boy is brought to the physician for a ...<br />
+    
+    <span style="background-color:yellow;">Reassurance</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1212.html" class="blue">Question#19</a><br />
+    
+    An 11-year-old boy has had pain in his right mid-thigh for 2 ...<br />
+    
+    <span style="background-color:yellow;">Ewing sarcoma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1213.html" class="blue">Question#20</a><br />
+    
+    A 49-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Avascular necrosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1214.html" class="blue">Question#21</a><br />
+    
+    A 30-year-old man comes to the physician because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">Polycystin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1215.html" class="blue">Question#22</a><br />
+    
+    A previously healthy 6-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Does anyone else in the family have an itchy rash like this?</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1216.html" class="blue">Question#23</a><br />
+    
+    A patient in the early stages of hemorrhagic shock is most ...<br />
+    
+    <span style="background-color:yellow;">A weak pulse due to decreased stroke volume</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1217.html" class="blue">Question#24</a><br />
+    
+    A 48-year-old man with renal artery stenosis undergoes stent ...<br />
+    
+    <span style="background-color:yellow;">Testicular artery</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1218.html" class="blue">Question#25</a><br />
+    
+    During an experiment, a 22-year-old man receives an infusion ...<br />
+    
+    <span style="background-color:yellow;">Arteriolar resistance: decreased;<br />Capillary hydrostatic pressure: increased;<br />Capillary filtration rate: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1219.html" class="blue">Question#26</a><br />
+    
+    A 42-year-old man comes to the physician because of a 1-month ...<br />
+    
+    <span style="background-color:yellow;">Hydrochlorothiazide</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1220.html" class="blue">Question#27</a><br />
+    
+    During a clinical study, 15 patients with renal allografts ...<br />
+    
+    <span style="background-color:yellow;">Azathioprine</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1221.html" class="blue">Question#28</a><br />
+    
+    A 48-year-old man comes to the physician because of fatigue, ...<br />
+    
+    <span style="background-color:yellow;">Transferrin saturation and serum ferritin measurements</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1222.html" class="blue">Question#29</a><br />
+    
+    A 28-year-old man comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Jejunum</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1223.html" class="blue">Question#30</a><br />
+    
+    A 42-year-old woman is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Temporal lobe</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1224.html" class="blue">Question#31</a><br />
+    
+    A 60-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Lung cancer</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1225.html" class="blue">Question#32</a><br />
+    
+    A 17-year-old boy is brought to the emergency department 45 ...<br />
+    
+    <span style="background-color:yellow;">Hypokalemia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1226.html" class="blue">Question#33</a><br />
+    
+    A 32-year-old woman begins to hyperventilate and then ...<br />
+    
+    <span style="background-color:yellow;">Cerebral blood flow</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1227.html" class="blue">Question#34</a><br />
+    
+    A 15-year-old girl is brought to the physician by her mother ...<br />
+    
+    <span style="background-color:yellow;">First-degree burn</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1228.html" class="blue">Question#35</a><br />
+    
+    A 35-year-old man is brought to the hospital after a diving ...<br />
+    
+    <span style="background-color:yellow;">Alteration of the thermostatic set point</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1229.html" class="blue">Question#36</a><br />
+    
+    A 67-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Idiopathic pulmonary fibrosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1230.html" class="blue">Question#37</a><br />
+    
+    A 28-year-old woman is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Area labeled ‘C’ (Abducens nucleus, right)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1231.html" class="blue">Question#38</a><br />
+    
+    A newborn born at 26 weeks' gestation has respiratory ...<br />
+    
+    <span style="background-color:yellow;">Dipalmitoyl lecithin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1232.html" class="blue">Question#39</a><br />
+    
+    A 23-year-old woman develops multiple red, papulovesicular ...<br />
+    
+    <span style="background-color:yellow;">Processing of antigen by Langerhans cells, leading to activation of CD4+ T cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1233.html" class="blue">Question#40</a><br />
+    
+    A 45-year-old man with chronic pancreatitis caused by alcohol ...<br />
+    
+    <span style="background-color:yellow;">Pancrelipase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1234.html" class="blue">Question#41</a><br />
+    
+    A 21-year-old man is brought to the emergency department 1 ...<br />
+    
+    <span style="background-color:yellow;">Gender and body habitus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1235.html" class="blue">Question#42</a><br />
+    
+    An 18-year-old woman develops sepsis after an abortion. ...<br />
+    
+    <span style="background-color:yellow;">Decreased plasma fibrinogen concentration</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1236.html" class="blue">Question#43</a><br />
+    
+    A 13-year-old girl is brought to the emergency department 15 ...<br />
+    
+    <span style="background-color:yellow;">C1 inhibitor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1237.html" class="blue">Question#44</a><br />
+    
+    A 52-year-old man with a history of alcoholic cirrhosis is ...<br />
+    
+    <span style="background-color:yellow;">Superior rectal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1238.html" class="blue">Question#45</a><br />
+    
+    A 16-year-old girl is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Diuretics</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1239.html" class="blue">Question#46</a><br />
+    
+    A 12-year-old girl is referred to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Conversion disorder</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1240.html" class="blue">Question#47</a><br />
+    
+    A 25-year-old woman comes to the physician because of easy ...<br />
+    
+    <span style="background-color:yellow;">Immune thrombocytopenic purpura</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1241.html" class="blue">Question#48</a><br />
+    
+    A 1-year-old boy is found to have an impairment of the ...<br />
+    
+    <span style="background-color:yellow;">Staphylococcus aureus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1242.html" class="blue">Question#49</a><br />
+    
+    A 17-year-old primigravid woman at 16 weeks' gestation has a ...<br />
+    
+    <span style="background-color:yellow;">Azithromycin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme22/1243.html" class="blue">Question#50</a><br />
+    
+    A 9-year-old boy is brought to the physician by his mother ...<br />
+    
+    <span style="background-color:yellow;">Protein structure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1244.html" class="blue">Question#1</a><br />
+    
+    A 29-year-old woman is brought to the emergency department 1 ...<br />
+    
+    <span style="background-color:yellow;">Avulsion of hepatic veins from the inferior vena cava</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1245.html" class="blue">Question#2</a><br />
+    
+    A 65-year-old man starts using topical fluorouracil for ...<br />
+    
+    <span style="background-color:yellow;">Thymidylate synthase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1246.html" class="blue">Question#3</a><br />
+    
+    A previously healthy 28-year-old man comes to the physician's ...<br />
+    
+    <span style="background-color:yellow;">Nephrolithiasis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1247.html" class="blue">Question#4</a><br />
+    
+    A previously healthy 60-year-old woman is admitted to the ...<br />
+    
+    <span style="background-color:yellow;">Increased central venous pressure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1248.html" class="blue">Question#5</a><br />
+    
+    A 74-year-old man with emphysema and lung cancer is brought ...<br />
+    
+    <span style="background-color:yellow;">Negative nitrogen balance</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1249.html" class="blue">Question#6</a><br />
+    
+    A 52-year-old man is brought to the emergency department 1 ...<br />
+    
+    <span style="background-color:yellow;">4 Months</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1250.html" class="blue">Question#7</a><br />
+    
+    A 66-year-old man comes to the physician because of a 2-month ...<br />
+    
+    <span style="background-color:yellow;">Libido: decreased;<br />Nocturnal erections: normal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1251.html" class="blue">Question#8</a><br />
+    
+    A 73-year-old man has difficulty urinating and frequent ...<br />
+    
+    <span style="background-color:yellow;">Area labeled ‘E’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1252.html" class="blue">Question#9</a><br />
+    
+    A 26-year-old woman develops hypotension and hemoglobinuria ...<br />
+    
+    <span style="background-color:yellow;">Antibody, complement C5-9</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1253.html" class="blue">Question#10</a><br />
+    
+    A 56-year-old man with a palpable hard nodule on the prostate ...<br />
+    
+    <span style="background-color:yellow;">Pelvic parasympathetic nerves</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1254.html" class="blue">Question#11</a><br />
+    
+    A 52-year-old man comes to the physician because a lump in ...<br />
+    
+    <span style="background-color:yellow;">Sensation from the anterior surface of the scrotum</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1255.html" class="blue">Question#12</a><br />
+    
+    A 42-year-old woman with frequent heartburn has relief of ...<br />
+    
+    <span style="background-color:yellow;">cAMP</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1256.html" class="blue">Question#13</a><br />
+    
+    A 5-year-old boy who lives on a farm has had diarrhea, ...<br />
+    
+    <span style="background-color:yellow;">Yersinia enterocolitica</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1257.html" class="blue">Question#14</a><br />
+    
+    A previously healthy 12-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Glucose and sodium</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1258.html" class="blue">Question#15</a><br />
+    
+    A 62-year-old woman comes to the physician 3 days after ...<br />
+    
+    <span style="background-color:yellow;">Carcinoma of the breast</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1259.html" class="blue">Question#16</a><br />
+    
+    A 60-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Prostate adenocarcinoma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1260.html" class="blue">Question#17</a><br />
+    
+    Ten healthy human subjects are given a new oral drug and ...<br />
+    
+    <span style="background-color:yellow;">Phase 1</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1261.html" class="blue">Question#18</a><br />
+    
+    A 32-year-old man comes to the physician because of a 2-week ...<br />
+    
+    <span style="background-color:yellow;">Reverse transcriptase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1262.html" class="blue">Question#19</a><br />
+    
+    A 50-year-old man comes to the physician 3 days after his ...<br />
+    
+    <span style="background-color:yellow;">Calcium</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1263.html" class="blue">Question#20</a><br />
+    
+    A 26-year-old nulligravid woman comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Hypothalamus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1264.html" class="blue">Question#21</a><br />
+    
+    A newborn has cyanosis, tachypnea, and retractions of the ...<br />
+    
+    <span style="background-color:yellow;">Respiratory acidosis and metabolic acidosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1265.html" class="blue">Question#22</a><br />
+    
+    A 35-year-old man comes to the physician because of a 3-year ...<br />
+    
+    <span style="background-color:yellow;">Adenylyl cyclase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1266.html" class="blue">Question#23</a><br />
+    
+    A 32-year-old woman comes to the physician because of a 1-day ...<br />
+    
+    <span style="background-color:yellow;">Reduviid bug</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1267.html" class="blue">Question#24</a><br />
+    
+    A 72-year-old man is given ketorolac for pain control after ...<br />
+    
+    <span style="background-color:yellow;">Acute renal failure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1268.html" class="blue">Question#25</a><br />
+    
+    A 37-year-old woman undergoes excision of a 1-cm, painless, ...<br />
+    
+    <span style="background-color:yellow;">Angiogenesis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1269.html" class="blue">Question#26</a><br />
+    
+    A randomized controlled trial is conducted to assess the ...<br />
+    
+    <span style="background-color:yellow;">(194/2371) – (123/2365)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1270.html" class="blue">Question#27</a><br />
+    
+    A 50-year-old man who has smoked 2 packs of cigarettes a day ...<br />
+    
+    <span style="background-color:yellow;">Increased blood HCO3−</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1271.html" class="blue">Question#28</a><br />
+    
+    A 65-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Ulnar and tibial</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1272.html" class="blue">Question#29</a><br />
+    
+    A 79-year-old man is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Insertion of transvenous pacemaker</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1273.html" class="blue">Question#30</a><br />
+    
+    A 40-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Multifactorial</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1274.html" class="blue">Question#31</a><br />
+    
+    An unimmunized 1-year-old boy is admitted to the hospital ...<br />
+    
+    <span style="background-color:yellow;">Phase variation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1275.html" class="blue">Question#32</a><br />
+    
+    A 54-year-old man who works in a delicatessen comes to the ...<br />
+    
+    <span style="background-color:yellow;">Schwann cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1276.html" class="blue">Question#33</a><br />
+    
+    A 29-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Thyroid-stimulating hormone: decreased;<br />Free thyroxine: decreased;<br />Free triiodothyronine: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1277.html" class="blue">Question#34</a><br />
+    
+    A 30-year-old man and a 24-year-old woman (indicated by the ...<br />
+    
+    <span style="background-color:yellow;">1 in 600</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1278.html" class="blue">Question#35</a><br />
+    
+    A 45-year-old man with Li-Fraumeni syndrome agrees to ...<br />
+    
+    <span style="background-color:yellow;">Decreased binding of RNA polymerase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1279.html" class="blue">Question#36</a><br />
+    
+    Which of the following drug effects is the most common reason ...<br />
+    
+    <span style="background-color:yellow;">Anticholinergic</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1280.html" class="blue">Question#37</a><br />
+    
+    A 63-year-old man has had progressive stiffness over the past ...<br />
+    
+    <span style="background-color:yellow;">Area labeled ‘D’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1281.html" class="blue">Question#38</a><br />
+    
+    Following a stroke, a patient is hoarse and cannot detect ...<br />
+    
+    <span style="background-color:yellow;">Lateral medulla</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1282.html" class="blue">Question#39</a><br />
+    
+    A 22-year-old woman comes to the office because of a 3-day ...<br />
+    
+    <span style="background-color:yellow;">Cardiomyopathy</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1283.html" class="blue">Question#40</a><br />
+    
+    A previously healthy 7-year-old girl is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Serum potassium concentration</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1284.html" class="blue">Question#41</a><br />
+    
+    A 12-year-old boy is swimming in a mountain stream. He is ...<br />
+    
+    <span style="background-color:yellow;">Central blood volume: increased;<br />Serum ADH (vasopressin): decreased;<br />Serum atrial natriuretic peptide: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1285.html" class="blue">Question#42</a><br />
+    
+    A 75-year-old woman has taken 12 over-the-counter ...<br />
+    
+    <span style="background-color:yellow;">Plasma renin activity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1286.html" class="blue">Question#43</a><br />
+    
+    A 20-year-old man comes to the physician because of tingling ...<br />
+    
+    <span style="background-color:yellow;">Area labeled ‘C’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1287.html" class="blue">Question#44</a><br />
+    
+    A 3-day-old full-term male newborn is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Hepatic UDP-glucuronosyltransferase activity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1288.html" class="blue">Question#45</a><br />
+    
+    An 86-year-old man who lives in a skilled nursing care ...<br />
+    
+    <span style="background-color:yellow;">Dextromethorphan</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1289.html" class="blue">Question#46</a><br />
+    
+    A 62-year-old man is being evaluated for rectal bleeding. An ...<br />
+    
+    <span style="background-color:yellow;">Greater mucosal surface area</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1290.html" class="blue">Question#47</a><br />
+    
+    A 22-year-old woman who is at 16 weeks' gestation has ...<br />
+    
+    <span style="background-color:yellow;">Down syndrome</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1291.html" class="blue">Question#48</a><br />
+    
+    Clostridium perfringens-α toxin affects cells and facilitates ...<br />
+    
+    <span style="background-color:yellow;">Splitting lecithin to phosphorylcholine and diglyceride</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1292.html" class="blue">Question#49</a><br />
+    
+    A physician is unable to communicate "bad news" to a patient ...<br />
+    
+    <span style="background-color:yellow;">Countertransference</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme22/1293.html" class="blue">Question#50</a><br />
+    
+    An 18-month-old boy is admitted to the hospital because of ...<br />
+    
+    <span style="background-color:yellow;">Tuberous sclerosis complex</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1294.html" class="blue">Question#1</a><br />
+    
+    A 35-year-old man comes to the physician because of a 6-week ...<br />
+    
+    <span style="background-color:yellow;">C7 nerve root</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1295.html" class="blue">Question#2</a><br />
+    
+    A 30-year-old man is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Increased serum angiotensin II concentration</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1296.html" class="blue">Question#3</a><br />
+    
+    An obese 45-year-old woman with type 2 diabetes mellitus, ...<br />
+    
+    <span style="background-color:yellow;">Diarrhea</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1297.html" class="blue">Question#4</a><br />
+    
+    A 29-year-old woman has an inflammatory disease involving her ...<br />
+    
+    <span style="background-color:yellow;">Immune complex-mediated cytotoxicity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1298.html" class="blue">Question#5</a><br />
+    
+    A 72-year-old man with multiple myeloma agrees to participate ...<br />
+    
+    <span style="background-color:yellow;">Unrearranged immunoglobulin gene</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1299.html" class="blue">Question#6</a><br />
+    
+    A 50-year-old man is admitted to the hospital because of ...<br />
+    
+    <span style="background-color:yellow;">Intracellular [Na+]: increased;<br />Intracellular [K+]: decreased;<br />Intracellular [Ca2+]: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1300.html" class="blue">Question#7</a><br />
+    
+    A 50-year-old man who is a college professor has had an ...<br />
+    
+    <span style="background-color:yellow;">It must be difficult for you to accept this diagnosis when you feel healthy.</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1301.html" class="blue">Question#8</a><br />
+    
+    A 38-year-old man who lives at sea level flies to a mountain ...<br />
+    
+    <span style="background-color:yellow;">pH: increased;<br />HCO3-: increased;<br />Volume: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1302.html" class="blue">Question#9</a><br />
+    
+    Microelectrode injection of antibodies to α-actinin results ...<br />
+    
+    <span style="background-color:yellow;">Area labeled ‘C’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1303.html" class="blue">Question#10</a><br />
+    
+    A 50-year-old man comes to the physician for follow-up ...<br />
+    
+    <span style="background-color:yellow;">Yes; the patient may wish to consider the money's influence on the physician's recommendation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1304.html" class="blue">Question#11</a><br />
+    
+    A 38-year-old man with Down syndrome is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Contact adult protective services</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1305.html" class="blue">Question#12</a><br />
+    
+    An 82-year-old woman has been bedridden since surgical repair ...<br />
+    
+    <span style="background-color:yellow;">Carboxylation of precursor proteins</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1306.html" class="blue">Question#13</a><br />
+    
+    A previously healthy 26-year-old woman comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Acute retroviral infection</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1307.html" class="blue">Question#14</a><br />
+    
+    A 57-year-old woman comes to the physician 2 weeks after ...<br />
+    
+    <span style="background-color:yellow;">Intercostal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1308.html" class="blue">Question#15</a><br />
+    
+    An 18-year-old man comes to the physician 10 days after ...<br />
+    
+    <span style="background-color:yellow;">C8</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1309.html" class="blue">Question#16</a><br />
+    
+    A 27-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Antiphospholipid antibodies</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1310.html" class="blue">Question#17</a><br />
+    
+    A 50-year-old man with chronic gastritis is diagnosed with a ...<br />
+    
+    <span style="background-color:yellow;">Helicobacter pylori</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1311.html" class="blue">Question#18</a><br />
+    
+    An 85-year-old woman is diagnosed with a fracture of the ...<br />
+    
+    <span style="background-color:yellow;">Morphine is metabolized to active metabolites that accumulate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1312.html" class="blue">Question#19</a><br />
+    
+    A 42-year-old man comes to the physician because of numbness ...<br />
+    
+    <span style="background-color:yellow;">Sensory neuropathy</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1313.html" class="blue">Question#20</a><br />
+    
+    A 43-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Fibularis (peroneus) brevis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1314.html" class="blue">Question#21</a><br />
+    
+    A screening test for cancer is developed and applied to 500 ...<br />
+    
+    <span style="background-color:yellow;">Data point labeled ‘A’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1315.html" class="blue">Question#22</a><br />
+    
+    A study is conducted to assess the prevalence of hypertension ...<br />
+    
+    <span style="background-color:yellow;">Chi-square test</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1316.html" class="blue">Question#23</a><br />
+    
+    A 45-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">25%</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1317.html" class="blue">Question#24</a><br />
+    
+    An 84-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Downregulation of E-cadherin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1318.html" class="blue">Question#25</a><br />
+    
+    A 3-month-old girl is brought to the physician by her mother ...<br />
+    
+    <span style="background-color:yellow;">Motor: normal;<br />Social: delayed;<br />Verbal and cognitive: delayed</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1319.html" class="blue">Question#26</a><br />
+    
+    A study is conducted to assess the extent of cardiac valvular ...<br />
+    
+    <span style="background-color:yellow;">Type I error: No change;<br />Type II error: decreased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1320.html" class="blue">Question#27</a><br />
+    
+    A 45-year-old man with poorly controlled type 2 diabetes ...<br />
+    
+    <span style="background-color:yellow;">Enterococcus faecalis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1321.html" class="blue">Question#28</a><br />
+    
+    A 12-year-old girl who recently immigrated to the USA from ...<br />
+    
+    <span style="background-color:yellow;">Praziquantel</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1322.html" class="blue">Question#29</a><br />
+    
+    A 45-year-old man with end-stage renal failure is brought to ...<br />
+    
+    <span style="background-color:yellow;">Bicarbonate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1323.html" class="blue">Question#30</a><br />
+    
+    Which of the following is required for the synthesis of ...<br />
+    
+    <span style="background-color:yellow;">Glutamine</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1324.html" class="blue">Question#31</a><br />
+    
+    A 35-year-old man is admitted to the hospital because he has ...<br />
+    
+    <span style="background-color:yellow;">Absorption of nitrogenous products from the gastrointestinal tract</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1325.html" class="blue">Question#32</a><br />
+    
+    A 25-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Fasting insulin: increased;<br />Testosterone: increased;<br />Luteinizing hormone: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1326.html" class="blue">Question#33</a><br />
+    
+    A 22-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">47,XXY</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1327.html" class="blue">Question#34</a><br />
+    
+    The risk for hemorrhagic stroke from drug X is investigated ...<br />
+    
+    <span style="background-color:yellow;">Case-control study</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1328.html" class="blue">Question#35</a><br />
+    
+    A 4-year-old boy is brought to the physician by his parents ...<br />
+    
+    <span style="background-color:yellow;">Interstitial inflammation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1329.html" class="blue">Question#36</a><br />
+    
+    A 62-year-old man comes to the physician's office for ...<br />
+    
+    <span style="background-color:yellow;">Alternative treatments</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1330.html" class="blue">Question#37</a><br />
+    
+    A 35-year-old man with bronchial asthma starts taking ...<br />
+    
+    <span style="background-color:yellow;">Increase in cAMP</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1331.html" class="blue">Question#38</a><br />
+    
+    A 73-year-old man comes to the physician with his wife ...<br />
+    
+    <span style="background-color:yellow;">Blood pressure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1332.html" class="blue">Question#39</a><br />
+    
+    A 52-year-old man with stable angina pectoris begins ...<br />
+    
+    <span style="background-color:yellow;">Headache</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1333.html" class="blue">Question#40</a><br />
+    
+    A 49-year-old man has had the gradual onset of numbness and ...<br />
+    
+    <span style="background-color:yellow;">Essential thrombocythemia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1334.html" class="blue">Question#41</a><br />
+    
+    A 56-year-old man develops brief episodes of ventricular ...<br />
+    
+    <span style="background-color:yellow;">CL x Css</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1335.html" class="blue">Question#42</a><br />
+    
+    A 62-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Inorganic phosphorus: increased;<br />Parathyroid hormone: increased;<br />Calcitriol: decreased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1336.html" class="blue">Question#43</a><br />
+    
+    A 53-year-old woman shows evidence of adrenal failure. On CT ...<br />
+    
+    <span style="background-color:yellow;">Autoimmune adrenalitis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1337.html" class="blue">Question#44</a><br />
+    
+    A 35-year-old man comes to the physician because of an itchy ...<br />
+    
+    <span style="background-color:yellow;">Prescribe permethrin for the patient and his family</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1338.html" class="blue">Question#45</a><br />
+    
+    A 28-year-old man who is seropositive for HIV has numerous ...<br />
+    
+    <span style="background-color:yellow;">Slit-like vascular spaces with plump spindle-shaped stromal cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1339.html" class="blue">Question#46</a><br />
+    
+    A 54-year-old woman with hypertension and bilateral renal ...<br />
+    
+    <span style="background-color:yellow;">Vasodilating prostaglandins at the afferent arteriole</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1340.html" class="blue">Question#47</a><br />
+    
+    A 10-year-old boy receives a renal transplant from a living, ...<br />
+    
+    <span style="background-color:yellow;">Lymphocytes infiltrating tubular epithelium</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1341.html" class="blue">Question#48</a><br />
+    
+    A 2-year-old boy is brought to the physician because of fever ...<br />
+    
+    <span style="background-color:yellow;">Bruton agammaglobulinemia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1342.html" class="blue">Question#49</a><br />
+    
+    A 42-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Dopaminergic neurons in the substantia nigra</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme22/1343.html" class="blue">Question#50</a><br />
+    
+    A 56-year-old woman is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Herpes encephalitis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1344.html" class="blue">Question#1</a><br />
+    
+    A 2-day-old full-term female newborn suddenly develops ...<br />
+    
+    <span style="background-color:yellow;">Superior mesenteric</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1345.html" class="blue">Question#2</a><br />
+    
+    Thirty minutes after taking 2 aspirin tablets for a tension ...<br />
+    
+    <span style="background-color:yellow;">Acetaminophen</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1346.html" class="blue">Question#3</a><br />
+    
+    A 60-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Alveolar macrophage</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1347.html" class="blue">Question#4</a><br />
+    
+    A 24-year-old man who is comatose is admitted to the hospital ...<br />
+    
+    <span style="background-color:yellow;">25 mL/cm H2O</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1348.html" class="blue">Question#5</a><br />
+    
+    A new virus has been isolated that causes encephalitis. The ...<br />
+    
+    <span style="background-color:yellow;">Single-stranded positive-sense</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1349.html" class="blue">Question#6</a><br />
+    
+    A population of vegetarians is surveyed to investigate the ...<br />
+    
+    <span style="background-color:yellow;">t-Test</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1350.html" class="blue">Question#7</a><br />
+    
+    A 27-year-old man comes to the physician for a routine ...<br />
+    
+    <span style="background-color:yellow;">Ask the patient to identify the pros and cons of smoking cessation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1351.html" class="blue">Question#8</a><br />
+    
+    A 6-year-old boy who recently emigrated from Russia is ...<br />
+    
+    <span style="background-color:yellow;">Vitamin E</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1352.html" class="blue">Question#9</a><br />
+    
+    A 5-year-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Interruption of erythrocyte production</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1353.html" class="blue">Question#10</a><br />
+    
+    An 81-year-old man comes to the physician for ongoing ...<br />
+    
+    <span style="background-color:yellow;">Atherosclerosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1354.html" class="blue">Question#11</a><br />
+    
+    A 26-year-old woman comes to the physician 5 weeks after the ...<br />
+    
+    <span style="background-color:yellow;">Sertraline</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1355.html" class="blue">Question#12</a><br />
+    
+    A 73-year-old woman dies 7 years after the onset of ...<br />
+    
+    <span style="background-color:yellow;">Hydrocephalus ex vacuo</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1356.html" class="blue">Question#13</a><br />
+    
+    A 36-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Cytosol with translocation into the nucleus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1357.html" class="blue">Question#14</a><br />
+    
+    In patients with adenosine deaminase deficiency, there is a ...<br />
+    
+    <span style="background-color:yellow;">Ribonucleotide reductase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1358.html" class="blue">Question#15</a><br />
+    
+    A 24-year-old woman, gravida 1, para 1, comes to the ...<br />
+    
+    <span style="background-color:yellow;">Release of stored thyroid hormone from a thyroid gland infiltrated by lymphocytes</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1359.html" class="blue">Question#16</a><br />
+    
+    A 4-month-old boy is brought to the office by his parents ...<br />
+    
+    <span style="background-color:yellow;">Maxillary and medial nasal prominences</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1360.html" class="blue">Question#17</a><br />
+    
+    A 62-year-old man with dyslipidemia is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Gemfibrozil</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1361.html" class="blue">Question#18</a><br />
+    
+    A 10-year-old girl has a slightly painful 2-mm subcutaneous ...<br />
+    
+    <span style="background-color:yellow;">Granuloma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1362.html" class="blue">Question#19</a><br />
+    
+    A 76-year-old man with a 1-month history of a pulsatile ...<br />
+    
+    <span style="background-color:yellow;">Anomalous origins of multiple renal arteries to each kidney</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1363.html" class="blue">Question#20</a><br />
+    
+    During a study of symptomatic proximal deep venous ...<br />
+    
+    <span style="background-color:yellow;">Open-label clinical trial</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1364.html" class="blue">Question#21</a><br />
+    
+    A previously healthy 45-year-old woman has had fever, ...<br />
+    
+    <span style="background-color:yellow;">Thrombotic thrombocytopenic purpura</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1365.html" class="blue">Question#22</a><br />
+    
+    A 37-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Hyperplastic arteriolosclerosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1366.html" class="blue">Question#23</a><br />
+    
+    A 57-year-old woman comes to the office because of a 5-week ...<br />
+    
+    <span style="background-color:yellow;">Autoimmune downregulation of Ca2+ channels of the presynaptic terminal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1367.html" class="blue">Question#24</a><br />
+    
+    A 39-year-old woman with rheumatoid arthritis comes to the ...<br />
+    
+    <span style="background-color:yellow;">Tumor necrosis factor-α</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1368.html" class="blue">Question#25</a><br />
+    
+    A healthy 25-year-old man eats a meal consisting of 60% ...<br />
+    
+    <span style="background-color:yellow;">Fusion of an intracellular vesicle with the plasma membrane</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1369.html" class="blue">Question#26</a><br />
+    
+    A 60-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Meningioma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1370.html" class="blue">Question#27</a><br />
+    
+    A 78-year-old man comes to the physician because of a 3-month ...<br />
+    
+    <span style="background-color:yellow;">Metastatic carcinoma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1371.html" class="blue">Question#28</a><br />
+    
+    A 48-year-old man comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Splenic vein</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1372.html" class="blue">Question#29</a><br />
+    
+    A 45-year-old man who is HIV positive comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Disruption of the pathogen cell membrane</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1373.html" class="blue">Question#30</a><br />
+    
+    A 27-year-old man who is a construction worker is brought to ...<br />
+    
+    <span style="background-color:yellow;">Splenic flexure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1374.html" class="blue">Question#31</a><br />
+    
+    A 65-year-old man comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Crackles</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1375.html" class="blue">Question#32</a><br />
+    
+    A case-control study is conducted to assess the relationship ...<br />
+    
+    <span style="background-color:yellow;">Cannot be determined from the data given</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1376.html" class="blue">Question#33</a><br />
+    
+    A 38-year-old single woman with a history of chronic ...<br />
+    
+    <span style="background-color:yellow;">Displacement</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1377.html" class="blue">Question#34</a><br />
+    
+    A 17-year-old boy comes to the physician because of a 1-week ...<br />
+    
+    <span style="background-color:yellow;">B lymphocyte</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1378.html" class="blue">Question#35</a><br />
+    
+    Nicotinic acid acts at which of the following labeled sites ...<br />
+    
+    <span style="background-color:yellow;">Pathway labeled ‘C’</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1379.html" class="blue">Question#36</a><br />
+    
+    A 38-year-old man is admitted to the hospital after ...<br />
+    
+    <span style="background-color:yellow;">Acute-phase response</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1380.html" class="blue">Question#37</a><br />
+    
+    A 53-year-old woman with a long history of fibromuscular ...<br />
+    
+    <span style="background-color:yellow;">Tubular atrophy</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1381.html" class="blue">Question#38</a><br />
+    
+    Patients with mucolipidosis II (I-cell disease) lack the ...<br />
+    
+    <span style="background-color:yellow;">Secreted from the cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1382.html" class="blue">Question#39</a><br />
+    
+    A 5-year-old boy is brought to the physician because of pain ...<br />
+    
+    <span style="background-color:yellow;">Retinal cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1383.html" class="blue">Question#40</a><br />
+    
+    A 5-year-old boy with mental retardation is grossly obese and ...<br />
+    
+    <span style="background-color:yellow;">Maternal origin of both chromosomes 15</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1384.html" class="blue">Question#41</a><br />
+    
+    A 65-year-old woman with a 20-year history of osteoarthritis ...<br />
+    
+    <span style="background-color:yellow;">L-3 to 4</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1385.html" class="blue">Question#42</a><br />
+    
+    A 31-year-old man comes to the physician because of concerns ...<br />
+    
+    <span style="background-color:yellow;">Dihydrotestosterone</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1386.html" class="blue">Question#43</a><br />
+    
+    A 44-year-old man comes to the physician because of fever and ...<br />
+    
+    <span style="background-color:yellow;">Tricuspid insufficiency</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1387.html" class="blue">Question#44</a><br />
+    
+    A 10-year-old boy has bruised easily since swallowing some of ...<br />
+    
+    <span style="background-color:yellow;">Prolonged prothrombin time</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1388.html" class="blue">Question#45</a><br />
+    
+    An 1814-g (4-lb) male newborn is delivered in the hospital at ...<br />
+    
+    <span style="background-color:yellow;">Endodermal cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1389.html" class="blue">Question#46</a><br />
+    
+    A 39-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Hemoglobin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1390.html" class="blue">Question#47</a><br />
+    
+    A 56-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Maintenance of basement membrane integrity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1391.html" class="blue">Question#48</a><br />
+    
+    An 8-year-old boy is brought to the physician by his parents ...<br />
+    
+    <span style="background-color:yellow;">Calorie consumption that exceeds energy expenditure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1392.html" class="blue">Question#49</a><br />
+    
+    A 52-year-old man with metastatic oat cell carcinoma begins ...<br />
+    
+    <span style="background-color:yellow;">Ensure that the patient receives enough medication to control his pain</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme22/1393.html" class="blue">Question#50</a><br />
+    
+    A 31-year-old woman in the second trimester of pregnancy is ...<br />
+    
+    <span style="background-color:yellow;">Hematopoietic stem cells</span><br />
+    </div>
+    <br />
+
+</div>
+
+
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">Recent comments ...</span><br /><br /><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/seagull">
+seagull</a> made a comment on
+<a href="nbme22/1278.html#1053" class="blue">nbme22/block2/q#35</a>
+(A 45-year-old man with Li-Fraumeni syndrome agrees...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+46&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1278/vote/1053/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1278/vote/1053/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/seagull">seagull</a>(923)
+   </div>
+   
+
+           
+
+             <p>Did anyone need to read that last sentence like 50 times because the author refuses to use better grammar. Just frustrating.</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/link981">
+    link981</a>&nbsp;
+    <span id="c2cbodylink">Author rationale: "What is grammar?"</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/qfever">
+    qfever</a>&nbsp;
+    <span id="c2cbodylink">Did anyone read like 50 times and still get it wrong? (LOL, me)</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/drbravojose">
+    drbravojose</a>&nbsp;
+    <span id="c2cbodylink">Actually never understand what the author saying at any time. LOL</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/alimd">
+    alimd</a>&nbsp;
+    <span id="c2cbodylink">Such a shitty question. Do we really have such questions on the real exam? In my opinion they just throw junk question to those assesments </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/nootnootpenguinn">
+    nootnootpenguinn</a>&nbsp;
+    <span id="c2cbodylink">Oh my goodness- thank you! I was so mad at whoever wrote this shitty question! (Got it wrong lol)</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/sacredazn">
+sacredazn</a> made a comment on
+<a href="nbme22/1298.html#1043" class="blue">nbme22/block3/q#5</a>
+(A 72-year-old man with multiple myeloma agrees to...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+46&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1298/vote/1043/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1298/vote/1043/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/sacredazn">sacredazn</a>(65)
+   </div>
+   
+
+           
+
+             <p>The concept is a convoluted way of asking if you knew how VDJ recombination works, which is that it is actually an example of <strong>altering the DNA</strong> of the B/T lymphocyte.</p>
+<p>Southern blot technique: So when they use a probe against some region, and outputting a size of 1.5 kb or 6 kb, this is telling you the size of the DNA fragment in each cell (doesn’t matter if they say J probe or constant region probe, they’re just saying they’re targeting some nucleotide sequence found in the Ig locus/TCR beta chain locus respectively for B/T cells).</p>
+<p>I think the confusing part could be wondering how you know whether you’re partly through rearrangement (answer choices B thru D) or if it hasn’t occurred at all yet (correct answer). Here, the concept is that B cells undergo V(D)J rearrangement in the bone marrow, while T cells do it in the thymus, and it all happens at once. So a plasma cell in the blood like in Multiple Myeloma would have fully undergone recombination, while a T cell in the blood could either be fully educated (and have finished VDJ recombination) or immature (hasn’t started VDJ).</p>
+<p>Since the T cell gene was 6 kb and definitely bigger than the 1.5 kb gene, the T cell hasn’t undergone recombination yet.</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/trichotillomaniac">
+    trichotillomaniac</a>&nbsp;
+    <span id="c2cbodylink">very nice explanation!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/nwinkelmann">
+    nwinkelmann</a>&nbsp;
+    <span id="c2cbodylink">This was awesome! Made so much sense and hopefully I will be able to think that critically about questions in the future (because I NEVER would have come up with this on my own, hah).</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/eacv">
+    eacv</a>&nbsp;
+    <span id="c2cbodylink">OMG! THANK YOU. I DIDNT KNOW ANYTHING about this!! Hope this is not testesd on real examen :p</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/ribosome01">
+    ribosome01</a>&nbsp;
+    <span id="c2cbodylink">I would like to meet you personally and say thank you 
+I wish I had a teacher like you </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/ajss">
+    ajss</a>&nbsp;
+    <span id="c2cbodylink">wow! this explanation was awesome! thanks!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/mrglass">
+    mrglass</a>&nbsp;
+    <span id="c2cbodylink">Also the T-cell V-D-J segments are not the same as the B-cell V-D-J segments. Therefore a B-cell J segment southern blot would look for whether the B-cell site VDJ segment in a T-cell, which would always non-rearranged.</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/mynamejeff">
+    mynamejeff</a>&nbsp;
+    <span id="c2cbodylink">Thank you! 
+So is this because multiple myeloma produces excessive monoclonal light chain Ig? Is this the 1.5 kb gene? Whereas, T-cells that have not gone through differentiation yet and their J region includes everything (VDJ) vs. just VJ in the light chain? (FA 2020 pg 104)</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/peridot">
+    peridot</a>&nbsp;
+    <span id="c2cbodylink">This explanation is amazing! However, to fully understand another step of what the question is getting at, please take a look at @highyieldboardswards's and/or @mrglass' explanation as well - a very important addition!!</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/seagull">
+seagull</a> made a comment on
+<a href="nbme22/1279.html#1056" class="blue">nbme22/block2/q#36</a>
+(Which of the following drug effects is the most...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+32&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1279/vote/1056/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1279/vote/1056/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/seagull">seagull</a>(923)
+   </div>
+   
+
+           
+
+             <p>Which of the following reasons is why this question is bull? </p>
+<p>1) Using the word "cyclic" instead of tricyclic for clarity</p>
+<p>2) Knowing all of epidemiology of all drugs </p>
+<p>3) having to reason out that anticholinergic effects are probably the worst over alpha1 or H1 effects to no certainty. </p>
+<p>4) The crippling depression of studying for days-to-weeks on end to probably do average on the test.</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/nlkrueger">
+    nlkrueger</a>&nbsp;
+    <span id="c2cbodylink">yo, re-fucking-tweet</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/aesalmon">
+    aesalmon</a>&nbsp;
+    <span id="c2cbodylink">I agree, I picked H1 because such a common complaint for those on TCAs is Sedation, I figure it might be so commonly seen as to be the &#34;most common&#34; reason for noncompliance. I suppose the &#34;hot as a hare...etc&#34; effects would be more severe/annoying, but I didn&#39;t think they were more common.</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/fcambridge">
+    fcambridge</a>&nbsp;
+    <span id="c2cbodylink">I just like to pretend that there&#39;s a reason this question is now in an NBME and no longer being used for the test. Hopefully they realized the idiocy of this question like we all do</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/link981">
+    link981</a>&nbsp;
+    <span id="c2cbodylink">Since it said cyclic, I thought of using, discontinuing, then using again. These people who write these questions need take some English writing courses so they can write with CLARITY. Cyclic is not the same as Tricyclic.</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/waterloo">
+    waterloo</a>&nbsp;
+    <span id="c2cbodylink">Incredibly awful question. one thought I did have when deciding between anticholinergic and antihistaminic - nortriptyline and desipramine are secondary amines that have less anti-cholinergic effects (from Sketchy Pharm) so maybe that's what they were getting at? That someone went out and made a new TCA drug that would have less anticholinergic effects. </span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/mcl">
+mcl</a> made a comment on
+<a href="nbme22/1280.html#902" class="blue">nbme22/block2/q#37</a>
+(A 63-year-old man has had progressive stiffness over...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+31&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1280/vote/902/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1280/vote/902/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/mcl">mcl</a>(475)
+   </div>
+   
+
+           
+
+             <p><a href="https://msu.edu/~brains/brains/human/coronal/2000_fiber_labelled.jpg" rel="nofollow">This</a> image is useful. Note that the stain used makes myelin appear dark. </p>
+<p>Vignette is typical for Parkinson's disease. Area D is the substantia nigra. </p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/oznefu">
+    oznefu</a>&nbsp;
+    <span id="c2cbodylink">Oh nice! Thanks!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/bend_nbme_over">
+    bend_nbme_over</a>&nbsp;
+    <span id="c2cbodylink">Great image thanks! Even though it was an MSU link :P Go Blue!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/apurva">
+    apurva</a>&nbsp;
+    <span id="c2cbodylink">Saved My life</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/keycompany">
+keycompany</a> made a comment on
+<a href="nbme22/1248.html#724" class="blue">nbme22/block2/q#5</a>
+(A 74-year-old man with emphysema and lung cancer is...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+25&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1248/vote/724/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1248/vote/724/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/keycompany">keycompany</a>(232)
+   </div>
+   
+
+           
+
+             <p>Nitrogen balance is a measurement of <strong>protein metabolism</strong> in the body. A negative nitrogen balance indicates muscle loss, as increased amounts of amino acids are being metabolized to produce energy. This <strong>increases the amount of nitrogen secreted</strong> from the body.  Because the amount of nitrogen you are taking in is <em>less than the amount of nitrogen you are secreting</em>, you have a <strong>negative nitrogen balance</strong>.  </p>
+<p>This man is malnourished, edematous, cachetic, and  has hypoalbuminemia. These clinical findings point to <strong>protein malnutrition (Kawashkior Disease)</strong>, which causes edema due to decreased serum oncotic pressure. Low oncotic pressure in this case is due to protein loss, and hence a negative nitrogen balance. </p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/drdoom">
+    drdoom</a>&nbsp;
+    <span id="c2cbodylink">Nice!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/dubywow">
+    dubywow</a>&nbsp;
+    <span id="c2cbodylink">I knew your last sentence and suspected Kwashiorkor. It's just everything else I did not know. I have not heard or thought of muscle/protein changes in terms of "nitrogen balance" before... and that's why I got this wrong. Nice explanation!</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/macrohphage95">
+    macrohphage95</a>&nbsp;
+    <span id="c2cbodylink">I agree with you in first part but i dont think it has any relation to kwashirkor.
+It is simply due to cachexia which causes muscle destruction through the proteasome pathway .. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/zevvyt">
+    zevvyt</a>&nbsp;
+    <span id="c2cbodylink">also, it says that his albumin is low. </span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/liverdietrying">
+liverdietrying</a> made a comment on
+<a href="nbme22/1358.html#955" class="blue">nbme22/block4/q#15</a>
+(A 24-year-old woman, gravida 1, para 1, comes to the...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+24&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1358/vote/955/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1358/vote/955/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/liverdietrying">liverdietrying</a>(69)
+   </div>
+   
+
+           
+
+             <p>This one was a little tricky. For this one the key is the low radioiodine uptake. This patient has high T4 and low TSH which makes sense in a hyperthyroid patient, perhaps your first thought is that this patient has Grave’s disease. However, in Grave’s your thyroid is being stimulated to make more thyroid hormone from scratch and as such would have an increased radioiodine uptake because the thyroid is bringing in the required (now radiolabeled) iodine. This is why it is not Graves (“release of thyroid hormone from a thyroid <em>stimulated</em> by antibodies”).</p>
+<p>So if its not Grave’s what could it be? For this you’d have to know that Hashimoto’s Thyroiditis (also known as Chronic Lymphocytic Thyroiditis and is often referred to as such on board exams to throw you off) has three phases - first they are hyperthyroid, then euthyroid, then the classic hypothyroid that you would expect with low T4 and high TSH. This was the key to this question. The reason for this is that antithyroid peroxidase antibodies in Hashimoto’s cause the thyroid to release all of its stored thyroid hormone making the patient hyperthyroid for a short period of time. After this massive release of thyroid hormone, the antibodies make them unable to make new TH and therefore they become euthyroid for a short period and then hypothyroid which you would expect! Since they can’t make new TH, the thyroid will not take up the radioiodine and therefore there will be <strong>low</strong> radioiodine uptake. Hence, “release of stored thyroid hormone from a thyroid gland infiltrated by lymphocytes.” aka “Lymphocytic (hashimotos) thyroiditis”.</p>
+<p>I think “release of thyroid hormone from a lymphomatous thyroid gland” is referring to some kind of thyroid cancer in which case you would expect them to be describing a nodule on radioiodine uptake.</p>
+<p>​Summary video here and also a great site in general: <a href="https://onlinemeded.org/spa/endocrine/thyroid/acquire" rel="nofollow">https://onlinemeded.org/spa/endocrine/thyroid/acquire</a></p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/aesalmon">
+    aesalmon</a>&nbsp;
+    <span id="c2cbodylink">pg 338 of FA lists it under hypothyroidism but it does present as transient hyperthyroidism first</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/hyperfukus">
+    hyperfukus</a>&nbsp;
+    <span id="c2cbodylink">yep that was the key! Goiter is "HOT" but the remaining answer choices were still kind of bleh D was distracting the hell out of me i spent so long to convince myself to pick C and move on </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/hello">
+    hello</a>&nbsp;
+    <span id="c2cbodylink">Pasting nwinkelmann's comment as an addition: Choice "D" is wrong b/c "lymphomatous thyroid gland" = primary thyroid lymphoma (typically NHL, which is very rare) or Hashimoto's thyroid progression. Hashimoto's thyroiditis = lymphocytic infiltrate with germinal B cells and Hurthle cells, which upon continued stimulation, can lead to mutation/malignant transformation to B cell lymphoma. Both of these present with hypothyroidism with low T4 and high TSH (opposite of this patient).</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/taediggity">
+    taediggity</a>&nbsp;
+    <span id="c2cbodylink">I absolutely love your @liverdietrying, however the pathogenesis of postpartum thyroiditis is similar to Hashimoto's, so I think this person has postpartum thyroiditis and your explanation of transient  thyrotoxicosis is spot on, which would also occur in postpartum thyroiditis</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/pg32">
+    pg32</a>&nbsp;
+    <span id="c2cbodylink">I agree with @taediggity. Also note that women eventually recover from postpartum thyroiditis and typically become euthyroid again, which doesn't happen with Hashimoto's. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/vulcania">
+    vulcania</a>&nbsp;
+    <span id="c2cbodylink">In FA (2019 p. 338) it says that thyroid is usually normal size in postpartum thyroiditis, but the patient in this question had a thyroid "twice the normal size." I guess at the end of the day it doesn't matter which diagnosis is right for this question cause they both seem to lead to the same correct answer :) </span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/imgdoc">
+imgdoc</a> made a comment on
+<a href="nbme22/1230.html#1800" class="blue">nbme22/block1/q#37</a>
+(A 28-year-old woman is brought to the physician...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+23&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1230/vote/1800/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1230/vote/1800/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/imgdoc">imgdoc</a>(115)
+   </div>
+   
+
+           
+
+             <p>I think its the right MLF (area C), not the right abducens nucleus that is lesioned on the cross section. If the abducens nucleus were lesioned she wouldn't have abduction in her left eye. The MLF mediates cross talk between the abducens nucleus on both sides to the MLF on the opposite side (2 abducens nuclei, 2 MLF one on each side). In her case, her right MLF wasn't functioning hence why she was gazing left but her right middle rectus wasn't contacting to mediate leftward gaze. </p>
+<p>This picture helps: <a href="http://what-when-how.com/wp-content/uploads/2012/04/tmp15F9_thumb.jpg" rel="nofollow">http://what-when-how.com/wp-content/uploads/2012/04/tmp15F9_thumb.jpg</a></p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/imgdoc">
+    imgdoc</a>&nbsp;
+    <span id="c2cbodylink">*medial rectus </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/kateinwonderland">
+    kateinwonderland</a>&nbsp;
+    <span id="c2cbodylink"><a href="https://en.wikipedia.org/wiki/Medial_longitudinal_fasciculus#/media/File:Gray711.png" rel="nofollow">https://en.wikipedia.org/wiki/Medial_longitudinal_fasciculus#/media/File:Gray711.png</a></span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/quip13">
+    quip13</a>&nbsp;
+    <span id="c2cbodylink">This shows the MLF pathway in a saggital cut:
+<a href="https://ars.els-cdn.com/content/image/3-s2.0-B9781437719260100128-f12-08-9781437719260.jpg" rel="nofollow">https://ars.els-cdn.com/content/image/3-s2.0-B9781437719260100128-f12-08-9781437719260.jpg</a></span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/alwaysanonymous">
+alwaysanonymous</a> made a comment on
+<a href="nbme22/1347.html#910" class="blue">nbme22/block4/q#4</a>
+(A 24-year-old man who is comatose is admitted to the...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+22&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1347/vote/910/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1347/vote/910/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/alwaysanonymous">alwaysanonymous</a>(25)
+   </div>
+   
+
+           
+
+             <p>His tidal volume was 500 mL. End-expiratory was +5 cm and end-inspiratory was +25. We were supposed to use the difference in airway pressure, and not the end-inspiratory pleural pressure (+20).</p>
+<p>Compliance = ΔV/ΔP = 500 / 20 = 25 mL/cm H2O</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/some-zheimers">
+    some-zheimers</a>&nbsp;
+    <span id="c2cbodylink">Great explanation. In general, also a great idea to pay attention to the units. I studied Physics in undergrad and have got one or two questions based purely on following the units, when the formula slips.</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/endochondral1">
+    endochondral1</a>&nbsp;
+    <span id="c2cbodylink">is that equation in FA? </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/redvelvet">
+    redvelvet</a>&nbsp;
+    <span id="c2cbodylink">yes @endochondral1, at page 651 in 2019FA</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/joha961">
+joha961</a> made a comment on
+<a href="nbme22/1376.html#407" class="blue">nbme22/block4/q#33</a>
+(A 38-year-old single woman with a history of chronic...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+22&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1376/vote/407/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1376/vote/407/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/joha961">joha961</a>(36)
+   </div>
+   
+
+           
+
+             <p>Like others have said, I think <em>sublimation</em> would have been better, but displacement from first aid says that it is, “redirection of emotions or impulses to a neutral person or <strong>object</strong>” so she’s kicking her family by kicking the bag.</p>
+
+           
+
+     
+ </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/drdoom">
+drdoom</a> made a comment on
+<a href="nbme22/1277.html#907" class="blue">nbme22/block2/q#34</a>
+(A 30-year-old man and a 24-year-old woman (indicated...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+21&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1277/vote/907/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1277/vote/907/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/drdoom">drdoom</a>(531)
+   </div>
+   
+
+           
+
+             <p><strong>Calculations for dad</strong>. The probability of the father being a carrier is 2/3 since it is <em>known</em> that he doesn’t have the disease. Then the probability of him passing it on to his kid is 1/2, thus:</p>
+<ul>
+<li>Probability of dad being carrier = 2/3</li>
+<li>Probability of dad passing on disease allele = 1/2</li>
+</ul>
+<p><strong>Calculations for mom</strong>. With the Hardy-Weinberg Principle, you can figure out the probability of the mother being a carrier:</p>
+<p><code>q = sqrt(1/40,000) = 1/200</code> </p>
+<p>So, <code>2pq = 2 * 1/200 * 199/200</code>, which is approx 1/100.</p>
+<p>For the child to get the allele from mom, two things need to happen: (1) mom must be a carrier [“heterozygote”] and (2) mom must pass the allele to child:</p>
+<ul>
+<li>Probability of mom being carrier = 1/100</li>
+<li>Probability of mom passing on disease allele = 1/2</li>
+</ul>
+<p><strong>Puting it all together</strong>. Now, combine all together:</p>
+<p>= (probability of dad being carrier) * (probability of dad passing on disease allele) * (probability of mom being carrier) * (probability of mom passing on disease allele)</p>
+<p>= <code>2/3 * 1/2 * 1/100 * 1/2</code><br />
+= <code>1 in 600</code></p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/kernicterusthefrog">
+    kernicterusthefrog</a>&nbsp;
+    <span id="c2cbodylink">To quote Thorgy Thor, drag queen: "ew, Jesus, gross"</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/niboonsh">
+    niboonsh</a>&nbsp;
+    <span id="c2cbodylink">This question makes me want to vomit </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/drdoom">
+    drdoom</a>&nbsp;
+    <span id="c2cbodylink">lol</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/keycompany">
+keycompany</a> made a comment on
+<a href="nbme22/1284.html#701" class="blue">nbme22/block2/q#41</a>
+(A 12-year-old boy is swimming in a mountain stream....)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+21&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1284/vote/701/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1284/vote/701/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/keycompany">keycompany</a>(232)
+   </div>
+   
+
+           
+
+             <p>Answer: Increased Central Blood Volume (CBV), Decreased ADH, Increased ANP.    </p>
+<p>The physiological response to hypothermia is <strong>vasoconstriction of peripheral vessels</strong> (i.e. the ones in your extremities) in an effort to keep your core body temperature normal, and thus your organs functioning properly.  Peripheral Vasoconstriction will <strong>increase CBV</strong>. Increased CBV will cause an increase in preload, and thus cause an <strong>increase in ANP/BNP</strong>. ANP/BNP has inhibitory effects on the Renin-Angiotensin-Aldosterone System, resulting in <strong>decreased ADH</strong>. </p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/gokings2021">
+    gokings2021</a>&nbsp;
+    <span id="c2cbodylink">RAAS is not directly linked secretion of ADH as claimed above. Increased pressure at baroreceptors and increased central volume sensed by the hypothalamus will decrease secretion of ADH. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/miniarnie89">
+    miniarnie89</a>&nbsp;
+    <span id="c2cbodylink">another way to think about it is central vs peripheral blood. peripheral is now being vasoconstricted, so central things (heart, lungs, KIDNEYS...) will be receiving more blood. more blood in kidneys = less ADH</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/usmleuser007">
+usmleuser007</a> made a comment on
+<a href="nbme22/1315.html#1659" class="blue">nbme22/block3/q#22</a>
+(A study is conducted to assess the prevalence of...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+20&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1315/vote/1659/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1315/vote/1659/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>(302)
+   </div>
+   
+
+           
+
+             <p>Just remember:</p>
+<p>1) T-test (tea for two) = looks at the mean values of 2 groups</p>
+<p>2) ANOVA (analysis of variance) ~ like t-test but = looks at mean values of 3 or more groups</p>
+<p>3) Chi-square = looks at the (%) or proportions between 2 or more groups. </p>
+<p>so, just look for how many groups being addressed and what values they are using (% or means)</p>
+
+           
+
+     
+ </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/yotsubato">
+yotsubato</a> made a comment on
+<a href="nbme22/1274.html#1595" class="blue">nbme22/block2/q#31</a>
+(An unimmunized 1-year-old boy is admitted to the...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+19&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1274/vote/1595/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1274/vote/1595/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/yotsubato">yotsubato</a>(693)
+   </div>
+   
+
+           
+
+             <p>In biology, phase variation is a method for dealing with rapidly varying environments without requiring random mutation. It involves the variation of protein expression, frequently in an on-off fashion, within different parts of a bacterial population. As such the phenotype can switch at frequencies that are much higher (sometimes &gt;1%) than classical mutation rates. Phase variation contributes to virulence by generating heterogeneity. Although it has been most commonly studied in the context of immune evasion, it is observed in many other areas as well and is employed by various types of bacteria, including Salmonella species.</p>
+<p><a href="https://www.wikiwand.com/en/Phase_variation" rel="nofollow">https://www.wikiwand.com/en/Phase_variation</a></p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/whoissaad">
+    whoissaad</a>&nbsp;
+    <span id="c2cbodylink">is it the same thing as antigenic variation?</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/dorsomedial_nucleus">
+    dorsomedial_nucleus</a>&nbsp;
+    <span id="c2cbodylink">No, antigenic variation involves genomic rearrangement
+Phase variation can be thought of as MORE or LESS of something. An on/off switch. No DNA is being rearranged, just under or overexpressed in response to the environment. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/makinallkindzofgainz">
+    makinallkindzofgainz</a>&nbsp;
+    <span id="c2cbodylink">This isn't in Zanki, Lightyear, or First Aid, and I don't remember ever learning about this in class. Thanks NBME! :D</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/usmleuser007">
+usmleuser007</a> made a comment on
+<a href="nbme22/1338.html#1664" class="blue">nbme22/block3/q#45</a>
+(A 28-year-old man who is seropositive for HIV has...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+18&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1338/vote/1664/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1338/vote/1664/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>(302)
+   </div>
+   
+
+           
+
+             <p>my list of spindle type cells and conditions:</p><ul>
+<li>a. NF-1</li>
+<li>b. NF-2 ~ Schwannoma (Antoni A) = Cutaneous neurofibroma ~ high cellularity (w/ palisading patterns with interspersing nuclear-free zones called&nbsp;Verocay bodies</li>
+<li>c. Leiomyoma (uterus &amp; esophagus)</li>
+<li>d. Mesothelioma (cytokeratin positive) </li>
+<li>e. Anaplastic Thyroid cancer (biphasic &amp; along with giant cells)</li>
+<li>f. Medullary Thyroid cancer (can also have polygonal cells)</li>
+<li>g. Primary cardiac angiosarcoma (malignant vascular spindle cells)</li>
+<li>h. Osteosarcoma (bone cancer) (pleomorphic cells)</li>
+<li>i. Meningioma</li>
+<li>j. Kaposi's Sarcoma (HHV-8) = Slit-like vascular spaces with plump spindle-shaped stromal cells</li>
+</ul>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/drdoom">
+    drdoom</a>&nbsp;
+    <span id="c2cbodylink">@usmleuser007 to make lists display correctly, try using the plus sign (+) for each "bullet point"; that should work</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/mcl">
+    mcl</a>&nbsp;
+    <span id="c2cbodylink">I love this and I love you</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/usmleuser007">
+    usmleuser007</a>&nbsp;
+    <span id="c2cbodylink">LOL thanks, had to ddo a lot of digging since "spindle cells" are commonly tested</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/leaf_house">
+    leaf_house</a>&nbsp;
+    <span id="c2cbodylink">@uslmeuser007 "MAMML PONNK" is the best I can do with that</span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/kernicterusthefrog">
+kernicterusthefrog</a> made a comment on
+<a href="nbme22/1376.html#1788" class="blue">nbme22/block4/q#33</a>
+(A 38-year-old single woman with a history of chronic...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+18&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1376/vote/1788/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1376/vote/1788/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/kernicterusthefrog">kernicterusthefrog</a>(61)
+   </div>
+   
+
+           
+
+             <p>"she feels happier and more relaxed" after starting kickboxing: this is a <em>MATURE defense mechanism</em> (classic textbook <em>sublimation</em>, as has been said). <strong>This question is just plain wrong.</strong> It's not displacement, because it's a healthy, socially acceptable outlet that improves her emotional state; punching bags are meant to be punched (thus it is actually NOT neutral). Displacement to an object would be punching a hole in her wall, or breaking her vase (I just like that imagery). Both of those would be better than punching her family, or breaking their car window, which is why it's displacement (unconscious redirection of an emotion to a safer object). However, kickboxing is LITERALLY an example in several psych textbooks for sublimation. Thank you for coming to my TED Talk.</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/jaxx">
+    jaxx</a>&nbsp;
+    <span id="c2cbodylink">Meanwhile, I thought everything was wrong so I went with another Mature defense mechanism. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/happyhib_">
+    happyhib_</a>&nbsp;
+    <span id="c2cbodylink">What if, just what if. Her taking time to do lessions was actually hurting her children by her having less time to spend with them and in turn not providing good care for them. (less of a mature defense mech now). 
+Trust me I agree completely just not best answer, but given what we are given you could argue beyond that; amboss even says "a mom showing her feelings of anger towards the child instead of the actual problem, the husband". So in a way she is not addressing her actual problem (which she COULD address). </span>
+  </div></div><div style="padding-bottom:36px;">
+  ... <a href="https://nbmeanswers.com/author/k_tron_3000">
+k_tron_3000</a> made a comment on
+<a href="nbme22/1312.html#1069" class="blue">nbme22/block3/q#19</a>
+(A 42-year-old man comes to the physician because of...)
+<br />
+<div class="
+            comment
+            "
+     style="max-width:500px;">
+   <div class="monospace"><span style="background-color:palegreen;">&nbsp;+18&nbsp;</span>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1312/vote/1069/upvote">upvote</a>
+   <a href="https://nbmeanswers.com/commentvote/nbme22/1312/vote/1069/downvote">downvote</a> <br />
+   submitted by <a href="https://nbmeanswers.com/author/k_tron_3000">k_tron_3000</a>(25)
+   </div>
+   
+
+           
+
+             <p>The description of bilateral lower limb loss of vibration implies DCML damage, and the absent DTRs + Romberg seem to me to be implying that he possibly has tabes dorsalis from syphilis (or something very similar in presentation).</p>
+<p>As for the other answers, A is wrong because his motor function is intact, B is wrong because pain and temperature deficits are not mentioned, C is wrong because it implies a specific nerve is entrapped, but he has lost bilateral sensation in his entire lower extremities</p>
+<p>D is the trickiest, and I’m not 100% sure, but I would think radiculopathy of the anterior (ventral) roots would cause motor deficits since they carry motor efferents. You might also expect that motor dysfunction to be unilateral, since it would be unlikely to have a problem with the nerve roots on both sides. also the DCML is not located near the anterior roots of the spinal cord, so if the anterior roots were affected you really wouldn’t expect to see vibratory loss.</p>
+<p>So basically process of elimination, I do feel like sensory neuropathy is an extremely vague answer though and I wasn’t a fan of the question.</p>
+
+           
+
+     
+ </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/keycompany">
+    keycompany</a>&nbsp;
+    <span id="c2cbodylink">This is a great rationale. I would like to add on that D is wrong because Radicular Neuropathy of the anterior lumbar roots would (1) be painful [radicular neuropathy is characterized by radiating pain (hence the word “Radicular”); this patient has numbness and tingling, not pain] and (2) because the anterior lumbar roots are the motor roots and do not carry sensory innervation. This patient is having a problem with his dorsal spinal cord (not anterior/ventral).</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/hello">
+    hello</a>&nbsp;
+    <span id="c2cbodylink">Want to clarify that &#34;radiculopathy&#34; is not synonymous with pain. Radiculopathy can cause pain, weakness, or numbness.  
+
+I think the only reason Choice D. was incorrect because it discussed the &#34;anterior lumbar roots&#34;, which would affect motor function. </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/niboonsh">
+    niboonsh</a>&nbsp;
+    <span id="c2cbodylink">Radiculopathy is damage to the actual nerve itself, wouldnt that make it a LMN lesion and babinski would be negative? </span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/link981">
+    link981</a>&nbsp;
+    <span id="c2cbodylink">Great explanation guys</span>
+  </div><div class="c2c">
+    <a href="https://nbmeanswers.com/author/usmel2020">
+    usmel2020</a>&nbsp;
+    <span id="c2cbodylink">UW QID: 12035 explains what you are testing with Romberg sign</span>
+  </div></div><br /><br />
+</div>
+
+
+
+</div>
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

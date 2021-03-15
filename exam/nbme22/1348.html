@@ -1,0 +1,1653 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 22 Answers : Block 4 : #5 = A new virus has been isolated that causes ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 22 Answers <a href="1349.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme22.html">nbme22</a>/Block 4/Question#5
+<br />
+
+
+A new virus has been isolated that causes ...<br />
+
+<a href="https://www.google.com/search?q=Single-stranded+positive-sense+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Single-stranded positive-sense</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="1348">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-1348"
+        action="https://nbmeanswers.com/exam/nbme22/1348/comment-submit#1348"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="855">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/855/upvote#855">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/855/downvote#855">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/haliburton">haliburton</a>(178),
+    <a href="#855"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-30T03:44:19Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-05-30T03:44:19Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>according to <a href="https://step1.medbullets.com/step1-microbiology/104196/rna-viruses_" rel="nofollow">medbullets link</a> ns ss RNA must carry RNA dependent RNA polymerase (so that is out). </p>
+<p>also, according to medbullets there are very few ds RNA viruses, so "most likely" will be ss. Also, RNA-dependent DNA polymerase = Reverse Transcriptase. Since HIV is a ss ps RNA virus with RT, they've described an HIV cousin. not sure beyond this.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/nc1992">nc1992</a>&nbsp;
+    <span id="c2cbodylink">negative stranded can&#39;t be read by a translator so it needs to be transcribed into + first. Only then can it be used for protein. + is basically mRNA already.
+
+There&#39;s only one double stranded RNA family as far as I know- Reovirus so no encephalitis</span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/561#855" style="background-color:floralwhite;color:red;font-size:;">+5</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-04T19:42:46Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-06-04T19:42:46Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="855">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-855" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/855#855" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="855" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="555">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/555/upvote#555">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/555/downvote#555">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/welpdedelp">welpdedelp</a>(168),
+    <a href="#555"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-24T17:31:25Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-05-24T17:31:25Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Ok, so RNA dependent DNA polymerase is for reverse transcriptase... single stranded + use RNA dependent RNA polymerase. Can someone explain?</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hyoid">hyoid</a>&nbsp;
+    <span id="c2cbodylink">The only thing I can think of is that HIV is a (+)-sense single-stranded RNA virus that relies on an RNA dependent DNA polymerase (reverse transcriptase) to synthesize DNA.</span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/138#555" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-28T03:44:46Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-05-28T03:44:46Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/haliburton">haliburton</a>&nbsp;
+    <span id="c2cbodylink">according to [medbullets link](https://step1.medbullets.com/step1-microbiology/104196/rna-viruses_) ns ss RNA must carry RNA dependent RNA polymerase (so that is out). 
+
+also, according to medbullets there are very few ds RNA viruses, so &#34;most likely&#34; will be ss. Also, RNA-dependent DNA polymerase = Reverse Transcriptase. Since HIV is a ss ps RNA virus with RT, they&#39;ve described an HIV cousin. not sure beyond this.</span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/213#555" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-30T03:43:49Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-05-30T03:43:49Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/some0217710">some0217710</a>&nbsp;
+    <span id="c2cbodylink">Can’t think of any retroviruses outside of HIV and HTLV and they’re both +ssRNA</span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/1236#555" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-20T02:42:24Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-06-20T02:42:24Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="555">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-555" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/555#555" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="555" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3450">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3450/upvote#3450">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3450/downvote#3450">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/kenyaboi">kenyaboi</a>(1),
+    <a href="#3450"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-01-30T18:06:43Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2020-01-30T18:06:43Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>the gotdamn trick here is HIV is single standed + sense "diploid". NBME writers are just fuckers. ughhhh </p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3450">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3450" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/3450#3450" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3450" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="4064">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/4064/upvote#4064">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/4064/downvote#4064">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/b1ackcoffee">b1ackcoffee</a>(17),
+    <a href="#4064"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-04-13T06:23:30Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2020-04-13T06:23:30Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>my problem with this, why can't it be similar to Hep B (circular DNA)? virus is new or hypothetical.</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/andro">andro</a>&nbsp;
+    <span id="c2cbodylink">Hep B - is " partially " Double stranded and not fully double stranded . Double stranded Circular does not necessarily denote Hep B even though the virus has a reverse transcriptase . I think they wanted you to pay attention to this . And besides the obvious fact that Hepatitis viruses cause inflammation of the Hepar ( liver) and not encephalon ( brain) </span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/5490#4064" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-04-21T13:15:59Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2020-04-21T13:15:59Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="4064">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-4064" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/4064#4064" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="4064" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3412">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3412/upvote#3412">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3412/downvote#3412">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/jcmed">jcmed</a>(5),
+    <a href="#3412"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-01-25T19:35:09Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2020-01-25T19:35:09Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>As soon as I saw encephalitis I thought of Flaviviruses which are:</p>
+<p>SS ⊕ linear Icosahedral including:</p>
+<p>HCV,Yellow fever, Dengue, St. Louis encephalitis, West Nile virus aka meningoencephalitis and Zika virus</p>
+<p>p. 167 First Aid 2018</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3412">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3412" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/3412#3412" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3412" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="2170">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/2170/upvote#2170">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/2170/downvote#2170">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/meddeku">meddeku</a>(0),
+    <a href="#2170"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-08T02:50:27Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-07-08T02:50:27Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Japanese encephalitis virus according to Dr. Google (ncbi)</p>
+<p><a href="https://www.google.com/search?q=single+stranded+positive+rna+encephalitis&amp;rlz=1C5CHFA_enUS718US718&amp;oq=single+stranded+positive+rna+encep&amp;aqs=chrome.1.69i57j33.15282j0j7&amp;sourceid=chrome&amp;ie=UTF-8" rel="nofollow">Google</a> </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2170">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2170" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/2170#2170" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2170" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3479">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3479/upvote#3479">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/3479/downvote#3479">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/drschmoctor">drschmoctor</a>(50),
+    <a href="#3479"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-02-03T16:02:33Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2020-02-03T16:02:33Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>RNA depended DNA polymerase = reverse transcriptase 
+(FA 20 p 38, under telomerase). </p>
+<p>Given the virus has reverse transcriptase, it is likely a retrovirus (hepadnavirus also has reverse transcriptase).</p>
+<p>Retroviruses are SS+ RNA viruses
+(FA 20 p 167)</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3479">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3479" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/3479#3479" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3479" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="959">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/959/upvote#959">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/959/downvote#959">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/hipster_do">hipster_do</a>(5),
+    <a href="#959"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-31T16:58:17Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-05-31T16:58:17Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>I think this was referring to reverse transcriptase, and the only two viruses I knew that used them were HepB and HIV/retroviruses. Given the context I picked HIV/retroviruses which are SS + sense. This was kind of weird though since the virus was “new” ... but I’ve learned that “new” usually means very little on these tests.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/yotsubato">yotsubato</a>&nbsp;
+    <span id="c2cbodylink">"New" means made up fantasyland virus</span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/1032#959" style="background-color:floralwhite;color:red;font-size:;">+5</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-14T12:31:07Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-06-14T12:31:07Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/yotsubato">yotsubato</a>&nbsp;
+    <span id="c2cbodylink">Also Hep B is a ssDNA virus that goes to RNA, then is reverse transcribed to dsDNA </span>
+    <a href="https://nbmeanswers.com/nbme22/1348/subcommentvote/1033#959" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-14T12:32:18Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-06-14T12:32:18Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="959">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-959" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/959#959" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="959" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1920">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/1920/upvote#1920">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme22/1348/vote/1920/downvote#1920">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/niboonsh">niboonsh</a>(241),
+    <a href="#1920"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-26T21:14:11Z" data-format="from(moment('2020-05-08T18:32:03Z'),0)" data-refresh="0" style="display: none">2019-06-26T21:14:11Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>My guess is that they are referring to Retrovirus (HIV/HTLV)- a single stranded positive sense linear RNA. Retroviruses are known to carry reverse transcriptase (RNA-dependent DNA-polymerase). The encephalitis is what threw me off cuz I automatically thought of the many negative sense RNA viruses that cause encephalitis (like arenavirus or bunyavirus). Apparently there have been a few causes of HTLV causing encephalitis... maybe this is what they were trying to get at? Idk but i just spent way too much time on this damn question <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5878187/" rel="nofollow">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5878187/</a> </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1920">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1920" action="https://nbmeanswers.com/exam/nbme22/1348/subcomment-submit/1920#1920" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc3Iw.TYtcw8MpACqlAMaSAkwQyFQom1E">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1920" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

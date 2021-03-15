@@ -1,0 +1,1911 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 20 Answers : Block 1 : #17 = A 50-year-old woman comes to the physician because ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 20 Answers <a href="411.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme20.html">nbme20</a>/Block 1/Question#17
+<br />
+
+
+A 50-year-old woman comes to the physician ...<br />
+
+<a href="https://www.google.com/search?q=Drug+effect+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Drug effect</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="410">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-410"
+        action="https://nbmeanswers.com/exam/nbme20/410/comment-submit#410"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="210">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+22&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/210/upvote#210">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/210/downvote#210">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/strugglebus">strugglebus</a>(144),
+    <a href="#210"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-05T17:49:02Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-05-05T17:49:02Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Nowhere have I been able to find why the hell this is a thing. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/yotsubato">yotsubato</a>&nbsp;
+    <span id="c2cbodylink">Its not in FA, Sketchy, or Pathoma, or U world. 
+
+I knew it wasnt cancer because its bilateral. And Diabetes made no sense to me. So I just threw down Drug effect and walked away. </span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/820#210" style="background-color:floralwhite;color:red;font-size:;">+5</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-10T10:24:29Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-10T10:24:29Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/breis">breis</a>&nbsp;
+    <span id="c2cbodylink">same^^^</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/979#210" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-13T01:31:56Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-13T01:31:56Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/feliperamirez">feliperamirez</a>&nbsp;
+    <span id="c2cbodylink">The only possible explanation I think is that she was under a K sparing diuretic, such as spironolactone (which would lead to gynecomastia). </span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/1985#210" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-15T14:32:44Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-07-15T14:32:44Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/chandlerbas">chandlerbas</a>&nbsp;
+    <span id="c2cbodylink">you had me at its not in sketchy ;) </span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/3141#210" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-11-13T02:03:30Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-11-13T02:03:30Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="210">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-210" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/210#210" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="210" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1279">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+19&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1279/upvote#1279">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1279/downvote#1279">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/hello">hello</a>(218),
+    <a href="#1279"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-05T03:28:21Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-05T03:28:21Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Goljan had a lecture that mentioned that "If a patient has galactorrhea, review <em>every</em> drug they're taking since <em>many</em> drugs cause galactorrhea."</p>
+<p>The only thing of possible relevance in this Q-stem is that she takes a medication, therefore the answer of "drug effect" is the most likely reason for her galactorrhea.</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">I still think this question is pretty BS. But having studied some more, I think it's less BS than I originally thought. Pathoma gives the three major causes of galactorrhea as nipple stimulation, prolactinoma of anterior pituitary, and drugs (see 16.1 - Breast Pathology). Only drug effect is an answer choice for this question.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5102#1279" style="background-color:floralwhite;color:red;font-size:;">+3</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-19T23:42:40Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-19T23:42:40Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">To put another way - before you try to go through every answer choice, asking yourself "would this cause galactorrhea?" Instead, ask yourself, "What are the causes of galactorrhea?" According to Dr. Sattar, they are "nipple stimulation, prolactinoma of anterior pituitary, and drugs."</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5104#1279" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-19T23:58:11Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-19T23:58:11Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">The question doesn't say anything that would point you toward nipple stimulation, like "it only seems to appear when she puts on a shirt/plays sports/runs/etc." It also makes no mention of bitemporal blindness (which would point you to an anterior pituitary tumor), so you can rule out prolactinoma. The only option left is drug effect.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5105#1279" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-20T00:01:10Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T00:01:10Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/drdoom">drdoom</a>&nbsp;
+    <span id="c2cbodylink">hungrybox’s full comment (below) here: <a href="#3907" rel="nofollow">https://nbmeanswers.com/exam/nbme20/410#3907</a></span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5108#1279" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-20T05:09:13Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T05:09:13Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1279">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1279" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/1279#1279" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1279" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="212">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+11&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/212/upvote#212">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/212/downvote#212">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/strugglebus">strugglebus</a>(144),
+    <a href="#212"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-05T17:53:17Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-05-05T17:53:17Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>As an edit:
+108,001 people reported to have side effects when taking Hydrochlorothiazide.
+Among them, 25 people (0.02%) have Breast discharge</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/neonem">neonem</a>&nbsp;
+    <span id="c2cbodylink">I think the best way to answer this question was by process of elimination.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/41#212" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-20T22:10:35Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-05-20T22:10:35Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sympathetikey">sympathetikey</a>&nbsp;
+    <span id="c2cbodylink">That&#39;s some bullshit lol
+</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/325#212" style="background-color:floralwhite;color:red;font-size:;">+4</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-31T22:04:05Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-05-31T22:04:05Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    background-color:rgba(0,255,0,0.1);
+    
+    ">
+    <a href="https://nbmeanswers.com/author/karljeon">karljeon</a>&nbsp;
+    <span id="c2cbodylink">Haha I eliminated the answer by process of elimination.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/508#212" style="background-color:floralwhite;color:red;font-size:;">+17</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-04T00:16:18Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-04T00:16:18Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/medschul">medschul</a>&nbsp;
+    <span id="c2cbodylink">I eliminated thiazides by process of elimination :(</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/564#212" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-04T20:16:37Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-04T20:16:37Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/medstudent65">medstudent65</a>&nbsp;
+    <span id="c2cbodylink">Shit I eliminated thiazides because of elimination went with HTN thinking intercranial bleed effecting the pituitary </span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/675#212" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-07T02:04:45Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-07T02:04:45Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="212">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-212" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/212#212" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="212" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3907">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3907/upvote#3907">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3907/downvote#3907">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>(668),
+    <a href="#3907"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-20T00:06:33Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T00:06:33Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Pathoma gives the three major causes of <strong>galactorrhea</strong> as nipple stimulation, prolactinoma of anterior pituitary, and drugs (see 16.1 - Breast Pathology). Only <strong>drug effect</strong> is an answer choice for this question.</p>
+<p>To put another way - before you try to go through every answer choice, asking yourself "would this cause galactorrhea?" Instead, ask yourself, <strong>"What are the causes of galactorrhea?"</strong> According to Dr. Sattar, they are "nipple stimulation, prolactinoma of anterior pituitary, and drugs."</p>
+<p>The question doesn't say anything that would point you toward nipple stimulation, like "it only seems to appear when she puts on a shirt/plays sports/runs/etc."† So you can rule out nipple stimulation.</p>
+<p>It also makes no mention of bitemporal blindness (which would point you to an anterior pituitary tumor), so you can rule out prolactinoma. The only option left is <strong>drug effect.</strong></p>
+<hr>
+<p>†<em>I've never seen anything like this on a question but I assume the NBME would word it in some convoluted way like that.</em></p>
+<hr>
+<p><em>I initially wrote this as a subcomment, but I feel like it deserves its own comment. I was never really satisfied with any of the explanations for this problem, and I finally arrived at one that makes the most sense to me.</em></p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">Oh, and besides, nipple stimulation and prolactinoma aren't even answers lol</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5106#3907" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-20T00:07:11Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T00:07:11Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/drdoom">drdoom</a>&nbsp;
+    <span id="c2cbodylink">[system mailer] your account has been upgraded: FORMAT NINJA</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5107#3907" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-20T05:05:46Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T05:05:46Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3907">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3907" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/3907#3907" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3907" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  <div class="tangent">
+    
+    <p>One more thing: Pathoma specifically says cancer is NOT a cause of galactorrhea.</p>
+<p>So the people who are saying you can rule out cancer because it's bilateral are completely wrong. You rule out cancer because it doesn't cause galactorrhea.</p>
+<p>Besides, breast cancer can be bilateral. <strong>Bilateral breast cancer is almost always invasive lobular carcinoma.</strong></p>
+<p>This is analogous to serous cystadenocarcinoma. Bilateral ovarian cancer is almost always serous cystadenocarcinoma.</p>
+<p>Idk how this "breast cancer can't be bilateral" myth started propagating.</p>
+    
+    <div class="monospace">
+    <a href="https://nbmeanswers.com/nbme20/410/tangentvote/344/upvote#3907" class="upvoteme" style="color:green;">+4</a>/<a href="https://nbmeanswers.com/nbme20/410/tangentvote/344/downvote#3907" class="downvoteme">-</a> <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>(668), <span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-20T11:34:59Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-20T11:34:59Z</span></span>
+  </div class="monospace">
+  </div>
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1665">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1665/upvote#1665">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1665/downvote#1665">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/niboonsh">niboonsh</a>(241),
+    <a href="#1665"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-17T18:24:02Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-17T18:24:02Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>" Other classes of medications that cause hyperprolactinemia include antidepressants, antihypertensive agents, and drugs that increase bowel motility. Hyperprolactinemia caused by medications is commonly symptomatic, causing galactorrhea, menstrual disturbance, and impotence. It is Important to ensure that hyperprolactinemia in an Individual patient is due to medication and not to a structural lesion in the hypothalamic/pituitary area; this can be accomplished by (1) stopping the medication temporarily to determine whether prolactin levels return to normal, (2) switching to a medication that does not cause hyperprolactinemia "</p>
+<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/16092584" rel="nofollow">https://www.ncbi.nlm.nih.gov/pubmed/16092584</a></p>
+<p>"Non-dose-dependent side effects — Although low-dose therapy seems to minimize the metabolic complications induced by a thiazide or thiazide-like diuretic, it may not necessarily eliminate other side effects. As an example, as many as 25 percent of men treated with 25 mg/day of chlorthalidone develop a decline in sexual function [34]. Sleep disturbances can also occur, particularly if the patient is on a low-sodium diet [34]. How these problems occur is not known." </p>
+<p><a href="https://www.uptodate.com/contents/use-of-thiazide-diuretics-in-patients-with-primary-essential-hypertension#H2250530998" rel="nofollow">https://www.uptodate.com/contents/use-of-thiazide-diuretics-in-patients-with-primary-essential-hypertension#H2250530998</a></p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1665">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1665" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/1665#1665" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1665" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3218">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+2&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3218/upvote#3218">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3218/downvote#3218">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/fkstpashls">fkstpashls</a>(12),
+    <a href="#3218"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-12-24T16:20:33Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-12-24T16:20:33Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Process of elimination is the only way to get this answer without Savant levels of autism, as some bowtie wearing doucher who wrote the question probably has. </p>
+<p>Cancer is unilateral almost all the time, DM doesn't make sense for any reason, HTN itself wouldn't cause milky boobs, and mast cells degranulating doesn't make milky boobs either. So, and because many drugs can have milky boobs, you're left with drug effects by process of elimination.</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/djinn">djinn</a>&nbsp;
+    <span id="c2cbodylink">I dont think the autor was a savant. Also I think is right proccess to think "cancer" can be bilateral and malignant but the "drug" that causes this isnt HCT. This question is bad written.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/3690#3218" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-01-16T16:16:48Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-01-16T16:16:48Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/hungrybox">hungrybox</a>&nbsp;
+    <span id="c2cbodylink">According to Pathoma, galactorrhea is NOT associated with cancer ever (see 16.1 - breast pathology).</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/5103#3218" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-19T23:44:06Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-19T23:44:06Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3218">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3218" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/3218#3218" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3218" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1596">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+1&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1596/upvote#1596">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/1596/downvote#1596">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/namira">namira</a>(23),
+    <a href="#1596"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-14T19:00:15Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-14T19:00:15Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Possible explanation:</p>
+<p>If the pt is taking a thiazide (which is K depleting), it might have also been given with a K sparing drug such as spirinolactone. </p>
+<p>Spirinolactone has endocrinologic effects such as gynecomastia and galactorrhea. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sugaplum">sugaplum</a>&nbsp;
+    <span id="c2cbodylink">I think you could only make this assumption if they said "patient is on standard htn tx" but since they gave the name hctz, would not be fair to assume they are also taking spirinolactone. I went with process of elimination on this one. 
+Even checked access medicine's drug adverse effect profile...galactorrhea not listed for hctz</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/1372#1596" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-24T18:11:08Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-06-24T18:11:08Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1596">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1596" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/1596#1596" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1596" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3803">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3803/upvote#3803">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/3803/downvote#3803">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/dave_">dave_</a>(0),
+    <a href="#3803"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-07T02:04:15Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-07T02:04:15Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>Thiazides reduce GFR -&gt; Reduced clearance of prolactin -&gt; hyperpolactinemia -&gt; discharge.</p>
+<p>Not sure how correct that is, but aside from cancer being unilateral, I would associate high prolactin with loss of dopamine inhibition/reduced clearance of prolactin itself.</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3803">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3803" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/3803#3803" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3803" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2134">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/2134/upvote#2134">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/2134/downvote#2134">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/sam1">sam1</a>(12),
+    <a href="#2134"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-07T02:05:37Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-07-07T02:05:37Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Thiazides can cause acute interstitial nephritis, a form of renal failure. Without the renal excretion of prolactin, it can build up in the serum and result in galactorrhea. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/coccidioinmytitties">coccidioinmytitties</a>&nbsp;
+    <span id="c2cbodylink">Sexual dysfunction [desire based = libido] can be due to drug side effects [antihypertensives], per first aid. 
+Edition: 2018
+Page: 551
+Section: Psych
+Per, 1stAid's endocrine section: "excessive amounts of prolactin associated with ↓libido [324]. 
+This goes together with our sexual dysfunction with "antihypertensives." 
+Only logical synthesis I can think of: 
+thiazide = ↑prolactin = ↓libido + galactorrhea. It would also make sense since we are dealing with an expected to be post-menopausal female [milk production would have to be due to exogenous source].
+Dug into my lecture notes and found the following:  beta-blockers and thiazides cause sexual dysfunction.
+I also like sam1's explanation.  We're reaching here, but its the best I can do.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/2097#2134" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-19T10:37:51Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-07-19T10:37:51Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/g8427">g8427</a>&nbsp;
+    <span id="c2cbodylink">Mayo clinic shows clear or bloody nipple discharge as side affect of Thiazides. But doesnt state milky discharge. </span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/2485#2134" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-08-11T00:51:01Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-08-11T00:51:01Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2134">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2134" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/2134#2134" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2134" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2594">
+    <div class="monospace"><span style="background-color:pink;">&nbsp;-3&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/2594/upvote#2594">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme20/410/vote/2594/downvote#2594">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/minhphuongpnt07">minhphuongpnt07</a>(3),
+    <a href="#2594"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-08-15T18:52:51Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2019-08-15T18:52:51Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Thiazide=&gt; hypercalcemia=&gt; Oxytoxin (Gq coupled protein-&gt; incr Ca2+)=&gt; nipple discharge</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/arkanaftus">arkanaftus</a>&nbsp;
+    <span id="c2cbodylink">Oxytocin will not work on breast resulting on milky discharge if the glands were not "prepared" by prolactin. It's like trying to squeeze empty balloon - nothing goes out.</span>
+    <a href="https://nbmeanswers.com/nbme20/410/subcommentvote/4967#2594" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-03-11T19:32:26Z" data-format="from(moment('2020-05-08T19:26:17Z'),0)" data-refresh="0" style="display: none">2020-03-11T19:32:26Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2594">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2594" action="https://nbmeanswers.com/exam/nbme20/410/subcomment-submit/2594#2594" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZdD2Q._HkaMo0_BUU-Qq0yxGYNu2bAvVo">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2594" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

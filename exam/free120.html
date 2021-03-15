@@ -1,0 +1,1549 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+
+
+</style>
+
+
+
+
+
+<title>NBME  Answers</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+
+<div class="container-exam">
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">NBME  Answers</span><br />
+
+
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<br />
+
+<div class="has-comments">Block 1/<a href="free120/1394.html" class="blue">Question#1</a><br />
+    
+    A 28-year-old man comes to the physician because of a 1-year ...<br />
+    
+    <span style="background-color:yellow;">Schistosomiasis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1395.html" class="blue">Question#2</a><br />
+    
+    A 14-year-old boy is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Common fibular (peroneal)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1396.html" class="blue">Question#3</a><br />
+    
+    A 24-year-old man comes to the office because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">Hair follicle</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1397.html" class="blue">Question#4</a><br />
+    
+    A 14-year-old girl is brought to the physician after her ...<br />
+    
+    <span style="background-color:yellow;">Acting out</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1398.html" class="blue">Question#5</a><br />
+    
+    A 24-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Vascular endothelial growth factor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1399.html" class="blue">Question#6</a><br />
+    
+    A 63-year-old woman comes to the physician 1 day after the ...<br />
+    
+    <span style="background-color:yellow;">Calcium pyrophosphate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1400.html" class="blue">Question#7</a><br />
+    
+    A 55-year-old woman with small cell carcinoma of the lung is ...<br />
+    
+    <span style="background-color:yellow;">Filgrastim</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1401.html" class="blue">Question#8</a><br />
+    
+    A 37-year-old woman with right lower extremity edema is ...<br />
+    
+    <span style="background-color:yellow;">P2 louder than A2</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1402.html" class="blue">Question#9</a><br />
+    
+    During an experiment, a Southern blot analysis is done by ...<br />
+    
+    <span style="background-color:yellow;">Gene rearrangement</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1403.html" class="blue">Question#10</a><br />
+    
+    During a clinical study examining the effects of exercise, ...<br />
+    
+    <span style="background-color:yellow;">Total peripheral resistance</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1404.html" class="blue">Question#11</a><br />
+    
+    A 26-year-old man is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Arterial baroreceptor firing rate: decreased;<br />Systemic vascular resistance: increased;<br />Pulmonary vascular resistance: increased;<br />Systemic capillary fluid transfer: absorption</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1405.html" class="blue">Question#12</a><br />
+    
+    A 17-year-old boy is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">PCP (phencyclidine)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1406.html" class="blue">Question#13</a><br />
+    
+    A 26-year-old woman is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Pouch of Douglas</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1407.html" class="blue">Question#14</a><br />
+    
+    A 14-year-old girl has had nausea, intermittent diarrhea, and ...<br />
+    
+    <span style="background-color:yellow;">Microscopic examination of the stool</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1408.html" class="blue">Question#15</a><br />
+    
+    A 40-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Sertoli-Leydig tumor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1409.html" class="blue">Question#16</a><br />
+    
+    A 45-year-old woman with systemic sclerosis (scleroderma) ...<br />
+    
+    <span style="background-color:yellow;">Diffuse interstitial fibrosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1410.html" class="blue">Question#17</a><br />
+    
+    A new blood test to detect prostate cancer is evaluated in ...<br />
+    
+    <span style="background-color:yellow;">Prostate biopsies of men with test results equal to or below 5 ng/mL</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1411.html" class="blue">Question#18</a><br />
+    
+    A 62-year-old woman comes to the physician because of low ...<br />
+    
+    <span style="background-color:yellow;">Decreased osteoclast activity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1412.html" class="blue">Question#19</a><br />
+    
+    A 26-year-old woman is brought to the emergency department 3 ...<br />
+    
+    <span style="background-color:yellow;">Serum HCO3-: decreased;<br />Arterial pH: decreased;<br />Blood PCO2: decreased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1413.html" class="blue">Question#20</a><br />
+    
+    An investigator is studying the incidence of the common cold ...<br />
+    
+    <span style="background-color:yellow;">Decreased macrophage activity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1414.html" class="blue">Question#21</a><br />
+    
+    A 63-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Hypercoagulability from advanced malignancy</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1415.html" class="blue">Question#22</a><br />
+    
+    A 35-year-old man comes to the physician because of pain and ...<br />
+    
+    <span style="background-color:yellow;">Separation of endothelial junctions</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1416.html" class="blue">Question#23</a><br />
+    
+    A 4-year-old boy from Brazil is brought to the physician ...<br />
+    
+    <span style="background-color:yellow;">Apoptosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1417.html" class="blue">Question#24</a><br />
+    
+    A 33-year-old woman comes to the physician because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">Inactivation of cellular p53</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1418.html" class="blue">Question#25</a><br />
+    
+    A 27-year-old man is admitted to the hospital 45 minutes ...<br />
+    
+    <span style="background-color:yellow;">Adenylyl cyclase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1419.html" class="blue">Question#26</a><br />
+    
+    A 30-year-old man is admitted to the hospital for evaluation. ...<br />
+    
+    <span style="background-color:yellow;">Crohn disease</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1420.html" class="blue">Question#27</a><br />
+    
+    A couple comes for preconceptional genetic counseling because ...<br />
+    
+    <span style="background-color:yellow;">50%</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1421.html" class="blue">Question#28</a><br />
+    
+    A healthy 22-year-old man participates in a study of glucose ...<br />
+    
+    <span style="background-color:yellow;">Glycogenolysis in the liver</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1422.html" class="blue">Question#29</a><br />
+    
+    A 63-year-old homeless man is brought to the emergency ...<br />
+    
+    <span style="background-color:yellow;">C5a</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1423.html" class="blue">Question#30</a><br />
+    
+    A 16-year-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Escherichia coli</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1424.html" class="blue">Question#31</a><br />
+    
+    A 16-year-old boy is admitted to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Hemopneumothorax, not under tension</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1425.html" class="blue">Question#32</a><br />
+    
+    A 20-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">von Willebrand disease</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1426.html" class="blue">Question#33</a><br />
+    
+    A 2-year-old boy is brought to the physician for a well-child ...<br />
+    
+    <span style="background-color:yellow;">Trinucleotide repeat expansion</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1427.html" class="blue">Question#34</a><br />
+    
+    A 31-year-old woman with type 2 diabetes mellitus comes to ...<br />
+    
+    <span style="background-color:yellow;">α-Toxin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1428.html" class="blue">Question#35</a><br />
+    
+    A 10-month-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Mediation of cell entry via a fusion protein</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1429.html" class="blue">Question#36</a><br />
+    
+    A 17-year-old girl is brought to the emergency department 15 ...<br />
+    
+    <span style="background-color:yellow;">β2-Adrenergic agonist</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1430.html" class="blue">Question#37</a><br />
+    
+    A 30-year-old woman, gravida 2, para 0, aborta 1, at 28 ...<br />
+    
+    <span style="background-color:yellow;">Formation of antibodies to RhD</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1431.html" class="blue">Question#38</a><br />
+    
+    A 52-year-old woman begins pharmacotherapy after being ...<br />
+    
+    <span style="background-color:yellow;">Metformin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1432.html" class="blue">Question#39</a><br />
+    
+    A sexually active 23-year-old man with multiple sex partners ...<br />
+    
+    <span style="background-color:yellow;">Antigenic variation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="free120/1433.html" class="blue">Question#40</a><br />
+    
+    A 17-year-old girl is brought to the physician by her mother ...<br />
+    
+    <span style="background-color:yellow;">Hypogonadotropic hypogonadism</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1434.html" class="blue">Question#1</a><br />
+    
+    A 49-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">HDL-cholesterol: increased;<br />Triglycerides: decreased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1435.html" class="blue">Question#2</a><br />
+    
+    A 15-year-old girl comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Stimulation of the sebaceous glands by androgens</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1436.html" class="blue">Question#3</a><br />
+    
+    A previously healthy 40-year-old man is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Pericardium</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1437.html" class="blue">Question#4</a><br />
+    
+    A 55-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Blood pressure: 85/60;<br />Pulse: 120;<br />Jugular venous pressure: increased;<br />Pulsus paradoxus: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1438.html" class="blue">Question#5</a><br />
+    
+    A 54-year-old woman comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Decreased metabolism of codeine to morphine</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1439.html" class="blue">Question#6</a><br />
+    
+    A 14-year-old girl with a 9-year history of type 1 diabetes ...<br />
+    
+    <span style="background-color:yellow;">Countertransference</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1440.html" class="blue">Question#7</a><br />
+    
+    A 23-year-old woman with bone marrow failure is treated with ...<br />
+    
+    <span style="background-color:yellow;">Immune complex deposition in tissues</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1441.html" class="blue">Question#8</a><br />
+    
+    A 25-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Ribosomal assembly</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1442.html" class="blue">Question#9</a><br />
+    
+    A 42-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Thyroid-stimulating hormone: decreased;<br />Total thyroxine (T<sub>4</sub>): increased;<br />Free thyroxine: increased;<br />Thyroid-binding globulin: normal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1443.html" class="blue">Question#10</a><br />
+    
+    A 29-year-old woman is prescribed carbamazepine for ...<br />
+    
+    <span style="background-color:yellow;">Metabolism</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1444.html" class="blue">Question#11</a><br />
+    
+    Over 1 year, a study is conducted to assess the antileukemic ...<br />
+    
+    <span style="background-color:yellow;">Open-labeled clinical trial</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1445.html" class="blue">Question#12</a><br />
+    
+    A 64-year-old man with non-Hodgkin lymphoma comes to the ...<br />
+    
+    <span style="background-color:yellow;">Vincristine</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1446.html" class="blue">Question#13</a><br />
+    
+    During an experiment, drug X is added to a muscle bath ...<br />
+    
+    <span style="background-color:yellow;">Cholinesterase inhibitor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1447.html" class="blue">Question#14</a><br />
+    
+    A 42-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">The patient's perception that the physician is uncaring</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1448.html" class="blue">Question#15</a><br />
+    
+    A 72-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Echocardiography</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1449.html" class="blue">Question#16</a><br />
+    
+    A 14-year-old boy is brought to the physician for a physical ...<br />
+    
+    <span style="background-color:yellow;">Normal development</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1450.html" class="blue">Question#17</a><br />
+    
+    A 5-year-old boy is admitted to the hospital because of a ...<br />
+    
+    <span style="background-color:yellow;">Inability of leukocytes to kill intracellular microorganisms</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1451.html" class="blue">Question#18</a><br />
+    
+    A 22-year-old woman contacts a medical student and asks if he ...<br />
+    
+    <span style="background-color:yellow;">He cannot date her because she was once his psychiatric patient</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1452.html" class="blue">Question#19</a><br />
+    
+    A 73-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Vitamin B12 (cyanocobalamin)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1453.html" class="blue">Question#20</a><br />
+    
+    A 45-year-old man comes to the physician because of right ...<br />
+    
+    <span style="background-color:yellow;">Infraspinatus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1454.html" class="blue">Question#21</a><br />
+    
+    A 54-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Amygdala</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1455.html" class="blue">Question#22</a><br />
+    
+    A placebo-controlled clinical trial is conducted to assess ...<br />
+    
+    <span style="background-color:yellow;">Significant findings can be reported with greater confidence</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1456.html" class="blue">Question#23</a><br />
+    
+    A male stillborn is delivered at 32 weeks' gestation to a ...<br />
+    
+    <span style="background-color:yellow;">Pulmonary hypoplasia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1457.html" class="blue">Question#24</a><br />
+    
+    A 33-year-old man undergoes a radical thyroidectomy for ...<br />
+    
+    <span style="background-color:yellow;">Branch of the thyrocervical trunk</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1458.html" class="blue">Question#25</a><br />
+    
+    A 42-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Na+–Cl− symport inhibitor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1459.html" class="blue">Question#26</a><br />
+    
+    A 55-year-old man comes to the physician because of a 2-week ...<br />
+    
+    <span style="background-color:yellow;">Basement membrane</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1460.html" class="blue">Question#27</a><br />
+    
+    A 24-year-old man is brought to the emergency department 40 ...<br />
+    
+    <span style="background-color:yellow;">Foramen ovale</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1461.html" class="blue">Question#28</a><br />
+    
+    A 55-year-old man who is a business executive is admitted to ...<br />
+    
+    <span style="background-color:yellow;">Splitting</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1462.html" class="blue">Question#29</a><br />
+    
+    A 3-year-old boy with chronic granulomatous disease is ...<br />
+    
+    <span style="background-color:yellow;">Vancomycin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1463.html" class="blue">Question#30</a><br />
+    
+    An otherwise healthy 45-year-old man comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Elaboration of proteases and urease with local tissue destruction</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1464.html" class="blue">Question#31</a><br />
+    
+    A 10-year-old girl is brought to the office by her mother ...<br />
+    
+    <span style="background-color:yellow;">It is a polymorphism</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1465.html" class="blue">Question#32</a><br />
+    
+    A previously healthy 40-year-old woman is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Thrombotic thrombocytopenic purpura</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1466.html" class="blue">Question#33</a><br />
+    
+    A 17-year-old girl has never had a menstrual period. Physical ...<br />
+    
+    <span style="background-color:yellow;">Androgen insensitivity</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1467.html" class="blue">Question#34</a><br />
+    
+    A 12-year-old girl is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Decreased activity of UDP glucuronosyltransferase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1468.html" class="blue">Question#35</a><br />
+    
+    A 47-year-old woman comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Annular pancreas</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1469.html" class="blue">Question#36</a><br />
+    
+    An 8-year-old boy is brought to the office by his mother ...<br />
+    
+    <span style="background-color:yellow;">Adenovirus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1470.html" class="blue">Question#37</a><br />
+    
+    A 36-year-old man with profound intellectual disability is ...<br />
+    
+    <span style="background-color:yellow;">Omental bursa (lesser sac)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1471.html" class="blue">Question#38</a><br />
+    
+    A study is designed to evaluate the feasibility of ...<br />
+    
+    <span style="background-color:yellow;">Case series</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1472.html" class="blue">Question#39</a><br />
+    
+    A 56-year-old man comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Uric acid crystals</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/1473.html" class="blue">Question#40</a><br />
+    
+    A 62-year-old man comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Type I pneumocytes: decreased;<br />Type II pneumocytes: increased;<br />Fibroblasts: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1474.html" class="blue">Question#1</a><br />
+    
+    Six healthy subjects participate in a study of muscle ...<br />
+    
+    <span style="background-color:yellow;">Fatty acid oxidation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1475.html" class="blue">Question#2</a><br />
+    
+    A 72-year-old woman who has smoked 20 cigarettes daily for ...<br />
+    
+    <span style="background-color:yellow;">Timolol</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1476.html" class="blue">Question#3</a><br />
+    
+    A 54-year-old man comes to the physician because of episodes ...<br />
+    
+    <span style="background-color:yellow;">Third-degree atrioventricular block</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1477.html" class="blue">Question#4</a><br />
+    
+    A 15-year-old boy is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Olfactory nerve</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1478.html" class="blue">Question#5</a><br />
+    
+    A 42-year-old woman comes to the physician for a routine ...<br />
+    
+    <span style="background-color:yellow;">Parathyroid gland</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1479.html" class="blue">Question#6</a><br />
+    
+    A new severe respiratory illness caused by a newly identified ...<br />
+    
+    <span style="background-color:yellow;">Avoids the concern for reversion to virulence</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1480.html" class="blue">Question#7</a><br />
+    
+    A 72-year-old woman comes to the physician because of a 3-day ...<br />
+    
+    <span style="background-color:yellow;">Aspiration</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1481.html" class="blue">Question#8</a><br />
+    
+    A 25-year-old woman comes to the office because of a 6-month ...<br />
+    
+    <span style="background-color:yellow;">Cyclin-dependent kinases</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1482.html" class="blue">Question#9</a><br />
+    
+    A 72-year-old woman is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Area labeled 'C'</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1483.html" class="blue">Question#10</a><br />
+    
+    A 4-year-old boy is brought to the physician because of slow ...<br />
+    
+    <span style="background-color:yellow;">Calcium: decreased;<br />Inorganic phosphorus: increased;<br />1,25-dihydroxycholecalciferol: decreased;<br />Erythropoietin: decreased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1484.html" class="blue">Question#11</a><br />
+    
+    A 42-year-old woman is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Infraorbital</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1485.html" class="blue">Question#12</a><br />
+    
+    A previously healthy 24-year-old woman who is a college ...<br />
+    
+    <span style="background-color:yellow;">Lubiprostone</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1486.html" class="blue">Question#13</a><br />
+    
+    A 32-year-old man is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Membranous</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1487.html" class="blue">Question#14</a><br />
+    
+    A 2-year-old boy is brought to the office by his mother ...<br />
+    
+    <span style="background-color:yellow;">DNA virus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1488.html" class="blue">Question#15</a><br />
+    
+    A 46-year-old woman with active ankylosing spondylitis comes ...<br />
+    
+    <span style="background-color:yellow;">Tumor necrosis factor α</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1489.html" class="blue">Question#16</a><br />
+    
+    During a study of renal glomeruli, a healthy animal kidney is ...<br />
+    
+    <span style="background-color:yellow;">Increased hydrostatic pressure</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1490.html" class="blue">Question#17</a><br />
+    
+    A 67-year-old woman is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Syndrome of inappropriate secretion of ADH (vasopressin)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1491.html" class="blue">Question#18</a><br />
+    
+    A 23-year-old woman comes to the physician for genetic ...<br />
+    
+    <span style="background-color:yellow;">The patient's DMD carrier status is uncertain because of random X inactivation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1492.html" class="blue">Question#19</a><br />
+    
+    A randomized controlled trial is conducted to assess the risk ...<br />
+    
+    <span style="background-color:yellow;">0.2</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1493.html" class="blue">Question#20</a><br />
+    
+    A 35-year-old woman comes to the office because of a 3-day ...<br />
+    
+    <span style="background-color:yellow;">Explain that the patient does not need the MRI and that it is not appropriate to misrepresent her examination findings</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1494.html" class="blue">Question#21</a><br />
+    
+    A 6-day-old breast-fed boy is brought to the emergency ...<br />
+    
+    <span style="background-color:yellow;">Galactose 1-phosphate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1495.html" class="blue">Question#22</a><br />
+    
+    A 14-year-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Infectious mononucleosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1496.html" class="blue">Question#23</a><br />
+    
+    In a cohort study of elderly women, the relative risk ratio ...<br />
+    
+    <span style="background-color:yellow;">Statistically significant overall increase in risk</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1497.html" class="blue">Question#24</a><br />
+    
+    A 12-year-old boy is brought to the physician by his mother ...<br />
+    
+    <span style="background-color:yellow;">Patellar ligament</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1498.html" class="blue">Question#25</a><br />
+    
+    A 22-year-old woman comes to the office because of a 3-day ...<br />
+    
+    <span style="background-color:yellow;">BK virus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1499.html" class="blue">Question#26</a><br />
+    
+    A new test to detect the presence of malarial antibodies by ...<br />
+    
+    <span style="background-color:yellow;">95%</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1500.html" class="blue">Question#27</a><br />
+    
+    A 30-year-old woman comes to the physician because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">The second CFTR mutation was not detected by the testing obtained</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1501.html" class="blue">Question#28</a><br />
+    
+    A 52-year-old man is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Increases nitric oxide concentration</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1502.html" class="blue">Question#29</a><br />
+    
+    A technician wants to determine whether cytomegalovirus (CMV) ...<br />
+    
+    <span style="background-color:yellow;">Polymerase chain reaction</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1503.html" class="blue">Question#30</a><br />
+    
+    A 16-year-old boy comes to the physician because of a rash on ...<br />
+    
+    <span style="background-color:yellow;">Carditis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1504.html" class="blue">Question#31</a><br />
+    
+    After being severely beaten and sustaining a gunshot wound to ...<br />
+    
+    <span style="background-color:yellow;">Reassure the patient that her chance of becoming addicted to narcotics is minuscule</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1505.html" class="blue">Question#32</a><br />
+    
+    A 51-year-old man comes to the office because of a 6-month ...<br />
+    
+    <span style="background-color:yellow;">Submental</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1506.html" class="blue">Question#33</a><br />
+    
+    A 31-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Lifelong persistent infection</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1507.html" class="blue">Question#34</a><br />
+    
+    A 57-year-old man receives radiation therapy for a squamous ...<br />
+    
+    <span style="background-color:yellow;">G1</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1508.html" class="blue">Question#35</a><br />
+    
+    A 55-year-old man comes to the physician for a routine ...<br />
+    
+    <span style="background-color:yellow;">Increased peripheral vascular resistance</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1509.html" class="blue">Question#36</a><br />
+    
+    A 53-year-old man comes to the physician because of a 6-month ...<br />
+    
+    <span style="background-color:yellow;">Superficial inguinal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1510.html" class="blue">Question#37</a><br />
+    
+    A 59-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Hypovolemic</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1511.html" class="blue">Question#38</a><br />
+    
+    A 2-week-old newborn is brought to the physician for a ...<br />
+    
+    <span style="background-color:yellow;">Normal reflex response</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1512.html" class="blue">Question#39</a><br />
+    
+    A 14-year-old boy is brought to the office for an examination ...<br />
+    
+    <span style="background-color:yellow;">Normal findings</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/1513.html" class="blue">Question#40</a><br />
+    
+    A 65-year-old man is brought to the physician by his daughter ...<br />
+    
+    <span style="background-color:yellow;">Substantia nigra</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 0/<a href="free120/1662.html" class="blue">Question#1</a><br />
+    
+    A 67-year-old woman with congenital bicuspid aortic valve is ...<br />
+    
+    <span style="background-color:yellow;">Binding to the 30S ribosomal protein</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 0/<a href="free120/1663.html" class="blue">Question#10</a><br />
+    
+    A 22-year-old woman comes to the office because of a 4-day ...<br />
+    
+    <span style="background-color:yellow;">CD28 on T lymphocytes &xrarr; CD80 on epidermal Langerhans cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/2010.html" class="blue">Question#13</a><br />
+    
+    A 33-year-old man undergoes a radical thyroidectomy for ...<br />
+    
+    <span style="background-color:yellow;">Branch of the thyrocervical trunk</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/2011.html" class="blue">Question#17</a><br />
+    
+    A 6-year-old girl is admitted to the hospital because of a ...<br />
+    
+    <span style="background-color:yellow;">Myeloperoxidase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/2012.html" class="blue">Question#19</a><br />
+    
+    A 7-year-old boy who lives in Kentucky is brought to the office<br />
+    
+    <span style="background-color:yellow;">Ingestion of soil</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="free120/2013.html" class="blue">Question#31</a><br />
+    
+    A 23-year-old woman is brought to the medical tent 2 minutes after<br />
+    
+    <span style="background-color:yellow;">Orthostatic hypotension</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="free120/2014.html" class="blue">Question#18</a><br />
+    
+    A 51-year-old man comes to the office because of a 6-month ...<br />
+    
+    <span style="background-color:yellow;">Submental</span><br />
+    </div>
+    <br />
+
+</div>
+
+
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">Recent comments ...</span><br /><br /><br /><br />
+</div>
+
+
+
+</div>
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

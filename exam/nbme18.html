@@ -1,0 +1,1189 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+
+
+</style>
+
+
+
+
+
+<title>NBME 18 Answers</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+
+<div class="container-exam">
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">NBME 18 Answers</span><br />
+
+
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<br />
+
+<div class="has-comments">Block 1/<a href="nbme18/67.html" class="blue">Question#3</a><br />
+    
+    5 yo boy, history of motion sickness<br />
+    
+    <span style="background-color:yellow;">Antagonist at muscarinic-3 receptors</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/68.html" class="blue">Question#10</a><br />
+    
+    25 yo woman, polycystic kidneys<br />
+    
+    <span style="background-color:yellow;">HCO3: decreased; inorganic PO4: increased; parathryroid hormone: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/69.html" class="blue">Question#11</a><br />
+    
+    67 yo man, fine resting tremor in both hands<br />
+    
+    <span style="background-color:yellow;">Alpha-synuclein</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/70.html" class="blue">Question#13</a><br />
+    
+    10 yo boy, nosebleeds and easy bruising<br />
+    
+    <span style="background-color:yellow;">Antibodies directed against the glycoprotein (Gp) IIb/IIIa complex</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/71.html" class="blue">Question#14</a><br />
+    
+    26 yo man with 27 yo wife, inability to conceive<br />
+    
+    <span style="background-color:yellow;">Primary spermatocyte</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/72.html" class="blue">Question#15</a><br />
+    
+    experimental animal with defect in an innate gastrointestinal defence mechanism<br />
+    
+    <span style="background-color:yellow;">Chronic gastritis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/73.html" class="blue">Question#17</a><br />
+    
+    4 day old boy, vomited throughout night after breastfeeding<br />
+    
+    <span style="background-color:yellow;">21-Hydroxylase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/74.html" class="blue">Question#18</a><br />
+    
+    68 yo man, chronically increased hydrostatic pressure in Bowman space<br />
+    
+    <span style="background-color:yellow;">Benign prostatic hyperplasia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/75.html" class="blue">Question#19</a><br />
+    
+    70 yo woman, increasingly severe pain in right knee over 3 months<br />
+    
+    <span style="background-color:yellow;">Pleomorphic neoplastic cells producing new woven bone</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/76.html" class="blue">Question#23</a><br />
+    
+    22 yo man, professional cyclist<br />
+    
+    <span style="background-color:yellow;">Eccentric hypertrophy</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/77.html" class="blue">Question#26</a><br />
+    
+    50 yo woman, chronic obstructive pulmonary disease<br />
+    
+    <span style="background-color:yellow;">Endothelial nitric oxide synthase production</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/78.html" class="blue">Question#28</a><br />
+    
+    Cholera toxin is a catalyst that results in the inhibition of GTPase activity of G-stimulator protein<br />
+    
+    <span style="background-color:yellow;">Concentration of cAMP</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/79.html" class="blue">Question#30</a><br />
+    
+    29 yo woman irregular menstrual periods<br />
+    
+    <span style="background-color:yellow;">Provide follow-up appointments to assess the patient's progress in attaining her goals</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/80.html" class="blue">Question#31</a><br />
+    
+    7 yo boy appendectomy<br />
+    
+    <span style="background-color:yellow;">Low blood solubility</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/81.html" class="blue">Question#32</a><br />
+    
+    52 yo man with chest pain and shortness of breath<br />
+    
+    <span style="background-color:yellow;">Proximal tubule: isotonic; Macula densa: hypotonic; Medullary collecting duct: hypertonic</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/82.html" class="blue">Question#33</a><br />
+    
+    35 yo woman with pain and swelling of breasts, pelvic discomfort<br />
+    
+    <span style="background-color:yellow;">Have a chaperone join them for the remainder of the examination</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/83.html" class="blue">Question#34</a><br />
+    
+    60 yo man, 1 day of fever, chills, confusion and memory loss<br />
+    
+    <span style="background-color:yellow;"><i>Vibrio vulnificus</i></span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/84.html" class="blue">Question#38</a><br />
+    
+    45 yo homeless man found unconscious<br />
+    
+    <span style="background-color:yellow;">Methylmalonic Acid: normal; Homocysteine: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/85.html" class="blue">Question#43</a><br />
+    
+    18 yo man cracked lips and sunburned skin<br />
+    
+    <span style="background-color:yellow;">Barrier</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/86.html" class="blue">Question#44</a><br />
+    
+    26 yo man skiing accident<br />
+    
+    <span style="background-color:yellow;">Axillary</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/87.html" class="blue">Question#45</a><br />
+    
+    55 yo man; father and brother died of myocardial infarct at early age<br />
+    
+    <span style="background-color:yellow;">Increased transcription of HMG-CoA reductase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/88.html" class="blue">Question#46</a><br />
+    
+    65 yo man, generalized tonic-clonic seizures<br />
+    
+    <span style="background-color:yellow;">High-grade fibrillary astrocytoma</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/89.html" class="blue">Question#8</a><br />
+    
+    39 yo man, polycystic kidney disease<br />
+    
+    <span style="background-color:yellow;">pH: 7.22; PCO2: 28; HCO2: 11</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/90.html" class="blue">Question#9</a><br />
+    
+    19 yo woman being treated for meningococcal meningitis<br />
+    
+    <span style="background-color:yellow;">Adrenocorticotropic hormone stimulation test</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/91.html" class="blue">Question#15</a><br />
+    
+    38 yo man, 1 week history of shortness of breath with exertion<br />
+    
+    <span style="background-color:yellow;">Aortic regurgitation</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/92.html" class="blue">Question#17</a><br />
+    
+    65 yo woman, 1 week of swollen, painful knee<br />
+    
+    <span style="background-color:yellow;">Uric acid</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/93.html" class="blue">Question#18</a><br />
+    
+    Researcher testing new cancer drug<br />
+    
+    <span style="background-color:yellow;">Neutrophil counts</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/94.html" class="blue">Question#21</a><br />
+    
+    66 yo woman, 2 days of fever, flank pain, pain with urination, nausea<br />
+    
+    <span style="background-color:yellow;">Calcium carbonate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/95.html" class="blue">Question#25</a><br />
+    
+    40 yo man, 1 year of orthostatic hypotension and loose stools<br />
+    
+    <span style="background-color:yellow;">Motility disorder</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/96.html" class="blue">Question#27</a><br />
+    
+    58 yo man, 4 years of recurrent cough and sputum<br />
+    
+    <span style="background-color:yellow;">Pseudostratified columnar epithelial cells</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/97.html" class="blue">Question#29</a><br />
+    
+    32 yo woman, new neurologic finding; imaging shows cavernous sinus thrombosis<br />
+    
+    <span style="background-color:yellow;">Inability to abduct the eye</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/98.html" class="blue">Question#30</a><br />
+    
+    35 yo man, 4 weeks of severe midline back pain<br />
+    
+    <span style="background-color:yellow;">ACTH</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/99.html" class="blue">Question#32</a><br />
+    
+    Investigator studying vancomycin-resistant <i>Enterococcus faecalis</i><br />
+    
+    <span style="background-color:yellow;">Plasmid loss</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/100.html" class="blue">Question#34</a><br />
+    
+    25 yo woman, fatigue for 3 weeks<br />
+    
+    <span style="background-color:yellow;">Greening reaction on blood agar</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/101.html" class="blue">Question#37</a><br />
+    
+    34 yo man, semiconscious and combative<br />
+    
+    <span style="background-color:yellow;">Pseudocholinesterase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/102.html" class="blue">Question#41</a><br />
+    
+    35 yo woman, 3 days fever and sharp chest pain<br />
+    
+    <span style="background-color:yellow;">Virus</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/103.html" class="blue">Question#44</a><br />
+    
+    35 yo woman, passed out while washing dishes<br />
+    
+    <span style="background-color:yellow;">K+: decreased; HCO3: increased; Anion gap: normal; pH: increased</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/104.html" class="blue">Question#3</a><br />
+    
+    17 yo boy septic shock<br />
+    
+    <span style="background-color:yellow;">alpha-1-Adrenoreceptors</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/105.html" class="blue">Question#5</a><br />
+    
+    82 yo woman, 24 hours of constant severe lower abdominal pain<br />
+    
+    <span style="background-color:yellow;">Fibrin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/106.html" class="blue">Question#6</a><br />
+    
+    32 yo woman, diagnosis of hyperparathyroidism<br />
+    
+    <span style="background-color:yellow;">Abnormal migration of endoderm from the fourth pharyngeal pouch</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/107.html" class="blue">Question#9</a><br />
+    
+    35 yo woman with infertility<br />
+    
+    <span style="background-color:yellow;">Spillage of contrast, which is normal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/108.html" class="blue">Question#12</a><br />
+    
+    58 yo woman, 6 months shortness of breath, nonproductive cough<br />
+    
+    <span style="background-color:yellow;">Pulmonary hypertension</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/109.html" class="blue">Question#13</a><br />
+    
+    35 yo woman, 2 days pain in left leg<br />
+    
+    <span style="background-color:yellow;">Drug-related antibodies</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/110.html" class="blue">Question#14</a><br />
+    
+    2 yo boy, 2 days of fever, sore throat, rash<br />
+    
+    <span style="background-color:yellow;">Erythrogenic toxin</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/111.html" class="blue">Question#17</a><br />
+    
+    46 yo woman, 1 week of fever and joint pain<br />
+    
+    <span style="background-color:yellow;">Inflammatory infiltrates in the interstitium</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/112.html" class="blue">Question#21</a><br />
+    
+    48 yo woman, gradual onset of back pain over 2 weeks<br />
+    
+    <span style="background-color:yellow;">Metastatic carcinoma of the breast</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/113.html" class="blue">Question#22</a><br />
+    
+    70 yo woman routine pelvic examination<br />
+    
+    <span style="background-color:yellow;">Cystocele</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/114.html" class="blue">Question#25</a><br />
+    
+    63 yo man, 2 weeks of fullness in left upper quadrant of abdomen<br />
+    
+    <span style="background-color:yellow;">Myelofibrosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/115.html" class="blue">Question#26</a><br />
+    
+    33 yo man, diagnosed with epilepsy<br />
+    
+    <span style="background-color:yellow;">He is medically qualified to drive</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/116.html" class="blue">Question#31</a><br />
+    
+    28 yo woman, 4 days of palpitations, severe neck pain, fatigue, malaise<br />
+    
+    <span style="background-color:yellow;">Subacute granulomatous thyroiditis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/117.html" class="blue">Question#32</a><br />
+    
+    25 yo woman, 2 years of intermittent, diffuse, cramping lower abdominal pain<br />
+    
+    <span style="background-color:yellow;">Accentuation of mu-opioid myenteric plexus receptor</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/118.html" class="blue">Question#33</a><br />
+    
+    4 yo boy, clumsy gait for 1 year<br />
+    
+    <span style="background-color:yellow;">1/4</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/119.html" class="blue">Question#34</a><br />
+    
+    52 yo woman with breast cancer<br />
+    
+    <span style="background-color:yellow;">Contraction</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/120.html" class="blue">Question#40</a><br />
+    
+    47 yo woman with irregular, raised, multicolored dark lesion<br />
+    
+    <span style="background-color:yellow;">Subcutaneous tissue</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/121.html" class="blue">Question#41</a><br />
+    
+    24 yo man, 3 days of progressive numbness of both feet<br />
+    
+    <span style="background-color:yellow;">Myelinated primary afferents</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/122.html" class="blue">Question#45</a><br />
+    
+    65 yo patient with lung region underventilated but well perfused<br />
+    
+    <span style="background-color:yellow;">Physiologic shunt</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/123.html" class="blue">Question#46</a><br />
+    
+    45 yo man for annual health maintenance examination<br />
+    
+    <span style="background-color:yellow;">Fenofibrate</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/124.html" class="blue">Question#47</a><br />
+    
+    19 yo woman, 2 days of pain in left index finger<br />
+    
+    <span style="background-color:yellow;">Flexor digitorum profundus tendon</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 3/<a href="nbme18/125.html" class="blue">Question#48</a><br />
+    
+    52 yo man, chronic pancreatitis<br />
+    
+    <span style="background-color:yellow;">Colipase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/126.html" class="blue">Question#3</a><br />
+    
+    68 yo man, 3 days of increasingly severe deep chest pain<br />
+    
+    <span style="background-color:yellow;">Aortic aneurysm</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/127.html" class="blue">Question#4</a><br />
+    
+    36 yo woman, 2 weeks of fatigue, bleeding gums, bone pain<br />
+    
+    <span style="background-color:yellow;">Histone acetylase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/128.html" class="blue">Question#14</a><br />
+    
+    18 yo woman ingests 100 aspirin tablets in suicide attempt<br />
+    
+    <span style="background-color:yellow;">pH: 7.32; PCO2: 15; HCO3: 8</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/129.html" class="blue">Question#15</a><br />
+    
+    45 yo man follows up 1 week after appendectomy<br />
+    
+    <span style="background-color:yellow;">Gilbert syndrome</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/130.html" class="blue">Question#27</a><br />
+    
+    54 yo man, normal renal function, receives heart transplant<br />
+    
+    <span style="background-color:yellow;">Cyclosporine</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/131.html" class="blue">Question#29</a><br />
+    
+    65 yo man, cancer of the cecum<br />
+    
+    <span style="background-color:yellow;">Ileocolic → superior mesenteric → portal → right hepatic branch of the portal</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/132.html" class="blue">Question#30</a><br />
+    
+    5 yo girl, 1 day severe leg pain after falling off sled<br />
+    
+    <span style="background-color:yellow;">Intestinal calcium absorption</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/133.html" class="blue">Question#31</a><br />
+    
+    57 yo man with alcoholism<br />
+    
+    <span style="background-color:yellow;">Liquefaction</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/134.html" class="blue">Question#35</a><br />
+    
+    73 yo man, 4 months poor appetite and 25 pound weight loss<br />
+    
+    <span style="background-color:yellow;">Cytokine effect</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/135.html" class="blue">Question#36</a><br />
+    
+    18 yo woman given general anesthesia for wisdom tooth extraction<br />
+    
+    <span style="background-color:yellow;">Sarcoplasmic Ca2+ release</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/136.html" class="blue">Question#37</a><br />
+    
+    66 yo man, 1 month nonproductive cough, 6 months progressive shortness of breath<br />
+    
+    <span style="background-color:yellow;">Idiopathic pulmonary fibrosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/137.html" class="blue">Question#42</a><br />
+    
+    4 month old boy, abnormal glycogen storage<br />
+    
+    <span style="background-color:yellow;">alpha-1,4-Glucosidase</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/138.html" class="blue">Question#45</a><br />
+    
+    35 yo man, prolonged QT interval<br />
+    
+    <span style="background-color:yellow;">Outward (delayed) rectifying potassium channel</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="nbme18/2275.html" class="blue">Question#46</a><br />
+    
+    An investigator conduct a meta-analysis of three genome-wide assoc<br />
+    
+    <span style="background-color:yellow;">The identified loci account for a relatively small part of the variance </span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/2276.html" class="blue">Question#45</a><br />
+    
+    A 4-year-old boy, fatigue and irritability, eosinophils<br />
+    
+    <span style="background-color:yellow;">Microcytic Anemia</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 4/<a href="nbme18/2277.html" class="blue">Question#22</a><br />
+    
+    A 55-year-old woman who is a physician is admitted<br />
+    
+    <span style="background-color:yellow;">Alcohol withdrawal</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="nbme18/2278.html" class="blue">Question#16</a><br />
+    
+    an 83-year-old woman with systemic arteriolosclerosis undergoes <br />
+    
+    <span style="background-color:yellow;">descending colon</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/2367.html" class="blue">Question#1</a><br />
+    
+    During a study of the regulation of cholesterol biosynthesis,<br />
+    
+    <span style="background-color:yellow;">F (cell diagram)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/2368.html" class="blue">Question#15</a><br />
+    
+    A 34-year-old man has a herniated lumbar intervertebral disc.<br />
+    
+    <span style="background-color:yellow;">D (Lamina)</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="nbme18/2369.html" class="blue">Question#28</a><br />
+    
+    A 51-year-old woman with Graves disease develops ulcerating<br />
+    
+    <span style="background-color:yellow;">Agranulocytosis</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/2370.html" class="blue">Question#1</a><br />
+    
+    A 25-year old woman comes to the physician for counseling prior to<br />
+    
+    <span style="background-color:yellow;">3 to 8 weeks</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/2371.html" class="blue">Question#6</a><br />
+    
+    A 17-year-old boy is brought to the physician by his mother<br />
+    
+    <span style="background-color:yellow;">"Tell me more about your concerns about your son's height."</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 2/<a href="nbme18/2372.html" class="blue">Question#28</a><br />
+    
+    A 68-year-old man comes to the physician because of a 10-month<br />
+    
+    <span style="background-color:yellow;">Cor pulmonale</span><br />
+    </div>
+    <br />
+
+</div>
+
+
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">Recent comments ...</span><br /><br /><br /><br />
+</div>
+
+
+
+</div>
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

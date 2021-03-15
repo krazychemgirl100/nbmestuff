@@ -1,0 +1,2107 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+#flask-pagedown-comment-preview {position:absolute;top:-15px;left:500px;width:500px;}
+
+
+</style>
+
+
+
+
+
+<title>NBME 24 Answers : Block 4 : #35 = An investigator is conducting a study of a novel ...</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+<br />
+<span style="font-family:;font-size:24px;">NBME 24 Answers <a href="979.html" title="go to next question">&#8614;</a>
+</span><br /><br />
+
+<div class="panel01">
+
+
+<a href="../nbme24.html">nbme24</a>/Block 4/Question#35
+<br />
+
+
+An investigator is conducting a study of a ...<br />
+
+<a href="https://www.google.com/search?q=Basal+keratinocyte:suprabasal+keratinocyte+USMLE&amp;tbm=isch" target="_blank" style="color:black;"><span style="background-color:rgba(255,255,224,0.5);">Basal keratinocyte:suprabasal keratinocyte</span>🔍</a>
+<br />
+<br />
+
+
+
+
+
+
+
+
+  <!-- comment form -->
+  <div class="small-adjustment"><a href="#comment" class="comment-show" getId="978">&plus;Add a new comment</a></div>
+  <form class="comment-form"
+        id="comment-form-978"
+        action="https://nbmeanswers.com/exam/nbme24/978/comment-submit#978"
+        method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  <div style="position:relative;">
+  <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="3500" name="comment" rows="13"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+
+
+  
+  
+  
+
+    <div>
+    
+  
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+    </div>
+  </div>
+  <input type="hidden" value="just a spacer" /><br />
+  <input id="submit" name="submit" type="submit" value="Submit your comment!">
+
+  <br />
+  <br />
+
+  <div style="background-color:lightyellow;">
+<span style="border-bottom:1px solid black;"><i>formatting cheatsheet</i></span>
+<br /><br />
+<table>
+<tr><td>*italics*&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><i>italics</i></td></tr>
+<tr><td>**bold**&nbsp;&nbsp;</td><td>&nbsp;=>&nbsp;</td><td><b>bold</b></td></tr>
+<tr><td>`unformatted text`</td><td>&nbsp;=>&nbsp;</td><td><code>unformatted text</code><br /><br /></td></tr>
+<tr><td>[a link to reddit](http://reddit.com)</td><td>&nbsp;=>&nbsp;</td><td><a href="https://reddit.com">a link to reddit</a><br /><br /></td></tr>
+<tr><td>
+  +&nbsp;&nbsp;item 1&nbsp;&nbsp;(<i>note space after </i>+)<br />+&nbsp;&nbsp;item 2<br />+&nbsp;&nbsp;item 3</td><td>&nbsp;=>&nbsp;</td><td><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul>
+</td></tr>
+<!-- <tr><td>force <code>&lt;br&gt;</code> a linebreak.</td><td>&nbsp;=>&nbsp;</td><td>force<br />a linebreak.</td></tr> -->
+</table>
+</div>
+
+  </form>
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+<br  />
+
+</div class="panel01">
+
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2165">
+    <div class="monospace"><span style="background-color:palegreen;">&nbsp;+10&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2165/upvote#2165">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2165/downvote#2165">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>(302),
+    <a href="#2165"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-07T23:16:25Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-07-07T23:16:25Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>After some research this is why the other answers are incorrect:</p>
+<p><strong>Basal keratinocyte &amp; lamina lucida</strong></p>
+<ul>
+<li>Incorrect b/c lamina lucida is a component of the basement membrane which is found between the epithelium and underlying connective tissue (e.g., epidermis and dermis of the skin). </li>
+<li>It is a roughly 40 nanometre wide electron-lucent zone between the plasma membrane of the basal cells and the (electron-dense) lamina densa of the basement membrane. (WIKI)</li>
+<li>basal keratinocyte attaches to the basement membrane using hemidesmosome</li>
+</ul>
+<p><strong>Granular keratinocyte &amp; stratum corneum</strong></p>
+<ul>
+<li>Stratum lucidum separates these two layers.</li>
+<li>there are no desmosome that connect these two layers </li>
+<li><a href="https://www.google.com/search?rlz=1C1CHBF_enGD722GD722&amp;tbm=isch&amp;q=desmosomes+skin+layer&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwiDpO2d86PjAhWEJ80KHf7RDfMQBQhGKAA&amp;biw=1536&amp;bih=722&amp;dpr=1.25#imgrc=GaieVxHmDCmbMM" rel="nofollow">Image for reference</a> </li>
+</ul>
+<p><strong><a href="https://images.app.goo.gl/XAdemzb3sQ3W8nxE8" rel="nofollow">Lamina lucida &amp; Lamina densa -- click for image</a></strong></p>
+<ul>
+<li>both are part of the basement membrane and not the epidermis </li>
+</ul>
+<p><strong><a href="https://images.app.goo.gl/xgu8RxASpcGugy7y8" rel="nofollow">Melanocyte &amp; basal kertinocyte --- click for image</a></strong></p>
+<ul>
+<li>are both connected to eachoter via E-cadherins</li>
+<li>it is probably the damage to this connection that  </li>
+</ul>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/azibird">azibird</a>&nbsp;
+    <span id="c2cbodylink">The stratum lucidum is only present in the thick skin of the palms, soles, and digits. So the stratum granulosum and corneum do touch in most of the body. I guess they just aren't connected by desmosomes.
+<a href="https://opentextbc.ca/anatomyandphysiology/chapter/5-1-layers-of-the-skin/" rel="nofollow">https://opentextbc.ca/anatomyandphysiology/chapter/5-1-layers-of-the-skin/</a></span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/5822#2165" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-05-05T15:02:38Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-05-05T15:02:38Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/peridot">peridot</a>&nbsp;
+    <span id="c2cbodylink">Wow if I'm understanding this correct, lamina lucida (basement membrane) is not the same as stratum lucidum (between stratum corneum and stratum granulosum). That def confused me about this question bc I simultaneously was like wait isn't this in the basement membrane but also recalled the picture in FA with all the layers. Thanks so much for the super detailed explanation of all the answer choices!</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/5886#2165" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-05-07T00:59:12Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-05-07T00:59:12Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2165">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2165" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/2165#2165" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2165" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="777">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+8&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/777/upvote#777">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/777/downvote#777">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/lsmarshall">lsmarshall</a>(336),
+    <a href="#777"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-28T23:44:12Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-05-28T23:44:12Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>"<strong>Desmosome</strong> (Macula adherens) - A cell-to-cell connection that provides structural support with intermediate filaments, particularly in tissues that undergo mechanical stress (e.g., skin, gastric tissue, bladder). Connects keratinocytes in the stratum spinosum of the epidermis." - AMBOSS</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    background-color:rgba(0,255,0,0.1);
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sympathetikey">sympathetikey</a>&nbsp;
+    <span id="c2cbodylink">This is why I was looking for some answer indicating keratinocytes in the stratum spinosum...instead they just gave a bunch of bs choices.</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/759#777" style="background-color:floralwhite;color:red;font-size:;">+20</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-09T04:41:24Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-09T04:41:24Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/roygbiv">roygbiv</a>&nbsp;
+    <span id="c2cbodylink">I&#39;m confused because I also know that S. aureus cleaves desmoglein in the stratum granulosum, so why is it specifically this answer? </span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/854#777" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-10T21:05:23Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-10T21:05:23Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/duat98">duat98</a>&nbsp;
+    <span id="c2cbodylink">desomosomes connects cells to cells.
+hemidesmosome connects cells to basement membrane.</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/1268#777" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-21T17:11:18Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-21T17:11:18Z</span></span>
+  </div>
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/medguru2295">medguru2295</a>&nbsp;
+    <span id="c2cbodylink">I think what this is really asking is can you tell Pemphigus Vulgaris from Bullous Pemphigoid
+Vulgaris (question)- Attack on DESMOSOMES- this separates some keratinocytes from others (ie some in basal layer  from ones above).
+Pemphigoid- attack on HEMIDESMOSOMES- this means separation of the keratinocytes from the basement membrane.</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/4319#777" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-02-09T01:19:54Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-02-09T01:19:54Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="777">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-777" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/777#777" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="777" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+  
+  <div class="tangent">
+    
+    <p>I answered this question just knowing that desmosomes connect cell-to-cell so I chose the answer with the same cell type (keratinocyte to keratinocyte)  </p>
+    
+    <div class="monospace">
+    <a href="https://nbmeanswers.com/nbme24/978/tangentvote/325/upvote#777" class="upvoteme" style="color:green;">+1</a>/<a href="https://nbmeanswers.com/nbme24/978/tangentvote/325/downvote#777" class="downvoteme">-</a> <a href="https://nbmeanswers.com/author/jgraham3">jgraham3</a>(7), <span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-10T21:30:00Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-03-10T21:30:00Z</span></span>
+  </div class="monospace">
+  </div>
+  
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1528">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+8&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1528/upvote#1528">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1528/downvote#1528">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/fenestrated">fenestrated</a>(24),
+    <a href="#1528"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-11T23:30:25Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-11T23:30:25Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Basically asking if you know Pemphigus Vulgaris. Separation of <strong> suprabasilar</strong> epidermis, intact basal keratinocytes vs Bollous pemphigoid--&gt; includes separation of basal layer </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/subclaviansteele">subclaviansteele</a>&nbsp;
+    <span id="c2cbodylink">This how I thought of the question...Classic histology photo of the "tomb stone" row of basal cells and the lifted keratinocytes. </span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/1595#1528" style="background-color:floralwhite;color:red;font-size:;">+1</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-07-01T17:55:57Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-07-01T17:55:57Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1528">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1528" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/1528#1528" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1528" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1065">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+5&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1065/upvote#1065">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1065/downvote#1065">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/brethren_md">brethren_md</a>(76),
+    <a href="#1065"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-02T01:49:10Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-02T01:49:10Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Stupid question, honestly just take your best guess and move on lol. </p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/seagull">seagull</a>&nbsp;
+    <span id="c2cbodylink">░░░░░░░░░░░█▀▀░░█░░░░░░
+░░░░░░▄▀▀▀▀░░░░░█▄▄░░░░
+░░░░░░█░█░░░░░░░░░░▐░░░
+░░░░░░▐▐░░░░░░░░░▄░▐░░░
+░░░░░░█░░░░░░░░▄▀▀░▐░░░
+░░░░▄▀░░░░░░░░▐░▄▄▀░░░░
+░░▄▀░░░▐░░░░░█▄▀░▐░░░░░
+░░█░░░▐░░░░░░░░▄░█░░░░░
+░░░█▄░░▀▄░░░░▄▀▐░█░░░░░
+░░░█▐▀▀▀░▀▀▀▀░░▐░█░░░░░
+░░▐█▐▄░░▀░░░░░░▐░█▄▄░░░
+░░░▀▀▄░░░░░░░░▄▐▄▄▄▀░░░
+   THis Question
+░░░░░░░░░░░░░░░░░░░░░░░</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/707#1065" style="background-color:floralwhite;color:red;font-size:;">+2</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-07T23:31:51Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-07T23:31:51Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1065">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1065" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/1065#1065" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1065" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2164">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+4&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2164/upvote#2164">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2164/downvote#2164">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>(302),
+    <a href="#2164"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-07T23:14:17Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-07-07T23:14:17Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>After some research this is why the other answers are incorrect:</p>
+<ol>
+<li>basal keratinocyte &amp; lamina lucida</li>
+<li>Incorrect b/c lamina lucida is a component of the basement membrane which is found between the epithelium and underlying connective tissue (e.g., epidermis and dermis of the skin). </li>
+<li>It is a roughly 40 nanometre wide electron-lucent zone between the plasma membrane of the basal cells and the (electron-dense) lamina densa of the basement membrane. (WIKI)</li>
+<li>
+<p>basal keratinocyte attaches to the basement membrane using hemidesmosome</p>
+</li>
+<li>
+<p>Granular keratinocyte &amp; stratum corneum</p>
+</li>
+<li>Stratum lucidum separates these two layers.</li>
+<li>there are no desmosome that connect these two layers </li>
+<li>
+<p><a href="https://www.google.com/search?rlz=1C1CHBF_enGD722GD722&amp;tbm=isch&amp;q=desmosomes+skin+layer&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwiDpO2d86PjAhWEJ80KHf7RDfMQBQhGKAA&amp;biw=1536&amp;bih=722&amp;dpr=1.25#imgrc=GaieVxHmDCmbMM" rel="nofollow">Image for reference</a> </p>
+</li>
+<li>
+<p><a href="https://images.app.goo.gl/XAdemzb3sQ3W8nxE8" rel="nofollow">Lamina lucida &amp; Lamina densa -- click for image</a></p>
+</li>
+<li>
+<p>both are part of the basement membrane and not the epidermis </p>
+</li>
+<li>
+<p><a href="https://images.app.goo.gl/xgu8RxASpcGugy7y8" rel="nofollow">Melanocyte &amp; basal kertinocyte --- click for image</a></p>
+</li>
+<li>are both connected to eachoter via E-cadherins</li>
+<li>it is probably the damage to this connection that might lead to <strong>melanoma</strong>  </li>
+</ol>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2164">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2164" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/2164#2164" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2164" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="3942">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3942/upvote#3942">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3942/downvote#3942">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/misterdoctor69">misterdoctor69</a>(10),
+    <a href="#3942"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2020-03-31T03:23:45Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-03-31T03:23:45Z</span></span></a>
+    </div>
+
+
+  
+
+     <p>How come melanocytes:basal keratinocytes don't also have a desmosomal connection (in addition to their E-cadherin link)?</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/vivijujubebe">vivijujubebe</a>&nbsp;
+    <span id="c2cbodylink">melanocyte is not part of the epidermal structure. they're at the epidermal-dermal junction and they produce melanin which is transported to the epidermal</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/5289#3942" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2020-04-04T03:04:57Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2020-04-04T03:04:57Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3942">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3942" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/3942#3942" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3942" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="2163">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2163/upvote#2163">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/2163/downvote#2163">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/usmleuser007">usmleuser007</a>(302),
+    <a href="#2163"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-07-07T22:52:36Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-07-07T22:52:36Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p><strong>Blistering diseases</strong> such as <strong>pemphigus vulgaris (PV)</strong> and pemphigus foliaceus (PF) are autoimmune diseases in which auto-antibodies target desmogleins. </p>
+<ul>
+<li>PV is caused by circulating autoantibodies (IgG) that target Dsg3 (Desmoglein 3) and sometimes Dsg1. </li>
+<li>PV is manifested by suprabasal acantholysis, or blisters in the mucous membrane and blisters in the epidermis. </li>
+<li>PF patients have autoantibodies that target Dsg1 with superficial blisters on the epidermis with no mucous membrane issues. </li>
+<li>Both disease result in a loss of <strong>keratinocyte adhesion</strong>. </li>
+<li>Pemphigus can also be caused by a bacterial infection: <strong>bullous impetigo</strong> is an infection caused by a <strong>staphylococcus</strong> bacterium that releases a toxin that cleaves the Dsg1 extracellular domain.</li>
+</ul>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="2163">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-2163" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/2163#2163" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="2163" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3020">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3020/upvote#3020">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3020/downvote#3020">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/osgoodschlatter10">osgoodschlatter10</a>(15),
+    <a href="#3020"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-11-08T04:20:07Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-11-08T04:20:07Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Desomosmes by function interconnect keratinocytes in the stratum spinosum - startum spinosum is the suprabasal layer.
+ Exclude option:
+a) Lucida is too high ; not in continuation with basal layer
+c) Corneum is even higher, Granulosum and Corneum aren't n continuation
+d) Lamina dens (BM) and lamina lucida not keratinocytes and not in continuation either
+e) Melanocyte are in the basal layer; it is not a keratinocyte</p>
+<p>b) is the only option that makes sense based on histology and also the only option that speaks about inter-keratinocyte linkage</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3020">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3020" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/3020#3020" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3020" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="1583">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1583/upvote#1583">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/1583/downvote#1583">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/rocmed">rocmed</a>(-1),
+    <a href="#1583"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-06-13T20:37:51Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-13T20:37:51Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Desmoglein: Component of desmosomes, which connect keratinocytes in the stratum spinosum - FA 2018, p.467, Pemphigus Vulgaris</p>
+<p>By this I can only assume that they mean that desmoglein connects keratinocytes to EACH OTHER, hence why the other options connecting keratinocytes to other structures are incorrect</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/charcot_bouchard">charcot_bouchard</a>&nbsp;
+    <span id="c2cbodylink">The epidermis primarily consists of keratinocytes[4] (proliferating basal and differentiated suprabasal), which comprise 90% of its cells. You are right. both are keratinocyte</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/1184#1583" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-06-18T15:10:59Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-06-18T15:10:59Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="1583">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-1583" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/1583#1583" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="1583" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3019">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3019/upvote#3019">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3019/downvote#3019">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/osgoodschlatter10">osgoodschlatter10</a>(15),
+    <a href="#3019"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-11-08T04:19:51Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-11-08T04:19:51Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Desomosmes by function interconnect keratinocytes in the stratum spinosum - startum spinosum is the suprabasal layer.
+ Exclude option:
+a) Lucida is too high ; not in continuation with basal layer
+c) Corneum is even higher, Granulosum and Corneum aren't n continuation
+d) Lamina dens (BM) and lamina lucida not keratinocytes and not in continuation either
+e) Melanocyte are in the basal layer; it is not a keratinocyte</p>
+<p>b) is the only option that makes sense based on histology and also the only option that speaks about inter-keratinocyte linkage</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3019">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3019" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/3019#3019" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3019" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment-is-question
+  
+  " id="440">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/440/upvote#440">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/440/downvote#440">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/ankistruggles">ankistruggles</a>(12),
+    <a href="#440"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-05-20T10:12:44Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-05-20T10:12:44Z</span></span></a>
+    </div>
+
+
+  
+
+        
+
+          <p>Why is <code>basal keratinocyte : suprabasal keratinocyte</code> the cell junction that’s most likely to be affected? Is it because it’s the only answer that lists a junction between two keratinocytes?</p>
+
+        
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+  <div class="c2c" style="
+    
+    ">
+    <a href="https://nbmeanswers.com/author/sattanki">sattanki</a>&nbsp;
+    <span id="c2cbodylink">Not too sure on this one, but I interpreted the basal keartinocyte:suprabasal keratinocyte as the stratum spinosum region, which is known to have the most desmosomes.</span>
+    <a href="https://nbmeanswers.com/nbme24/978/subcommentvote/35#440" style="background-color:floralwhite;color:red;font-size:;">+</a> &nbsp;<span style="font-family:'Courier New';font-size:12px;color:black;"><span style="white-space:nowrap;"><span class="flask-moment" data-timestamp="2019-05-20T10:13:22Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-05-20T10:13:22Z</span></span>
+  </div>
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="440">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-440" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/440#440" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="440" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+<!-- START : comment atom printer -->
+
+<div class="container-exam">
+
+<div class="flowy">
+  <div class="
+  
+  comment
+  
+  " id="3075">
+    <div class="monospace"><span style="background-color:lightyellow;">&nbsp;+0&nbsp;</span>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3075/upvote#3075">upvote</a>
+    <a href="https://nbmeanswers.com/commentvote/nbme24/978/vote/3075/downvote#3075">downvote</a> <br />
+    submitted by <a href="https://nbmeanswers.com/author/jellyfish923">jellyfish923</a>(0),
+    <a href="#3075"><span style="font-family:monospace;"><span class="flask-moment" data-timestamp="2019-11-23T13:27:42Z" data-format="from(moment('2020-05-08T18:56:29Z'),0)" data-refresh="0" style="display: none">2019-11-23T13:27:42Z</span></span></a>
+    </div>
+
+
+  
+
+     <p><a href="https://www.researchgate.net/profile/Mithun_Bhowmick5/publication/317179550/figure/fig1/AS:500004767715328@1496221834988/Cross-section-of-human-skin-Stratum-corneum-SC-and-epidermis-the-main-barrier-to.png" rel="nofollow">https://www.researchgate.net/profile/Mithun_Bhowmick5/publication/317179550/figure/fig1/AS:<span class="__cf_email__" data-cfemail="daefeaeaeaeaeeedecededebefe9e8e29aebeee3ece8e8ebe2e9eee3e2e2">[email&#160;protected]</span>/Cross-section-of-human-skin-Stratum-corneum-SC-and-epidermis-the-main-barrier-to.png</a>
+maybe this picture can show where the desmosome exist</p>
+
+  
+  </div>
+
+  <!-- subcomment display -->
+  
+
+  <!-- subcomment form -->
+  
+  <div class="this-needs-to-be-here">
+  <div class="small-adjustment grayline"><a href="#subcomment" class="subcomment-show" getId="3075">&#8623;Add a subcomment</a></div>
+  <form class="subcomment-form" id="subcomment-form-3075" action="https://nbmeanswers.com/exam/nbme24/978/subcomment-submit/3075#3075" method="post">
+  <input id="csrf_token" name="csrf_token" type="hidden" value="ImU4ZWI0M2EzOWNlNjJmMzI2OWY4Y2M1YTVlNGM4NjI0MGYyMGJhOWUi.EZc83Q.4dX8q9rvAFBnrdrlAq9aGz0MyDQ">
+  
+  
+  
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.min.js"></script>
+
+      <div style="position:relative;">
+      <input value="3075" name="parent" type="hidden" />
+      <div class="flask-pagedown"><textarea class="flask-pagedown-input" cols="" id="flask-pagedown-comment" maxlength="1000" name="comment" rows="4"></textarea></div>
+<div class="flask-pagedown-preview" id="flask-pagedown-comment-preview"></div>
+<script type="text/javascript">
+f = function() {
+    if (typeof flask_pagedown_converter === "undefined")
+        flask_pagedown_converter = Markdown.getSanitizingConverter().makeHtml;
+    var textarea = document.getElementById("flask-pagedown-comment");
+    var preview = document.getElementById("flask-pagedown-comment-preview");
+    textarea.onkeyup = function() { preview.innerHTML = flask_pagedown_converter(textarea.value); }
+    textarea.onkeyup.call(textarea);
+}
+if (document.readyState === 'complete')
+    f();
+else if (window.addEventListener)
+    window.addEventListener("load", f, false);
+else if (window.attachEvent)
+    window.attachEvent("onload", f);
+else
+    f();
+</script>
+
+      
+      
+      
+      </div>
+  <input type="hidden" value="just a spacer" />
+  <input id="submit" name="submit" type="submit" value="Submit your subcomment!"> <span class="form-limit">1,000 characters at a time (or fewer), please!</span>
+  </form>
+  
+  
+  
+  </div class="this-needs-to-be-here">
+  
+
+  <br /> <!-- this needs to be here; keeps break between comments on mobile -->
+
+</div class="flowy">
+
+
+<!-- logic for tangent display and tangent form -->
+<div class="flowy">
+
+  <!-- tangent forms -->
+  
+  
+  
+
+  <!-- tangent display -->
+  
+
+  
+  
+  
+
+  <br /><!-- this needs to be here -->
+  <br /><!-- so does this -->
+</div class="flowy">
+
+</div class="container-exam">
+
+<!-- END : comment atom printer -->
+
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>

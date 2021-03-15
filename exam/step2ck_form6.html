@@ -1,0 +1,1901 @@
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+  <script src="https://js.stripe.com/v3/"></script>
+  
+  
+
+<meta name="description" content="NBME Answers and Explanations!">
+<meta name="keywords" content="NBME,Medicine,Family medicine,Basic science,Reasoning,Knowledge,Infinity,Beyond">
+<meta name="author" content="NBME Answers">
+
+<!-- Chrome -->
+<meta name="theme-color" content="#f0f8ff">
+<meta name="theme-color" content="#db5945">
+
+
+<!-- Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#f0f8ff">
+
+<link rel="shortcut icon" href="../static/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/css/Serif/cmun-serif.css">
+
+<style>html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+  font-family:'Computer Modern Serif',serif,sans-serif;
+line-height: 19px;
+background-color:aliceblue;
+}
+
+form.tangent-form,form.subcomment-form,form.comment-form{display:none;}
+
+a.subcomment-show:link,a.subcomment-show:visited,a.subcomment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.tangent-show:link,a.tangent-show:visited,a.tangent-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+a.comment-show:link,a.comment-show:visited,a.comment-show:hover {
+  background-color:lavender;border-top:1px solid;color:black;
+  font-size:;
+  }
+
+.small-adjustment{padding-top:3;padding-bottom:1;font-size:15px;}
+.grayline{border-top:0px solid #e4e6e8;}
+.nobreak{white-space:nowrap;}
+
+code{background-color:#eff0f1;padding:1px 5px;}
+
+.tangent p{margin-block-start:0;padding-bottom:3;}
+.tangent{background-color: rgba(255,255,0,0.4);
+    max-width:500;
+    border-top:1px solid gold;
+    padding:1 0 4 0;
+}
+
+/* used for extra emphasis of stuff */
+.yellow-pop{
+  background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;}
+
+.form-limit{color:lightgrey;font-style:italic;vertical-align:sub;}
+
+.upvoteme, .downvoteme {padding:0 2;}
+
+#override a:hover{color:black;}
+
+a.upvoteme:link,a.upvoteme:visited {
+  background-color:palegreen;color:green;
+  }
+a.upvoteme:hover{color:black;}
+a.downvoteme:link,a.downvoteme:visited {
+  background-color:mistyrose;color:red;
+  }
+
+.answerme-box{
+    border-color: #e6dfc6;
+    background-color: #FFF8DC;
+    margin-right: 0px;
+    padding: 9 0 9 6;
+}
+
+/* comments-to-comments */
+.c2c {
+  border-top:1px solid #e4e6e8;
+  color:black;
+  font-family:Arial,sans-serif;
+  font-size:small;
+  line-height:16px;
+  max-width: 500px;
+}
+
+/* for styling images */
+.uploads {}
+
+
+/* styles questions that have/no-have comments :) */
+.no-has-comments{
+  padding: 5 9 5 0;
+  background-color:;
+}
+.has-comments {
+  padding: 5 9 5 0;
+  background-color:rgba(0,255,0,0.1);
+  width:440px;
+  }
+
+/* styles fact that has comments :) */
+.comment-inside{
+  background-color:rgba(0,255,0,0.2);
+}
+
+/* css selectors impede performance
+https://softwareengineering.stackexchange.com/questions/266302/css-when-to-use-which-selector
+
+[class*="preview"] {
+  padding: 5 9 5 9;
+  background-color: pink;
+}
+.preview-has-comments {
+  background-color:rgba(0,255,0,0.5);
+} */
+
+.container{
+  padding-top:10px;
+  padding-bottom:10;
+  padding-left:20;
+  padding-right:0;
+  background-color:aliceblue;}
+
+#head {padding-bottom: 8px;}
+
+.panel01{
+  max-width: 440px;
+  border:;
+}
+
+ul{line-height:;}
+
+p{position:relative;text-align:justify;hyphens:auto;margin-block-end:0px;}
+
+.comment{border-top:; padding:3 5 6 5;background-color:white;max-width:500;}
+.comment-is-question{border:1px solid lavender; padding:3 5 6 5;background-color:lavenderblush;max-width:500;}
+
+/* .tangent {border-top:palegreen 1px solid; padding:0 3;background-color:rgba(152,251,152,0.2);antiquewhite;} */
+.comment-abbrv {border-top:; padding:0 0 0 0;background-color:white;}
+.monospace{font-family:monospace;}
+.big-exam-name{font-family:;font-size:24px;background-color: white;color:red;}
+
+/* head is class for div, home is class for span */
+.head {text-align:center;}
+.home{font-size:36px;font-weight:100;line-height:24px;}
+
+.footer{
+  text-align: center;
+  margin: auto;
+  color:gainsboro;
+  padding-top: 30px;
+}
+
+.front-page-container {
+  padding: 0 9 0 0;
+}
+
+.navi {
+  top:;
+  background-color: white;
+  padding-bottom:1px;
+  /* padding-top: 1px; */
+  /* border-bottom: 1px solid #e4f3ff; */
+  margin-top: 0px;
+  text-align:center;}
+
+.patreon {
+  background-color:rgba(255,255,0,0.5);
+  text-align:center;
+  padding-top:0px;
+  border-bottom: 1px solid #e4f3ff;
+}
+
+table.links-table{
+  border-collapse: collapse;
+  line-height:18px;
+}
+
+td.left{
+  text-align:right;
+  padding-right:6px;
+}
+
+.nonitalics{font-style:normal;}
+
+table{border:none;}
+td{border:0px red solid;padding:0;background-color:;}
+
+/* .flask-pagedown-input{width:100%;} */
+textarea {width: 99%;}
+
+.fresh{background-color:yellow;
+  font-variant:small-caps;
+  font-family:verdana;
+  font-size:9px;
+  font-weight:500;
+  vertical-align:top;
+  letter-spacing:0px;
+  padding:0 0;}
+
+a.nothing:link{color:;text-decoration:none;}
+a.nothing:visited{color:;text-decoration:none;}
+a.nothing:hover,a.nothing:active{color:;text-decoration:none;background-color:;}
+
+a.flash:link{text-decoration:underline;}
+a.flash:visited{text-decoration:underline;}
+a.flash:hover,a.flash:active{background-color: floralwhite;}
+
+
+a.blue:link{color:blue;text-decoration:underline;}
+a.blue:visited{color:blue;text-decoration:underline;}
+a.blue:hover,a.blue:active{color:red;text-decoration:underline;background-color:;}
+
+
+a.fresh-link:link{color:black;text-decoration:underline;}
+a.fresh-link:visited{color:black;text-decoration:underline;}
+a.fresh-link:hover,a.fresh-link:active{color:white;text-decoration:underline;background-color:black;}
+
+a.links-link:link{color:black;text-decoration:underline;}
+a.links-link:visited{color:black;text-decoration:underline;}
+a.links-link:hover,a.links-link:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.links-url:link{color:darkgray;text-decoration:none;font-family:arial;font-size:14px;font-weight:100;}
+a.links-url:visited{color:darkgray;text-decoration:underline;}
+a.links-url:hover,a.links-url:active{color:darkgray;text-decoration:underline;background-color:floralwhite;}
+
+/* id will override class */
+span#c2cbodylink a:link{color:black;text-decoration:underline;}
+span#c2cbodylink a:visited{color:black;text-decoration:underline;}
+span#c2cbodylink a:hover,a:active{color:black;text-decoration:underline;background-color:floralwhite;}
+
+a.oftheday:link,a.oftheday:visited{color:black;text-decoration:;}
+a.oftheday:hover{color:black;text-decoration:underline;}
+
+a.green-box:link,a.green-box:visited{color:blue;text-decoration:;}
+a.green-box:hover{color:red;text-decoration:underline;}
+
+a.black:link{color:black;text-decoration:;}
+a.black:visited{color:black;text-decoration:;}
+a.black:hover{color:red;text-decoration:underline;}
+
+div.navi a, a:visited{color:blue;text-decoration:;}
+div.navi a:hover{color:red;text-decoration:underline;}
+
+
+div.container a, a:visited{color:steelblue;text-decoration:none;}
+div.container a:hover{color:red;text-decoration: underline;}
+
+table,td{
+    border-collapse:collapse;
+    vertical-align: text-bottom;
+}
+
+
+/* 2 column, responsive float stuff */
+.container-exam {
+  display: flex;
+  background-color:aliceblue;
+  padding-top:4px;}
+
+.flowy {
+  flex: 1; /*grow*/
+  border:;
+  padding-right:9px;}
+
+@media (max-width:801px) { /*breakpoint*/
+  .container-exam {
+    flex-direction: column;
+  }
+  .home {font-size:28;line-height:21px;}
+}
+
+
+
+
+</style>
+
+
+
+
+
+<title>NBME p2ck_form6 Answers</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://nbmeanswers.com/static/jquery-3.2.1.min.js">\x3C/script>')</script>
+<script type="text/javascript">
+// $(document).ready(function() {
+//   $(".tangent-show").click(function() {
+//     $(".tangent-form").toggle();
+//   });
+// });
+
+// $(document).ready(function() {
+//      $(".tangent-show").click(function() {
+//        $(this).next(".tangent-form").toggle()
+//      });
+//    });
+
+
+// to show tangent-form
+$(document).ready(function() {
+ $(".tangent-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#tangent-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show subcomment-form
+$(document).ready(function() {
+ $(".subcomment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#subcomment-form-"+getId).toggle();
+     });
+  });
+});
+
+// to show comment-form
+$(document).ready(function() {
+ $(".comment-show").each(function(){
+
+   var getId = $(this).attr('getId');
+   $(this).click(function(){
+        $("#comment-form-"+getId).toggle();
+     });
+  });
+});
+</script>
+<script></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script>
+moment.locale("en");
+function flask_moment_render(elem) {
+    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    $(elem).removeClass('flask-moment').show();
+}
+function flask_moment_render_all() {
+    $('.flask-moment').each(function() {
+        flask_moment_render(this);
+        if ($(this).data('refresh')) {
+            (function(elem, interval) { setInterval(function() { flask_moment_render(elem) }, interval); })(this, $(this).data('refresh'));
+        }
+    })
+}
+$(document).ready(function() {
+    flask_moment_render_all();
+});
+</script>
+
+</head>
+
+<body>
+
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+whoops! sorry for the home page error!🤖 everything is back to normal now! --webmaster, 1:19 AM 2020.03.01
+</div> -->
+
+
+<!-- <div style="background-color:pink;text-align:center;padding-top:6px;">
+nbmeanswers.com will be going offline for the next hour or so! sorry!
+we&rsquo;ll be right back!</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.2);text-align:center;padding-top:0px;">
+  and we&rsquo;re back! with
+  <span class="fresh"><a href="https://nbmeanswers.com/exam/nbme23/1176" class="fresh-link">BRAND SPANKIN' NEW</a></span>
+  tangents!
+</div> -->
+
+<!-- <div style="background-color:rgba(0,255,0,0.5);text-align:center;padding-top:1px;">
+  welcome redditors!<img src="/static/img/snoo.png"
+  width="25" style="vertical-align:baseline;" />to snoo-finity ... <i>and beyond!</i>
+</div> -->
+
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:10px;border-bottom:1px lightgreen solid;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<!-- <div class="patreon">
+  if this site saved you time, please support it! =>
+  <a href="https://www.patreon.com/nbmeanswers" class="blue" target="_blank" onclick="captureOutboundLink('patreon','patreon_click');">patreon</a>
+
+  <div style="background-color:rgb(255,192,203);text-align:center;padding-top:0px;">
+  whoops! sorry for the brief disruption!🤖 everything back to normal now! --webmaster, 2:50 PM 2020.04.28
+  </div>
+</div> -->
+
+
+
+<div class="container">
+
+  
+  <center>
+  <div id="head">
+  <a href="https://nbmeanswers.com/" class="home">NBME Answers<!-- <span style="color:red;">A</span><span style="color:orange;">n</span><span style="color:goldenrod;">s</span><span style="color:green;">w</span><span style="color:blue;">e</span><span style="color:indigo;">r</span><span style="color:violet;">s</span>--> & Explanations</a>
+  </div>
+  </center>
+
+  
+  
+  
+
+  
+
+  
+
+<div class="container-exam">
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">NBME p2ck_form6 Answers</span><br />
+
+
+
+
+
+
+<!--
+<div style="background-color:blanchedalmond;
+            max-width:439px;
+            padding:6 3 3 6;
+            margin:9 0 6 0;">
+<a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="nothing" onclick="captureOutboundLink('mst','graphic');">
+<img src="/static/img/tell_em.png"
+     style="border:1px solid cornflowerblue;
+            margin:0 0 0 0;
+            max-width:400px;"
+      width="100%" /></a>
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+
+
+<br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1664" class="blue">Question#2</a><br />
+    
+    A 67-year-old man is examined 3 days after undergoing ...<br />
+    
+    <span style="background-color:yellow;">Remove the urinary catheter</span><br />
+    </div>
+    <br />
+
+<div class="has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1665" class="blue">Question#3</a><br />
+    
+    A 20-month-old girl is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Cystic fibrosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1666" class="blue">Question#4</a><br />
+    
+    A previously healthy 16-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Pulmonary tuberculosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1667" class="blue">Question#5</a><br />
+    
+    During the past 4 months, a 32-year-old woman has had pain ...<br />
+    
+    <span style="background-color:yellow;">Sjögren syndrome</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1668" class="blue">Question#6</a><br />
+    
+    A 5-year-old boy is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Hyaline casts</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1669" class="blue">Question#7</a><br />
+    
+    A 3-year-old boy is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Impaired phagocytic oxidative metabolism</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1670" class="blue">Question#8</a><br />
+    
+    A 37-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Pulmonary artery pressure</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1671" class="blue">Question#9</a><br />
+    
+    A 42-year-old man is brought to the emergency department by a ...<br />
+    
+    <span style="background-color:yellow;">Vitamin B1 (thiamine)</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1672" class="blue">Question#10</a><br />
+    
+    A 32-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Histocompatibility human leukocyte antigen B27</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1673" class="blue">Question#11</a><br />
+    
+    A 32-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Thyroid-stimulating hormone</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1674" class="blue">Question#12</a><br />
+    
+    An 18-month-old boy is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Passive hypersupination of the forearm</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1675" class="blue">Question#13</a><br />
+    
+    Four hours after undergoing a cesarean delivery at term ...<br />
+    
+    <span style="background-color:yellow;">Postoperative intra-abdominal hemorrhage</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1676" class="blue">Question#14</a><br />
+    
+    A 72-year-old man comes to the emergency department after a ...<br />
+    
+    <span style="background-color:yellow;">Corticosteroid therapy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1677" class="blue">Question#15</a><br />
+    
+    A previously healthy 10-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Avoidance of the wooded area</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1678" class="blue">Question#17</a><br />
+    
+    A 28-year-old woman at 28 weeks' gestation reports excessive ...<br />
+    
+    <span style="background-color:yellow;">Mitral stenosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1679" class="blue">Question#18</a><br />
+    
+    A 27-year-old man comes to the physician because of a 1-week ...<br />
+    
+    <span style="background-color:yellow;">Diffuse hypokinesia and dilation of the ventricles</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1680" class="blue">Question#19</a><br />
+    
+    An otherwise healthy 4-month-old girl is brought to the ...<br />
+    
+    <span style="background-color:yellow;">No intervention is necessary</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1681" class="blue">Question#20</a><br />
+    
+    An asymptomatic 57-year-old man comes to the physician for a ...<br />
+    
+    <span style="background-color:yellow;">Accumulation of lipids in the arterial wall</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1682" class="blue">Question#21</a><br />
+    
+    A 25-year-old woman comes to the physician for a routine ...<br />
+    
+    <span style="background-color:yellow;">Borderline personality disorder</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1683" class="blue">Question#22</a><br />
+    
+    A 52-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Decreased androgens</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1684" class="blue">Question#23</a><br />
+    
+    Two hours ago, a 24-year-old man had the sudden onset of pain ...<br />
+    
+    <span style="background-color:yellow;">Tube thoracostomy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1685" class="blue">Question#24</a><br />
+    
+    A 57-year-old man is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Intravenous calcium gluconate</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1686" class="blue">Question#25</a><br />
+    
+    A healthy 18-year-old woman comes for a routine health ...<br />
+    
+    <span style="background-color:yellow;">Testing for Neisseria gonorrhoeae and Chlamydia trachomatis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1687" class="blue">Question#26</a><br />
+    
+    A 32-year-old woman comes to the physician because she and ...<br />
+    
+    <span style="background-color:yellow;">Polycystic ovarian syndrome</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1688" class="blue">Question#27</a><br />
+    
+    A 32-year-old man has had mild tremulousness, increasing ...<br />
+    
+    <span style="background-color:yellow;">Discontinuation of lorazepam</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1689" class="blue">Question#28</a><br />
+    
+    An 82-year-old woman is brought to the physician by her ...<br />
+    
+    <span style="background-color:yellow;">Major depressive disorder</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1690" class="blue">Question#29</a><br />
+    
+    A 42-year-old computer science professor is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Huntington's disease</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1691" class="blue">Question#30</a><br />
+    
+    A 67-year-old woman is hospitalized because of abdominal pain ...<br />
+    
+    <span style="background-color:yellow;">Intramural hematoma of the proximal small bowel</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1692" class="blue">Question#31</a><br />
+    
+    A 37-year-old woman is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Right optic nerve</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1693" class="blue">Question#32</a><br />
+    
+    A 24-year-old primigravid woman at 18 weeks' gestation comes ...<br />
+    
+    <span style="background-color:yellow;">Inflammatory bowel disease</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1694" class="blue">Question#33</a><br />
+    
+    A 15-year-old girl is brought to the physician by her parents ...<br />
+    
+    <span style="background-color:yellow;">Negotiate a contract regarding medication compliance</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1695" class="blue">Question#34</a><br />
+    
+    A 25-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Complete blood count</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1696" class="blue">Question#35</a><br />
+    
+    A 14-month-old girl is brought to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Water-soluble contrast enema</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1697" class="blue">Question#36</a><br />
+    
+    A 67-year-old man comes to the emergency department 1 hour ...<br />
+    
+    <span style="background-color:yellow;">Right vertebral</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1698" class="blue">Question#37</a><br />
+    
+    A 2-month-old boy is brought to the physician for a ...<br />
+    
+    <span style="background-color:yellow;">Language development: Normal; Psychosocial development: Normal</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1699" class="blue">Question#38</a><br />
+    
+    A previously healthy 32-year-old woman comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Inhaled β2-adrenergic agonist</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1700" class="blue">Question#39</a><br />
+    
+    A 6-month-old girl is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Patent ductus arteriosus</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1701" class="blue">Question#40</a><br />
+    
+    A 20-year-old man comes for a routine health maintenance ...<br />
+    
+    <span style="background-color:yellow;">Myotonic muscular dystrophy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1702" class="blue">Question#41</a><br />
+    
+    A previously healthy 52-year-old man comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Insulin</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1703" class="blue">Question#42</a><br />
+    
+    A 24-year-old man is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">Observation in the emergency department</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1704" class="blue">Question#43</a><br />
+    
+    A 70-year-old woman has had increasing abdominal pain over ...<br />
+    
+    <span style="background-color:yellow;">Gram stain of abdominal fluid</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1705" class="blue">Question#44</a><br />
+    
+    A 4-year-old boy is brought to the emergency department 20 ...<br />
+    
+    <span style="background-color:yellow;">Pulmonary contusion</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 1/<a href="https://nbmeanswers.com/exam/step2ck_form6/1706" class="blue">Question#45</a><br />
+    
+    A 77-year-old woman comes to the physician because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">Gallstone ileus</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1707" class="blue">Question#1</a><br />
+    
+    A 20-year-old man is brought to the emergency department on a ...<br />
+    
+    <span style="background-color:yellow;">Inadequate dissipation of body heat</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1708" class="blue">Question#2</a><br />
+    
+    A 23-year-old woman has pain, cramping, and swelling of the ...<br />
+    
+    <span style="background-color:yellow;">Hypercoagulable state of pregnancy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1709" class="blue">Question#3</a><br />
+    
+    A 21-year-old college student comes to the physician because ...<br />
+    
+    <span style="background-color:yellow;">Topical retinoic acid</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1710" class="blue">Question#4</a><br />
+    
+    Four weeks after a low transverse cesarean delivery for ...<br />
+    
+    <span style="background-color:yellow;">Reassurance</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1711" class="blue">Question#5</a><br />
+    
+    A 37-year-old man is brought to the emergency department 6 ...<br />
+    
+    <span style="background-color:yellow;">Laparotomy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1712" class="blue">Question#6</a><br />
+    
+    A 67-year-old woman has had anorexia, fatigue, and weakness ...<br />
+    
+    <span style="background-color:yellow;">Multiple myeloma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1713" class="blue">Question#7</a><br />
+    
+    A 62-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Avoidance of analgesics</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1714" class="blue">Question#10</a><br />
+    
+    A healthy 21-year-old college student comes for an annual ...<br />
+    
+    <span style="background-color:yellow;">Pap smear</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1715" class="blue">Question#11</a><br />
+    
+    A 52-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Adjustment disorder with anxiety</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1716" class="blue">Question#12</a><br />
+    
+    A 67-year-old man is brought to the emergency department 4 ...<br />
+    
+    <span style="background-color:yellow;">Ruptured aortic aneurysm</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1717" class="blue">Question#13</a><br />
+    
+    A 37-year-old woman comes to the physician because of an ...<br />
+    
+    <span style="background-color:yellow;">Medication adverse effect</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1718" class="blue">Question#14</a><br />
+    
+    A 3-month-old boy is brought for a well-child examination. He ...<br />
+    
+    <span style="background-color:yellow;">Glycogen storage disease, type II (Pompe's disease)</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1719" class="blue">Question#15</a><br />
+    
+    An 8-year-old girl with type 1 diabetes mellitus is brought ...<br />
+    
+    <span style="background-color:yellow;">Infusion of 0.9% saline</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1720" class="blue">Question#16</a><br />
+    
+    A 32-year-old woman is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Hemothorax</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1721" class="blue">Question#17</a><br />
+    
+    A 24-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Fibromyalgia</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1722" class="blue">Question#18</a><br />
+    
+    A 35-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Na+: 140;<br />Cl-: 80;<br />K+: 2.5;<br />HCO3-: 40</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1723" class="blue">Question#19</a><br />
+    
+    A 13-year-old girl is brought for a well-child examination. ...<br />
+    
+    <span style="background-color:yellow;">Discussion of pregnancy prevention</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1724" class="blue">Question#20</a><br />
+    
+    A previously healthy 52-year-old man comes to the emergency ...<br />
+    
+    <span style="background-color:yellow;">Fluid restriction</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1725" class="blue">Question#21</a><br />
+    
+    A 42-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Constrictive pericarditis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1726" class="blue">Question#22</a><br />
+    
+    A 5-week-old boy is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Hypertrophic pyloric stenosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1727" class="blue">Question#23</a><br />
+    
+    A 17-year-old boy comes to the physician because of a 2-day ...<br />
+    
+    <span style="background-color:yellow;">Inadequate production of insulin</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1728" class="blue">Question#25</a><br />
+    
+    After an uncomplicated laparoscopic cholecystectomy, a ...<br />
+    
+    <span style="background-color:yellow;">Reinsertion of a Foley catheter</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1729" class="blue">Question#26</a><br />
+    
+    A previously healthy 4-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Upper respiratory tract infection</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1730" class="blue">Question#27</a><br />
+    
+    A previously healthy 4-year-old girl is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Arthrocentesis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1731" class="blue">Question#28</a><br />
+    
+    A 25-year-old woman comes to the physician for evaluation 1 ...<br />
+    
+    <span style="background-color:yellow;">Latex products</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1732" class="blue">Question#29</a><br />
+    
+    A 32-year-old woman, gravida 2, para 2, comes to the ...<br />
+    
+    <span style="background-color:yellow;">Anovulation</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1733" class="blue">Question#30</a><br />
+    
+    A 62-year-old woman is admitted to the hospital because of a ...<br />
+    
+    <span style="background-color:yellow;">Glucocorticoid-induced demargination and storage pool release of segmented neutrophils</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1734" class="blue">Question#31</a><br />
+    
+    A 5-month-old boy is brought for a follow-up examination. He ...<br />
+    
+    <span style="background-color:yellow;">Compression of the airway by a vascular ring</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1735" class="blue">Question#32</a><br />
+    
+    A 25-year-old woman comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Idiopathic intracranial hypertension</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1736" class="blue">Question#33</a><br />
+    
+    A 25-year-old man with a history of intravenous drug use ...<br />
+    
+    <span style="background-color:yellow;">Cryptococcal meningitis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1737" class="blue">Question#34</a><br />
+    
+    A 7-year-old girl is brought to the physician in September ...<br />
+    
+    <span style="background-color:yellow;">Throat culture</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1738" class="blue">Question#35</a><br />
+    
+    A 27-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Irritable bowel syndrome</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1739" class="blue">Question#36</a><br />
+    
+    A 22-year-old woman comes to the physician for a health ...<br />
+    
+    <span style="background-color:yellow;">Administration of hepatitis B vaccine</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1740" class="blue">Question#38</a><br />
+    
+    A previously healthy 16-year-old boy is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Viral infection</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1741" class="blue">Question#39</a><br />
+    
+    A 57-year-old woman with breast cancer comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Spinal cord decompression and cervical stabilization</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1742" class="blue">Question#40</a><br />
+    
+    A previously healthy 44-year-old woman, gravida 4, para 4, ...<br />
+    
+    <span style="background-color:yellow;">Stress incontinence</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1743" class="blue">Question#41</a><br />
+    
+    One day after an uncomplicated spontaneous vaginal delivery, ...<br />
+    
+    <span style="background-color:yellow;">Overflow incontinence</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1744" class="blue">Question#42</a><br />
+    
+    An asymptomatic 32-year-old man comes for a routine health ...<br />
+    
+    <span style="background-color:yellow;">Selective IgA deficiency</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1745" class="blue">Question#43</a><br />
+    
+    Five weeks after vaginal delivery of a healthy full-term ...<br />
+    
+    <span style="background-color:yellow;">Admission to the hospital for treatment</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1746" class="blue">Question#44</a><br />
+    
+    A 62-year-old man has had the gradual onset of fatigue and ...<br />
+    
+    <span style="background-color:yellow;">Tricuspid regurgitation</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1747" class="blue">Question#45</a><br />
+    
+    An asymptomatic 47-year-old man comes for a preemployment ...<br />
+    
+    <span style="background-color:yellow;">Serum lipid studies while fasting</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 2/<a href="https://nbmeanswers.com/exam/step2ck_form6/1748" class="blue">Question#46</a><br />
+    
+    An 87-year-old nursing home resident with dementia, ...<br />
+    
+    <span style="background-color:yellow;">Decreased gag reflex</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1749" class="blue">Question#1</a><br />
+    
+    A 32-year-old woman who is HIV positive has a CD4+ ...<br />
+    
+    <span style="background-color:yellow;">Influenza virus</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1750" class="blue">Question#2</a><br />
+    
+    A 62-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Malabsorption</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1751" class="blue">Question#3</a><br />
+    
+    A 64-year-old woman has moderately severe postoperative pain ...<br />
+    
+    <span style="background-color:yellow;">Patient-controlled intravenous morphine</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1752" class="blue">Question#4</a><br />
+    
+    An 18-year-old man comes for an examination prior to ...<br />
+    
+    <span style="background-color:yellow;">Germinal cell tumor</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1753" class="blue">Question#5</a><br />
+    
+    A 67-year-old man comes to the physician because of a 6-month ...<br />
+    
+    <span style="background-color:yellow;">Thymoma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1754" class="blue">Question#6</a><br />
+    
+    A 16-year-old girl is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Aortic incompetence</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1755" class="blue">Question#7</a><br />
+    
+    A 52-year-old man comes to the physician for a routine health ...<br />
+    
+    <span style="background-color:yellow;">Exercise stress test</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1756" class="blue">Question#8</a><br />
+    
+    A newborn is in severe respiratory distress immediately ...<br />
+    
+    <span style="background-color:yellow;">Mother: O,Rh-negative; Newborn: O,Rh-positive</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1757" class="blue">Question#9</a><br />
+    
+    A 50-year-old woman has had progressive dyspnea over the past ...<br />
+    
+    <span style="background-color:yellow;">Echocardiography</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1758" class="blue">Question#10</a><br />
+    
+    An asymptomatic 32-year-old woman comes for a routine health ...<br />
+    
+    <span style="background-color:yellow;">Weight-loss program</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1759" class="blue">Question#12</a><br />
+    
+    A 47-year-old man is admitted to the hospital after ...<br />
+    
+    <span style="background-color:yellow;">Haloperidol decanoate</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1760" class="blue">Question#13</a><br />
+    
+    A 38-year-old woman, gravida 2, para 1, at 38 weeks' ...<br />
+    
+    <span style="background-color:yellow;">Nonstress test</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1761" class="blue">Question#14</a><br />
+    
+    A 42-year-old woman comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Endoscopic retrograde cholangiopancreatography</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1762" class="blue">Question#15</a><br />
+    
+    A 26-year-old woman is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">ACTH stimulation test</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1763" class="blue">Question#17</a><br />
+    
+    An 18-year-old man comes to the physician for an initial ...<br />
+    
+    <span style="background-color:yellow;">Ask about suicidal feelings</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1764" class="blue">Question#18</a><br />
+    
+    A 52-year-old woman comes to the physician because of a ...<br />
+    
+    <span style="background-color:yellow;">Intraductal papilloma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1765" class="blue">Question#19</a><br />
+    
+    A 67-year-old man with long-standing signs and symptoms of ...<br />
+    
+    <span style="background-color:yellow;">Protein: 2.5;<br />Glucose: 90;<br />Leukocyte count: 2,000;<br />Segmented neutrophils: 60 percent;<br />Monocytes: 40 percent</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1766" class="blue">Question#20</a><br />
+    
+    A 77-year-old woman is brought to the physician by her son ...<br />
+    
+    <span style="background-color:yellow;">Memory loss</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1767" class="blue">Question#21</a><br />
+    
+    A 47-year-old man comes to the physician because of fever and ...<br />
+    
+    <span style="background-color:yellow;">Carbamazepine therapy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1768" class="blue">Question#22</a><br />
+    
+    A previously healthy 16-year-old high school wrestler comes ...<br />
+    
+    <span style="background-color:yellow;">Eczema herpeticum</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1769" class="blue">Question#23</a><br />
+    
+    A 19-year-old man is brought to the emergency department 45 ...<br />
+    
+    <span style="background-color:yellow;">Laparotomy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1770" class="blue">Question#24</a><br />
+    
+    A 42-year-old woman comes to the physician for evaluation of ...<br />
+    
+    <span style="background-color:yellow;">Autonomous production of aldosterone</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1771" class="blue">Question#25</a><br />
+    
+    A 37-year-old woman, gravida 2, para 1, at 12 weeks' ...<br />
+    
+    <span style="background-color:yellow;">Previous preterm delivery</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1772" class="blue">Question#26</a><br />
+    
+    A 17-year-old boy is brought to the emergency department by ...<br />
+    
+    <span style="background-color:yellow;">PCP</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1773" class="blue">Question#27</a><br />
+    
+    A 57-year-old man is brought to the emergency department 6 ...<br />
+    
+    <span style="background-color:yellow;">Carotid ultrasonography</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1774" class="blue">Question#28</a><br />
+    
+    A previously healthy 27-year-old woman is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Electromyography and nerve conduction studies</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1775" class="blue">Question#29</a><br />
+    
+    A 32-year-old man receiving intensive chemotherapy for ...<br />
+    
+    <span style="background-color:yellow;">Pneumocystis jiroveci (formerly P. carinii)</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1776" class="blue">Question#30</a><br />
+    
+    A previously healthy 42-year-old carpenter comes to the ...<br />
+    
+    <span style="background-color:yellow;">Median nerve at the wrist</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1777" class="blue">Question#31</a><br />
+    
+    A previously healthy 37-year-old man comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Ulnar nerve at the elbow</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1778" class="blue">Question#32</a><br />
+    
+    Two days after admission to the hospital for treatment of ...<br />
+    
+    <span style="background-color:yellow;">Acute tubular necrosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1779" class="blue">Question#33</a><br />
+    
+    A 32-year-old woman comes to the physician because of vaginal ...<br />
+    
+    <span style="background-color:yellow;">Clue cells</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1780" class="blue">Question#34</a><br />
+    
+    A 32-year-old man with alcoholism is brought to the emergency ...<br />
+    
+    <span style="background-color:yellow;">Vitamin B1 (thiamine)</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1781" class="blue">Question#35</a><br />
+    
+    A 67-year-old man has had shortness of breath on exertion for ...<br />
+    
+    <span style="background-color:yellow;">Thoracentesis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1782" class="blue">Question#36</a><br />
+    
+    Three days after being hospitalized for treatment of a hip ...<br />
+    
+    <span style="background-color:yellow;">Heparin therapy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1783" class="blue">Question#37</a><br />
+    
+    A 2-year-old boy is brought to the physician because of fever ...<br />
+    
+    <span style="background-color:yellow;">Intravenous immunoglobulin infusion</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1784" class="blue">Question#38</a><br />
+    
+    A 3-year-old boy is brought for a follow-up examination. He ...<br />
+    
+    <span style="background-color:yellow;">CT scan of the head</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1785" class="blue">Question#39</a><br />
+    
+    A previously healthy 62-year-old man comes to the emergency ...<br />
+    
+    <span style="background-color:yellow;">CT scan of the abdomen</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1786" class="blue">Question#40</a><br />
+    
+    A 6-month-old girl is brought to the physician for a routine ...<br />
+    
+    <span style="background-color:yellow;">Obstruction of cerebrospinal fluid flow</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1787" class="blue">Question#41</a><br />
+    
+    A 72-year-old man with hypertension has had increasingly ...<br />
+    
+    <span style="background-color:yellow;">Metastatic prostate carcinoma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1788" class="blue">Question#42</a><br />
+    
+    A 40-year-old man is brought to the emergency department 1 ...<br />
+    
+    <span style="background-color:yellow;">Myocardial contusion</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1789" class="blue">Question#43</a><br />
+    
+    A previously healthy 67-year-old man is admitted to the ...<br />
+    
+    <span style="background-color:yellow;">Small cell carcinoma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1790" class="blue">Question#44</a><br />
+    
+    A previously healthy 67-year-old man comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Daily exercise program</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 3/<a href="https://nbmeanswers.com/exam/step2ck_form6/1791" class="blue">Question#45</a><br />
+    
+    A 42-year-old man comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Amphotericin B</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1792" class="blue">Question#1</a><br />
+    
+    A 16-year-old boy with neurofibromatosis is brought for a ...<br />
+    
+    <span style="background-color:yellow;">Catecholamine-producing tumor</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1793" class="blue">Question#2</a><br />
+    
+    A 32-year-old woman comes to the physician because of bright ...<br />
+    
+    <span style="background-color:yellow;">Anesthetic ointment and stool softeners</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1794" class="blue">Question#4</a><br />
+    
+    A previously healthy 47-year-old woman comes to the emergency ...<br />
+    
+    <span style="background-color:yellow;">Gallstone pancreatitis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1795" class="blue">Question#5</a><br />
+    
+    A 15-year-old boy is brought to the emergency department 30 ...<br />
+    
+    <span style="background-color:yellow;">Hypertrophic obstructive cardiomyopathy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1796" class="blue">Question#6</a><br />
+    
+    A 62-year-old woman is brought to the emergency department 1 ...<br />
+    
+    <span style="background-color:yellow;">Orthostatic hypotension</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1797" class="blue">Question#7</a><br />
+    
+    A 70-year-old man comes to the physician because of urinary ...<br />
+    
+    <span style="background-color:yellow;">Outflow obstruction of the bladder</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1798" class="blue">Question#8</a><br />
+    
+    A 67-year-old woman comes for a routine health maintenance ...<br />
+    
+    <span style="background-color:yellow;">Measurement of serum parathyroid hormone concentration</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1799" class="blue">Question#9</a><br />
+    
+    A 4-week-old newborn is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">High pulmonary vascular resistance</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1800" class="blue">Question#10</a><br />
+    
+    A 37-year-old primigravid woman at 9 weeks' gestation is ...<br />
+    
+    <span style="background-color:yellow;">Antiemetic therapy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1801" class="blue">Question#12</a><br />
+    
+    One month after undergoing an uneventful renal transplant for ...<br />
+    
+    <span style="background-color:yellow;">Increased dosage of corticosteroids</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1802" class="blue">Question#13</a><br />
+    
+    A 67-year-old man is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Brain abscess</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1803" class="blue">Question#14</a><br />
+    
+    A 57-year-old man comes to the physician because of a 1-day ...<br />
+    
+    <span style="background-color:yellow;">Indomethacin</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1804" class="blue">Question#15</a><br />
+    
+    A healthy 24-year-old woman comes for a routine health ...<br />
+    
+    <span style="background-color:yellow;">Repeat examination in 2 weeks</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1805" class="blue">Question#16</a><br />
+    
+    A 57-year-old woman is brought to the physician 2 days after ...<br />
+    
+    <span style="background-color:yellow;">Osteoporotic compression fracture</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1806" class="blue">Question#17</a><br />
+    
+    A previously healthy 32-year-old plumber comes to the ...<br />
+    
+    <span style="background-color:yellow;">Muscle strain</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1807" class="blue">Question#18</a><br />
+    
+    Over the past 3 months, a 30-year-old woman has had ...<br />
+    
+    <span style="background-color:yellow;">Adrenal gland</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1808" class="blue">Question#19</a><br />
+    
+    A 20-year-old African American man with sickle cell disease ...<br />
+    
+    <span style="background-color:yellow;">Increased demand for folic acid</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1809" class="blue">Question#20</a><br />
+    
+    A healthy 23-year-old woman, gravida 1, para 1, comes to the ...<br />
+    
+    <span style="background-color:yellow;">Oral levonorgestrel now and again in 12 hours</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1810" class="blue">Question#21</a><br />
+    
+    A previously healthy 52-year-old woman comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Sporotrichosis</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1811" class="blue">Question#22</a><br />
+    
+    An 18-year-old man comes to the physician 1 week after he had ...<br />
+    
+    <span style="background-color:yellow;">Operative treatment</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1812" class="blue">Question#24</a><br />
+    
+    A 62-year-old woman is brought to the physician by her ...<br />
+    
+    <span style="background-color:yellow;">Nitroprusside</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1813" class="blue">Question#25</a><br />
+    
+    A 42-year-old man comes to the physician because of a 3-month ...<br />
+    
+    <span style="background-color:yellow;">Emphysema</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1814" class="blue">Question#26</a><br />
+    
+    Four days after undergoing resection of an obstructing ...<br />
+    
+    <span style="background-color:yellow;">Central venous catheter</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1815" class="blue">Question#27</a><br />
+    
+    A 67-year-old woman has been intubated for 1 week after ...<br />
+    
+    <span style="background-color:yellow;">Wean from the ventilator</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1816" class="blue">Question#28</a><br />
+    
+    An 80-year-old woman has had bleeding gums for 3 weeks. Her ...<br />
+    
+    <span style="background-color:yellow;">C</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1817" class="blue">Question#29</a><br />
+    
+    A 17-year-old boy sustains a head injury and loses ...<br />
+    
+    <span style="background-color:yellow;">Acute respiratory distress syndrome</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1818" class="blue">Question#30</a><br />
+    
+    A 72-year-old man comes to the physician because of a 2-month ...<br />
+    
+    <span style="background-color:yellow;">Oral enalapril therapy</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1819" class="blue">Question#31</a><br />
+    
+    An asymptomatic 21-year-old woman is found to have an adnexal ...<br />
+    
+    <span style="background-color:yellow;">Benign cystic teratoma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1820" class="blue">Question#32</a><br />
+    
+    A 57-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Overflow incontinence from acontractile bladder</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1821" class="blue">Question#33</a><br />
+    
+    A 30-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Serum thyroid-stimulating hormone concentration</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1822" class="blue">Question#34</a><br />
+    
+    A 42-year-old man is brought to the physician by his wife ...<br />
+    
+    <span style="background-color:yellow;">Complex partial seizures</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1823" class="blue">Question#35</a><br />
+    
+    A 22-year-old primigravid woman at 16 weeks' gestation is ...<br />
+    
+    <span style="background-color:yellow;">Choriocarcinoma</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1824" class="blue">Question#36</a><br />
+    
+    A previously healthy 87-year-old woman comes to the physician ...<br />
+    
+    <span style="background-color:yellow;">Lichen sclerosus</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1825" class="blue">Question#37</a><br />
+    
+    A 32-year-old man comes to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Vitamin D deficiency</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1826" class="blue">Question#38</a><br />
+    
+    A 45-year-old woman comes to the emergency department because ...<br />
+    
+    <span style="background-color:yellow;">Lorazepam</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1827" class="blue">Question#39</a><br />
+    
+    A 47-year-old woman comes to the physician for a follow-up ...<br />
+    
+    <span style="background-color:yellow;">Gastric bypass</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1828" class="blue">Question#40</a><br />
+    
+    A 28-month-old boy has a history of cyanosis since birth with ...<br />
+    
+    <span style="background-color:yellow;">Tetralogy of Fallot</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1829" class="blue">Question#41</a><br />
+    
+    A previously healthy 3-month-old girl is brought to the ...<br />
+    
+    <span style="background-color:yellow;">Dysmorphogenesis of the third and fourth pharyngeal pouches</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1830" class="blue">Question#42</a><br />
+    
+    A 6-year-old boy is brought to the physician by his mother ...<br />
+    
+    <span style="background-color:yellow;">An excess of very long chain fatty acids</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1831" class="blue">Question#43</a><br />
+    
+    A 67-year-old woman is brought to the emergency department ...<br />
+    
+    <span style="background-color:yellow;">Esophageal perforation</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1832" class="blue">Question#44</a><br />
+    
+    A 13-year-old boy is brought to the physician by his mother ...<br />
+    
+    <span style="background-color:yellow;">No pharmacotherapy is indicated</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1833" class="blue">Question#45</a><br />
+    
+    A 72-year-old man comes to the physician with his wife ...<br />
+    
+    <span style="background-color:yellow;">Measurement of blood lead concentration</span><br />
+    </div>
+    <br />
+
+<div class="no-has-comments">Block 4/<a href="https://nbmeanswers.com/exam/step2ck_form6/1834" class="blue">Question#46</a><br />
+    
+    A 5-year-old girl is brought to the physician because of ...<br />
+    
+    <span style="background-color:yellow;">Empyema</span><br />
+    </div>
+    <br />
+
+</div>
+
+
+
+<div class="flowy">
+<span style="font-family:;font-size:24px;">Recent comments ...</span><br /><br /><br /><br />
+</div>
+
+
+
+</div>
+
+
+
+
+  
+  <div class="footer">
+    <i>
+      <!-- for every thousand thrashing at the branches of evil
+           there is one hacking at root
+
+           gather ye rosebuds while ye may
+           ye not busy being born is busy dying
+
+                 for every thousand thrashing <br />&nbsp;&nbsp;at the branches of evil<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;there is one hacking at root
+      -->
+      <!-- for every thousand thrashing at the branches of evil<br /> there is one hacking at root -->
+      one does not simply &ldquo;walk into mordor&rdquo;
+    </i>
+  </div>
+  
+</div>
+<!--
+<div style="background-color:rgba(0,255,0,0.5);
+            text-align:center;
+            padding-top:3px;">
+<span class="nobreak"><a href="https://www.medschooltutors.com/?utm_source=hello_from_nbmeanswers" target="_blank" class="blue" onclick="captureOutboundLink('mst','title');">
+    Med School Tutors</a> : Tell &rsquo;em <i>&ldquo;NBME Answers sent me!&rdquo;</i>&nbsp;
+  </span>
+  <span class="nobreak">
+    <a href="tel:+12123270098" target="_blank" class="blue" onclick="captureOutboundLink('mst','call_to_action');">Call +1 212 327 0098</a>
+  </span>
+  <br />
+</div>
+-->
+</body>
+</html>
